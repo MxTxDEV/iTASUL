@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locação de Ferramentas | Grupo Itaçu</title>
+  <meta name="description" content="Locação de betoneira, compactador de solo, placa vibratória, andaime, furadeira, martelete e serra mármore. Grupo Itaçu.">
+  <meta name="theme-color" content="#c8102e">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ CABEÇALHO / MENU ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Grupo Itaçu - início">
+        <!-- Coloque a logo em assets/img/logo.png — ela substitui o texto automaticamente -->
+        <img class="brand__logo" src="assets/img/logo.png" alt="Grupo Itaçu"
+             onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+        <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itaçu</strong></span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Início</a></li>
+          <li><a href="ferramentas.html" class="nav__link active" aria-current="page">Ferramentas</a></li>
+          <li><a href="cacambas.html" class="nav__link">Caçambas</a></li>
+          <li><a href="munck.html" class="nav__link">Caminhão Munck</a></li>
+          <li><a href="index.html#historia" class="nav__link">Nossa História</a></li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+        <a href="#" data-wa="Gostaria de um orçamento." class="btn btn--primary nav__cta">Solicitar orçamento</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ TOPO DA PÁGINA ============ -->
+    <section class="page-hero">
+      <div class="hero__bg" data-img="assets/img/ferramentas-topo.jpg"></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Você está em"><a href="index.html">Início</a>/<span>Ferramentas</span></nav>
+        <h1 class="reveal">Locação de <span class="text-red">ferramentas</span> para a sua obra</h1>
+        <p class="reveal">Equipamentos revisados, prontos para trabalhar e com entrega rápida. Escolha o que você precisa e peça seu orçamento pelo WhatsApp.</p>
+        <a href="#" data-wa="Gostaria de um orçamento de locação de ferramentas." class="btn btn--primary btn--lg reveal">Pedir orçamento no WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- ============ CATÁLOGO ============ -->
+    <!-- Para adicionar uma ferramenta: copie um bloco <article class="tool">, troque nome, textos,
+         categoria (data-cat) e a foto em assets/img/ferramenta-NOME.jpg -->
+    <section class="section section--gray" id="catalogo">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Nosso estoque</span>
+          <h2 class="section__title">Ferramentas <span class="text-red">disponíveis</span></h2>
+          <p class="section__lead section__lead--dark">Filtre por tipo de serviço e clique em “Alugar agora” para falar direto com a nossa equipe.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar ferramentas">
+          <button class="filter active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="concretagem">Concretagem</button>
+          <button class="filter" data-filter="compactacao">Compactação</button>
+          <button class="filter" data-filter="acesso">Acesso e Altura</button>
+          <button class="filter" data-filter="perfuracao">Perfuração e Demolição</button>
+          <button class="filter" data-filter="corte">Corte</button>
+        </div>
+        <div class="catalog">
+          <article class="tool reveal" data-cat="concretagem">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-betoneira.jpg" role="img" aria-label="Betoneira">
+              <span class="tool__tag">Concretagem</span>
+            </div>
+            <div class="tool__body">
+              <h3>Betoneira</h3>
+              <p>Mistura concreto e argamassa com rapidez e uniformidade, economizando tempo e mão de obra.</p>
+              <ul class="tool__uses">
+                <li>Concreto para lajes, pisos e fundações</li>
+                <li>Argamassa de assentamento e reboco</li>
+                <li>Ideal para obras de pequeno e médio porte</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Betoneira." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+          <article class="tool reveal" data-cat="compactacao">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-compactador-de-solo.jpg" role="img" aria-label="Compactador de Solo">
+              <span class="tool__tag">Compactação</span>
+            </div>
+            <div class="tool__body">
+              <h3>Compactador de Solo</h3>
+              <p>Conhecido como “sapo”, compacta o solo com força em áreas estreitas e valas.</p>
+              <ul class="tool__uses">
+                <li>Valas e fundações</li>
+                <li>Aterros e contrapisos</li>
+                <li>Base para calçadas e pavimentos</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Compactador de Solo." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+          <article class="tool reveal" data-cat="compactacao">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-placa-vibratoria.jpg" role="img" aria-label="Placa Vibratória">
+              <span class="tool__tag">Compactação</span>
+            </div>
+            <div class="tool__body">
+              <h3>Placa Vibratória</h3>
+              <p>Compacta áreas amplas de areia, brita e solo granular com acabamento nivelado.</p>
+              <ul class="tool__uses">
+                <li>Base para pisos intertravados (paver)</li>
+                <li>Estacionamentos e calçadas</li>
+                <li>Compactação de brita e areia</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Placa Vibratória." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+          <article class="tool reveal" data-cat="acesso">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-andaime.jpg" role="img" aria-label="Andaime">
+              <span class="tool__tag">Acesso e Altura</span>
+            </div>
+            <div class="tool__body">
+              <h3>Andaime</h3>
+              <p>Estrutura tubular segura para trabalhos em altura, montada conforme a sua necessidade.</p>
+              <ul class="tool__uses">
+                <li>Reboco, pintura e acabamento de fachadas</li>
+                <li>Montagem de estruturas</li>
+                <li>Manutenção predial</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Andaime." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+          <article class="tool reveal" data-cat="perfuracao">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-furadeira.jpg" role="img" aria-label="Furadeira">
+              <span class="tool__tag">Perfuração e Demolição</span>
+            </div>
+            <div class="tool__body">
+              <h3>Furadeira</h3>
+              <p>Furadeira profissional para furos precisos em concreto, alvenaria, madeira e metal.</p>
+              <ul class="tool__uses">
+                <li>Fixação de buchas e parafusos</li>
+                <li>Passagem de tubulações</li>
+                <li>Instalações elétricas e hidráulicas</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Furadeira." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+          <article class="tool reveal" data-cat="perfuracao">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-martelete.jpg" role="img" aria-label="Martelete">
+              <span class="tool__tag">Perfuração e Demolição</span>
+            </div>
+            <div class="tool__body">
+              <h3>Martelete</h3>
+              <p>Martelete rompedor com alto impacto para furar e demolir concreto e alvenaria.</p>
+              <ul class="tool__uses">
+                <li>Demolição de paredes e pisos</li>
+                <li>Abertura de rasgos para conduítes</li>
+                <li>Furos de grande diâmetro</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Martelete." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+          <article class="tool reveal" data-cat="corte">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-serra-marmore.jpg" role="img" aria-label="Serra Mármore">
+              <span class="tool__tag">Corte</span>
+            </div>
+            <div class="tool__body">
+              <h3>Serra Mármore</h3>
+              <p>Corte rápido e preciso de pisos, revestimentos, mármore, granito e concreto.</p>
+              <ul class="tool__uses">
+                <li>Cortes em porcelanato e cerâmica</li>
+                <li>Mármore, granito e pedras</li>
+                <li>Rasgos em alvenaria e concreto</li>
+              </ul>
+              <a href="#" data-wa="Gostaria de alugar: Serra Mármore." class="btn btn--dark">Alugar agora</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2 class="section__title">Alugar é <span class="text-red">simples</span></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Escolha</h3><p>Veja as ferramentas do nosso estoque e escolha o que a sua obra precisa.</p></div>
+          <div class="step reveal"><h3>Orçamento</h3><p>Chame no WhatsApp e informe o equipamento e o período de locação.</p></div>
+          <div class="step reveal"><h3>Retirada ou entrega</h3><p>Retire na nossa loja ou receba o equipamento direto na sua obra.</p></div>
+          <div class="step reveal"><h3>Devolução</h3><p>Terminou o serviço? Devolva ou agende o recolhimento com a gente.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHAMADA ============ -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2>Não encontrou o que precisa?</h2>
+          <p>Fale com a gente: podemos ter a ferramenta ideal para o seu serviço.</p>
+        </div>
+        <a href="#" data-wa="Estou procurando uma ferramenta para locação." class="btn btn--white btn--lg">Chamar no WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer" aria-label="Grupo Itaçu">
+          <img class="brand__logo" src="assets/img/logo-branca.png" alt="Grupo Itaçu"
+               onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+          <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itaçu</strong></span></span>
+        </a>
+        <p>Locação de equipamentos para construção civil, caçambas de entulho e caminhão Munck.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/5500000000000" class="js-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html#sobre">Quem Somos</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="cacambas.html">Caçambas</a></li>
+          <li><a href="munck.html">Caminhão Munck</a></li>
+          <li><a href="index.html#historia">Nossa História</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="ferramentas.html">Locação de Ferramentas</a></li>
+          <li><a href="cacambas.html">Caçambas de Entulho</a></li>
+          <li><a href="munck.html">Caminhão Munck</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li>(00) 00000-0000</li>
+          <li>contato@grupoitacu.com.br</li>
+          <li>Cidade/UF</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">© <span id="year"></span> Grupo Itaçu. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5500000000000" class="whatsapp-float js-whatsapp" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.5-.2z"/></svg>
+  </a>
+
+  <!-- Lightbox da galeria -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="Fechar">×</button>
+    <img alt="Foto ampliada">
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

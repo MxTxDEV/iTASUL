@@ -7,7 +7,10 @@ Feito em HTML, CSS e JavaScript puros: não precisa instalar nada. Basta abrir o
 ## Estrutura
 
 ```
-index.html            → página completa (todas as seções)
+index.html            → página inicial
+ferramentas.html      → catálogo de ferramentas (com filtro por tipo)
+cacambas.html         → caçambas de entulho (fotos no chão e cheias)
+munck.html            → caminhão Munck (fotos do serviço atendendo)
 assets/css/style.css  → visual (cores no topo do arquivo, em :root)
 assets/js/main.js     → menu, animações, galeria e formulário → WhatsApp
 assets/img/           → coloque aqui as imagens
@@ -28,6 +31,42 @@ Salve os arquivos em `assets/img/` com **exatamente** estes nomes. Enquanto uma 
 | `servico-cacambas.jpg`      | Card de Caçambas de Entulho                   | 800×500          |
 | `servico-munck.jpg`         | Card de Caminhão Munck                        | 800×500          |
 | `galeria-1.jpg` … `galeria-6.jpg` | Galeria "Nossa frota em ação"           | 1200×800         |
+
+**Página Ferramentas**
+
+| Arquivo | Onde aparece |
+|---|---|
+| `ferramentas-topo.jpg` | Fundo do topo da página (1920×1080) |
+| `ferramenta-betoneira.jpg` | Betoneira |
+| `ferramenta-compactador-de-solo.jpg` | Compactador de solo |
+| `ferramenta-placa-vibratoria.jpg` | Placa vibratória |
+| `ferramenta-andaime.jpg` | Andaime |
+| `ferramenta-furadeira.jpg` | Furadeira |
+| `ferramenta-martelete.jpg` | Martelete |
+| `ferramenta-serra-marmore.jpg` | Serra mármore |
+
+Fotos das ferramentas: formato 4:3 (ex.: 800×600).
+
+**Página Caçambas**
+
+| Arquivo | Onde aparece |
+|---|---|
+| `cacambas-topo.jpg` | Fundo do topo da página |
+| `cacamba-servico.jpg` | Foto ao lado do texto "O serviço" |
+| `cacamba-chao-1.jpg` … `cacamba-chao-3.jpg` | Caçamba no chão / no local |
+| `cacamba-cheia-1.jpg` … `cacamba-cheia-3.jpg` | Caçamba cheia |
+
+**Página Caminhão Munck**
+
+| Arquivo | Onde aparece |
+|---|---|
+| `munck-topo.jpg` | Fundo do topo da página |
+| `munck-servico.jpg` | Foto ao lado do texto "O serviço" |
+| `munck-atendimento-1.jpg` … `munck-atendimento-6.jpg` | "Nosso serviço atendendo" (a 1ª aparece grande) |
+
+## Adicionar uma ferramenta
+
+Em `ferramentas.html`, copie um bloco `<article class="tool">…</article>`, troque o nome, os textos, a categoria (`data-cat`: concretagem, compactacao, acesso, perfuracao ou corte) e o nome da foto.
 
 ## O que falta personalizar
 
