@@ -1,5 +1,5 @@
 /* =========================================================
-   GRUPO ITAÇU — Folha de estilo
+   GRUPO ITASUL — Folha de estilo
    Cores da marca: vermelho, preto, branco e cinza
    ========================================================= */
 
@@ -164,8 +164,10 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .brand { display: flex; align-items: center; color: var(--white); flex-shrink: 0; }
-.brand__logo { height: 52px; width: auto; display: none; }
+.brand__logo { height: 56px; width: auto; display: none; transition: height .3s; }
 .brand.has-logo .brand__logo { display: block; }
+.header.is-scrolled .brand__logo { height: 48px; }
+.brand--footer .brand__logo { height: auto; width: 200px; }
 .brand.has-logo .brand__text { display: none; }
 .brand__text {
   display: flex;
@@ -897,7 +899,8 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 
 @media (max-width: 600px) {
   :root { --header-h: 68px; }
-  .brand__logo { height: 42px; }
+  .brand__logo, .header.is-scrolled .brand__logo { height: 44px; }
+  .brand--footer .brand__logo { height: auto; width: 170px; }
   .brand__text { font-size: 1.3rem; }
   .brand__mark { width: 36px; height: 36px; font-size: 1.4rem; }
   .hero::after { width: 90%; right: -40%; }

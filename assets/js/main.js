@@ -4,7 +4,7 @@
 
 /* ▼▼▼ CONFIGURAÇÃO — troque pelo número real (DDI + DDD + número, só dígitos) ▼▼▼ */
 const WHATSAPP_NUMBER = "5500000000000";
-const WHATSAPP_MSG = "Olá, Grupo Itaçu! Vim pelo site e gostaria de um orçamento.";
+const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçamento.";
 /* ▲▲▲ ------------------------------------------------------------------- ▲▲▲ */
 
 (function () {
@@ -19,7 +19,7 @@ const WHATSAPP_MSG = "Olá, Grupo Itaçu! Vim pelo site e gostaria de um orçame
   $$(".js-whatsapp").forEach((a) => (a.href = waLink(WHATSAPP_MSG)));
   // Botões com mensagem própria, ex.: data-wa="Quero alugar uma Betoneira"
   $$("[data-wa]").forEach((a) => {
-    a.href = waLink(`Olá, Grupo Itaçu! Vim pelo site. ${a.dataset.wa}`);
+    a.href = waLink(`Olá, Grupo Itasul! Vim pelo site. ${a.dataset.wa}`);
     a.target = "_blank";
     a.rel = "noopener";
   });
@@ -164,7 +164,7 @@ const WHATSAPP_MSG = "Olá, Grupo Itaçu! Vim pelo site e gostaria de um orçame
     }
     const d = Object.fromEntries(new FormData(form));
     const msg = [
-      "Olá, Grupo Itaçu! Gostaria de um orçamento.",
+      "Olá, Grupo Itasul! Gostaria de um orçamento.",
       "",
       `*Nome:* ${d.nome}`,
       `*Telefone:* ${d.telefone}`,

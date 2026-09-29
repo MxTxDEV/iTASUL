@@ -1,6 +1,6 @@
-# Grupo Itaçu — Site institucional
+# Grupo Itasul — Site institucional
 
-Site vitrine do **Grupo Itaçu**: locação de equipamentos para construção civil, caçambas de entulho e caminhão Munck.
+Site vitrine do **Grupo Itasul**: locação de equipamentos para construção civil, caçambas de entulho e caminhão Munck.
 
 Feito em HTML, CSS e JavaScript puros: não precisa instalar nada. Basta abrir o `index.html` ou publicar a pasta em qualquer hospedagem (Hostinger, Vercel, Netlify, GitHub Pages…).
 
@@ -22,9 +22,11 @@ Salve os arquivos em `assets/img/` com **exatamente** estes nomes. Enquanto uma 
 
 | Arquivo                     | Onde aparece                                  | Tamanho sugerido |
 |-----------------------------|-----------------------------------------------|------------------|
-| `logo.png`                  | Menu no topo (fundo transparente, logo clara) | ~400×120         |
-| `logo-branca.png`           | Rodapé (versão branca da logo)                | ~400×120         |
-| `favicon.png`               | Ícone da aba do navegador                     | 512×512          |
+| `logo-horizontal-branca.png` | Menu no topo (ícones + nome em branco)       | já incluída      |
+| `logo-branca.png`           | Rodapé (logo vertical, nome em branco)        | já incluída      |
+| `logo.png`                  | Logo vertical com nome preto (fundos claros)  | já incluída      |
+| `logo-icone.png`            | Só os ícones, sem o nome                      | já incluída      |
+| `favicon.png`               | Ícone da aba do navegador                     | já incluída      |
 | `hero.jpg`                  | Banner principal (tela de abertura)           | 1920×1080        |
 | `sobre.jpg`                 | Seção "Quem somos" (vertical)                 | 800×1000         |
 | `servico-equipamentos.jpg`  | Card de Locação de Equipamentos               | 800×500          |
