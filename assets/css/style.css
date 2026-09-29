@@ -164,9 +164,9 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .brand { display: flex; align-items: center; color: var(--white); flex-shrink: 0; }
-.brand__logo { height: 56px; width: auto; display: none; transition: height .3s; }
+.brand__logo { height: 62px; width: auto; display: none; transition: height .3s; }
 .brand.has-logo .brand__logo { display: block; }
-.header.is-scrolled .brand__logo { height: 48px; }
+.header.is-scrolled .brand__logo { height: 52px; }
 .brand--footer .brand__logo { height: auto; width: 200px; }
 .brand.has-logo .brand__text { display: none; }
 .brand__text {
@@ -841,7 +841,7 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 /* =========================================================
    RESPONSIVO
    ========================================================= */
-@media (max-width: 1360px) {
+@media (max-width: 1540px) {
   .nav__list { gap: 20px; }
   .nav__cta { display: none; }
 }
