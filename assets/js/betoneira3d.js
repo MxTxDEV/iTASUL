@@ -34,6 +34,7 @@ export function initBetoneira(container) {
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   } catch (e) {
     status.textContent = "Seu navegador não suporta visualização 3D.";
+    container.classList.add("no-3d");
     return;
   }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -466,6 +467,7 @@ export function initBetoneira(container) {
   let tiltTarget = MIX_TILT;
   let idleTimer;
   const btn = (name) => container.querySelector(`[data-b3d="${name}"]`);
+  const is3d = () => !container.classList.contains("show-photos");
 
   const pauseAuto = () => {
     container.classList.add("is-used");
@@ -476,9 +478,11 @@ export function initBetoneira(container) {
   controls.addEventListener("start", pauseAuto);
 
   btn("auto")?.addEventListener("click", (e) => {
+    if (!is3d()) return;
     controls.autoRotate = !controls.autoRotate;
     e.currentTarget.classList.toggle("active", controls.autoRotate);
   });
+  container.addEventListener("b3d:mode", () => is3d() && btn("auto")?.classList.toggle("active", controls.autoRotate));
   btn("auto")?.classList.toggle("active", controls.autoRotate);
 
   btn("spin")?.addEventListener("click", (e) => {
@@ -504,6 +508,7 @@ export function initBetoneira(container) {
   let camTween = null;
   container.querySelectorAll("[data-view]").forEach((b) =>
     b.addEventListener("click", () => {
+      if (!is3d() || !views[b.dataset.view]) return;
       pauseAuto();
       camTween = { from: camera.position.clone(), to: new THREE.Vector3(...views[b.dataset.view]), t: 0 };
     })
@@ -528,7 +533,7 @@ export function initBetoneira(container) {
   const clock = new THREE.Clock();
   renderer.setAnimationLoop(() => {
     const dt = Math.min(clock.getDelta(), 0.05);
-    if (!visible) return;
+    if (!visible || !is3d()) return;
     if (spinning) drum.rotation.y += DRUM_SPEED * dt;
     const before = tilt.rotation.x;
     tilt.rotation.x += (tiltTarget - tilt.rotation.x) * Math.min(1, dt * 2.2);
@@ -547,50 +552,143 @@ export function initBetoneira(container) {
     const hint = container.querySelector(".b3d__hint");
     if (hint) hint.lastChild.textContent = "Arraste para girar · Pince para aproximar";
   }
-  container.classList.add("is-ready");
+  container.classList.add("is-ready-3d");
   status.textContent = "";
 }
 
-/* ---------- Visualizador 360° com fotos reais (fica ativo quando as fotos existirem) ---------- */
-function initPhotoSpin(container) {
+/* ---------- Visualizador 360° com as fotos da betoneira ---------- */
+function initPhotoSpin(container, onMode) {
   const base = container.dataset.photos;
-  const frames = +container.dataset.frames || 36;
-  if (!base) return;
+  const frames = +container.dataset.frames || 12;
+  const view = container.querySelector(".b3d__photos");
+  const [imgA, imgB, extra] = view.querySelectorAll("img");
+  const angleLabel = container.querySelector(".b3d__angle");
+  const status = container.querySelector(".b3d__status");
+  const autoBtn = container.querySelector('[data-b3d="auto"]');
+  const step = 360 / frames;
   const src = (i) => `${base}${String(i + 1).padStart(2, "0")}.jpg`;
-  const probe = new Image();
-  probe.onload = () => {
-    const tabs = container.querySelector(".b3d__tabs");
-    const view = container.querySelector(".b3d__photos");
-    const img = view.querySelector("img");
-    tabs.hidden = false;
-    const imgs = Array.from({ length: frames }, (_, i) => { const im = new Image(); im.src = src(i); return im; });
-    let frame = 0, startX = 0, startFrame = 0, dragging = false;
-    const show = (f) => { frame = ((f % frames) + frames) % frames; img.src = imgs[frame].src; };
-    show(0);
-    view.addEventListener("pointerdown", (e) => { dragging = true; startX = e.clientX; startFrame = frame; view.setPointerCapture(e.pointerId); });
-    view.addEventListener("pointermove", (e) => { if (dragging) show(startFrame - Math.round((e.clientX - startX) / 12)); });
-    view.addEventListener("pointerup", () => (dragging = false));
-    tabs.querySelectorAll("button").forEach((b) =>
-      b.addEventListener("click", () => {
-        tabs.querySelectorAll("button").forEach((x) => x.classList.toggle("active", x === b));
-        container.classList.toggle("show-photos", b.dataset.mode === "photos");
-      })
-    );
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // pré-carrega todos os ângulos
+  let loaded = 0;
+  const imgs = Array.from({ length: frames }, (_, i) => {
+    const im = new Image();
+    im.onload = () => { if (++loaded === frames) { container.classList.add("is-ready"); status.textContent = ""; } };
+    im.src = src(i);
+    return im;
+  });
+  ["topo", "interior"].forEach((n) => (new Image().src = `${base}${n}.jpg`));
+
+  let angle = 0, auto = !reduceMotion, dragging = false, lastX = 0, velocity = 0, idle;
+  const photosActive = () => container.classList.contains("show-photos");
+
+  function render() {
+    const a = ((angle % 360) + 360) % 360;
+    const f = Math.floor(a / step) % frames;
+    const t = (a - f * step) / step;
+    // transição suave entre o ângulo atual e o próximo
+    if (imgA.dataset.f !== String(f)) { imgA.src = imgs[f].src; imgA.dataset.f = f; }
+    const n = (f + 1) % frames;
+    if (imgB.dataset.f !== String(n)) { imgB.src = imgs[n].src; imgB.dataset.f = n; }
+    // cada ângulo fica nítido e a troca acontece rápido no meio do caminho
+    const u = Math.min(1, Math.max(0, (t - 0.38) / 0.24));
+    imgB.style.opacity = u * u * (3 - 2 * u);
+    if (!view.classList.contains("show-extra")) angleLabel.textContent = `${Math.round(a)}°`;
+  }
+
+  function setAuto(on) {
+    auto = on;
+    if (photosActive()) autoBtn.classList.toggle("active", auto);
+  }
+  function showExtra(name) {
+    extra.src = `${base}${name}.jpg`;
+    view.classList.add("show-extra");
+    angleLabel.textContent = name === "topo" ? "Vista de cima" : "Por dentro";
+  }
+  function hideExtra() { view.classList.remove("show-extra"); }
+
+  let target = null;
+  const VIEWS = { front: 0, side: 90, back: 180 };
+  container.querySelectorAll("[data-view]").forEach((b) =>
+    b.addEventListener("click", () => {
+      if (!photosActive()) return;
+      container.classList.add("is-used");
+      setAuto(false);
+      const v = b.dataset.view;
+      if (v === "top") return showExtra("topo");
+      if (v === "inside") return showExtra("interior");
+      hideExtra();
+      // vai pelo caminho mais curto até o ângulo escolhido
+      const cur = ((angle % 360) + 360) % 360;
+      let d = VIEWS[v] - cur;
+      if (d > 180) d -= 360;
+      if (d < -180) d += 360;
+      target = angle + d;
+    })
+  );
+  autoBtn.addEventListener("click", () => { if (photosActive()) { hideExtra(); setAuto(!auto); } });
+
+  view.addEventListener("pointerdown", (e) => {
+    dragging = true; lastX = e.clientX; velocity = 0; target = null;
+    hideExtra(); setAuto(false); clearTimeout(idle);
+    container.classList.add("is-used");
+    view.setPointerCapture(e.pointerId);
+  });
+  view.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - lastX;
+    lastX = e.clientX;
+    angle -= dx * 0.6;
+    velocity = -dx * 0.6;
+  });
+  const end = () => {
+    if (!dragging) return;
+    dragging = false;
+    idle = setTimeout(() => !reduceMotion && setAuto(true), 6000); // volta a girar sozinha depois de um tempo
   };
-  probe.src = src(0);
+  view.addEventListener("pointerup", end);
+  view.addEventListener("pointercancel", end);
+
+  let last = performance.now();
+  (function loop(now) {
+    const dt = Math.min((now - last) / 1000, 0.05);
+    last = now;
+    if (photosActive()) {
+      if (target !== null) {
+        angle += (target - angle) * Math.min(1, dt * 5);
+        if (Math.abs(target - angle) < 0.2) { angle = target; target = null; }
+      } else if (!dragging) {
+        if (Math.abs(velocity) > 0.05) { angle += velocity; velocity *= 0.9; } // inércia ao soltar
+        else if (auto) angle += 24 * dt;
+      }
+      render();
+    }
+    requestAnimationFrame(loop);
+  })(last);
+
+  // abas: Fotos 360° / Modelo 3D
+  const tabs = container.querySelectorAll(".b3d__tabs button");
+  tabs.forEach((b) =>
+    b.addEventListener("click", () => {
+      tabs.forEach((x) => x.classList.toggle("active", x === b));
+      container.classList.toggle("show-photos", b.dataset.mode === "photos");
+      if (b.dataset.mode === "photos") autoBtn.classList.toggle("active", auto);
+      onMode(b.dataset.mode);
+      container.dispatchEvent(new Event("b3d:mode"));
+    })
+  );
+  setAuto(auto);
+  render();
 }
 
-/* ---------- Só carrega o 3D quando a seção chega perto da tela ---------- */
+/* ---------- Inicia o visualizador; o 3D só carrega se a pessoa abrir a aba ---------- */
 const el = document.querySelector("#betoneira3d");
 if (el) {
-  initPhotoSpin(el);
-  const io = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) return;
-      io.disconnect();
+  let started3d = false;
+  initPhotoSpin(el, (mode) => {
+    if (mode === "3d" && !started3d) {
+      started3d = true;
       initBetoneira(el);
-    },
-    { rootMargin: "300px" }
-  );
-  io.observe(el);
+    }
+  });
 }

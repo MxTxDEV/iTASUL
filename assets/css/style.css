@@ -367,10 +367,44 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 .b3d__canvas, .b3d__photos { position: absolute; inset: 0; }
 .b3d__canvas canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; }
 .b3d__canvas canvas:active { cursor: grabbing; }
-.b3d__photos { display: none; place-items: center; cursor: ew-resize; background: var(--white); }
-.b3d__photos img { max-width: 100%; max-height: 100%; object-fit: contain; user-select: none; pointer-events: none; }
-.b3d.show-photos .b3d__photos { display: grid; }
-.b3d.show-photos .b3d__canvas, .b3d.show-photos .b3d__views, .b3d.show-photos .b3d__actions { visibility: hidden; }
+/* modo fotos 360° (fundo de estúdio claro, igual às fotos) */
+.b3d__photos {
+  display: none;
+  cursor: grab;
+  background: #fff;
+}
+.b3d__photos:active { cursor: grabbing; }
+.b3d__ph {
+  position: absolute;
+  inset: 8% 3% 15%;
+  width: 94%;
+  height: 77%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+.b3d__ph--b { opacity: 0; }
+.b3d__ph--extra { opacity: 0; transition: opacity .35s; background: transparent; }
+.b3d__photos.show-extra .b3d__ph--extra { opacity: 1; }
+.b3d__photos.show-extra .b3d__ph--a, .b3d__photos.show-extra .b3d__ph--b { visibility: hidden; }
+.b3d__angle {
+  position: absolute;
+  top: 18px; right: 18px;
+  padding: 5px 12px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  color: var(--white);
+  background: var(--black);
+  border-radius: 20px;
+}
+.b3d.show-photos .b3d__photos { display: block; }
+.b3d.show-photos .b3d__canvas, .b3d.show-photos .only-3d { display: none; }
+.b3d:not(.show-photos) .only-photos { display: none; }
+.b3d.show-photos::before { display: none; }
+.b3d.show-photos { background: #fff; }
+.b3d.show-photos .b3d__views, .b3d.show-photos .b3d__actions, .b3d.show-photos .b3d__tabs { background: rgba(20,20,20,.82); }
 
 .b3d__status {
   position: absolute;
@@ -384,7 +418,9 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
   color: var(--gray-300);
   pointer-events: none;
 }
-.b3d.is-ready .b3d__status { display: none; }
+.b3d.show-photos.is-ready .b3d__status,
+.b3d:not(.show-photos).is-ready-3d .b3d__status { display: none; }
+.b3d.show-photos .b3d__status { color: var(--gray-500); }
 .b3d__hint {
   position: absolute;
   top: 16px; left: 50%;
@@ -406,8 +442,7 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 .b3d.is-used .b3d__hint { opacity: 0; }
 .b3d__hint svg { width: 16px; height: 16px; color: var(--red-light); }
 .b3d__tabs { position: absolute; top: 14px; left: 14px; z-index: 2; display: flex; gap: 4px; padding: 4px; background: rgba(0,0,0,.55); border-radius: 30px; }
-.b3d__tabs[hidden] { display: none; }
-.b3d__tabs + .b3d__canvas ~ .b3d__hint { top: 60px; }
+.b3d__hint { top: auto; bottom: 74px; }
 
 .b3d__controls {
   position: absolute;
@@ -1028,6 +1063,12 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
   .steps, .apps, .photo-grid { grid-template-columns: 1fr; }
   .b3d { aspect-ratio: 4 / 5; min-height: 0; margin-inline: -8px; }
   .b3d__controls { flex-direction: column; align-items: center; }
+  .b3d__ph { inset: 12% 2% 30%; width: 96%; height: 58%; }
+  .b3d__hint { display: none; }
+  .b3d__controls { left: 8px; right: 8px; }
+  .b3d__views { flex-wrap: wrap; justify-content: center; border-radius: 18px; max-width: 100%; }
+  .b3d__views button { padding: 7px 8px; font-size: .78rem; letter-spacing: .03em; white-space: nowrap; }
+  .b3d__angle { top: 64px; right: 14px; }
   .b3d button { padding: 7px 11px; font-size: .85rem; }
   .specs { grid-template-columns: repeat(2, 1fr); }
   .specs dd { font-size: 1.45rem; }
