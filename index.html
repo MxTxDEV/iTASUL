@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "./assets/vendor/three/three.module.min.js", "three/addons/": "./assets/vendor/three/" } }
+  </script>
 </head>
 <body>
 
@@ -78,6 +81,55 @@
         <div class="highlight">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
           <div><strong>Atendimento</strong><span>Próximo e personalizado</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DESTAQUE: BETONEIRA EM 3D ============ -->
+    <!-- Fotos 360° reais: salve 36 fotos em assets/img/betoneira-360/01.jpg ... 36.jpg
+         (tiradas em volta da máquina) e o botão "Fotos 360°" aparece sozinho -->
+    <section class="section b3d-section" id="betoneira-3d">
+      <div class="container b3d-grid">
+        <div class="b3d" id="betoneira3d" data-photos="assets/img/betoneira-360/" data-frames="36">
+          <div class="b3d__tabs" hidden>
+            <button class="active" data-mode="3d">Modelo 3D</button>
+            <button data-mode="photos">Fotos 360°</button>
+          </div>
+          <div class="b3d__canvas" aria-label="Betoneira 400 litros em 3D. Arraste para girar."></div>
+          <div class="b3d__photos"><img alt="Betoneira 400 litros em 360 graus" draggable="false"></div>
+          <p class="b3d__status">Carregando 3D…</p>
+          <p class="b3d__hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="m21 3-1 5-5-1"/></svg>Arraste para girar · Role para aproximar</p>
+          <div class="b3d__controls">
+            <div class="b3d__views" role="group" aria-label="Vistas">
+              <button data-view="front">Frente</button>
+              <button data-view="side">Lado</button>
+              <button data-view="back">Trás</button>
+              <button data-view="top">Cima</button>
+            </div>
+            <div class="b3d__actions">
+              <button data-b3d="auto" title="Girar a câmera em 360°">360°</button>
+              <button data-b3d="spin" title="Ligar ou desligar o tambor">Tambor</button>
+              <button data-b3d="pour" title="Bascular o tambor"><span>Despejar</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="b3d-info reveal">
+          <span class="eyebrow eyebrow--light">Destaque do estoque</span>
+          <h2 class="section__title section__title--light">Betoneira <span class="text-red">400 litros</span> em 3D</h2>
+          <p>Gire, aproxime e veja cada detalhe da betoneira profissional que vai para a sua obra. Tambor reforçado, cremalheira de aço e chassi com rodas para facilitar o transporte no canteiro.</p>
+          <dl class="specs">
+            <div><dt>Tambor</dt><dd>400 L</dd></div>
+            <div><dt>Mistura</dt><dd>300 L</dd></div>
+            <div><dt>Rotação</dt><dd>27 RPM</dd></div>
+            <div><dt>Motor</dt><dd>2 CV</dd></div>
+            <div><dt>Ciclos/hora</dt><dd>15 a 20</dd></div>
+            <div><dt>Peso c/ motor</dt><dd>189 kg</dd></div>
+          </dl>
+          <div class="b3d-info__actions">
+            <a href="#" data-wa="Gostaria de alugar a Betoneira 400 litros." class="btn btn--primary btn--lg">Alugar esta betoneira</a>
+            <a href="ferramentas.html" class="btn btn--ghost btn--lg">Ver todas as ferramentas</a>
+          </div>
         </div>
       </div>
     </section>
@@ -370,5 +422,6 @@
   </div>
 
   <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/betoneira3d.js"></script>
 </body>
 </html>

@@ -334,6 +334,114 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 .highlight span { font-size: .88rem; opacity: .85; }
 
 /* =========================================================
+   DESTAQUE: BETONEIRA EM 3D
+   ========================================================= */
+.b3d-section {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(200, 16, 46, .22), transparent 60%),
+    linear-gradient(180deg, var(--black) 0%, var(--black-2) 100%);
+  color: var(--white);
+  overflow: hidden;
+}
+.b3d-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: center; }
+.b3d {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  min-height: 420px;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 50% 42%, #3a3a3a 0%, #1c1c1c 55%, #0f0f0f 100%);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5), inset 0 0 0 1px rgba(200,16,46,.15);
+  overflow: hidden;
+  touch-action: none;
+}
+.b3d::before {
+  content: "";
+  position: absolute;
+  left: 10%; right: 10%; bottom: 14%;
+  height: 22%;
+  background: radial-gradient(ellipse at center, rgba(200,16,46,.28), transparent 70%);
+  pointer-events: none;
+}
+.b3d__canvas, .b3d__photos { position: absolute; inset: 0; }
+.b3d__canvas canvas { display: block; width: 100% !important; height: 100% !important; cursor: grab; }
+.b3d__canvas canvas:active { cursor: grabbing; }
+.b3d__photos { display: none; place-items: center; cursor: ew-resize; background: var(--white); }
+.b3d__photos img { max-width: 100%; max-height: 100%; object-fit: contain; user-select: none; pointer-events: none; }
+.b3d.show-photos .b3d__photos { display: grid; }
+.b3d.show-photos .b3d__canvas, .b3d.show-photos .b3d__views, .b3d.show-photos .b3d__actions { visibility: hidden; }
+
+.b3d__status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  pointer-events: none;
+}
+.b3d.is-ready .b3d__status { display: none; }
+.b3d__hint {
+  position: absolute;
+  top: 16px; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  font-size: .8rem;
+  color: var(--gray-100);
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+.b3d.is-used .b3d__hint { opacity: 0; }
+.b3d__hint svg { width: 16px; height: 16px; color: var(--red-light); }
+.b3d__tabs { position: absolute; top: 14px; left: 14px; z-index: 2; display: flex; gap: 4px; padding: 4px; background: rgba(0,0,0,.55); border-radius: 30px; }
+.b3d__tabs[hidden] { display: none; }
+.b3d__tabs + .b3d__canvas ~ .b3d__hint { top: 60px; }
+
+.b3d__controls {
+  position: absolute;
+  left: 14px; right: 14px; bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+.b3d__controls > * { pointer-events: auto; }
+.b3d__views, .b3d__actions { display: flex; gap: 4px; padding: 4px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.1); border-radius: 30px; backdrop-filter: blur(6px); }
+.b3d button {
+  padding: 7px 12px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .92rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--gray-100);
+  border-radius: 30px;
+  transition: background .2s, color .2s;
+}
+.b3d button:hover { background: rgba(255,255,255,.12); color: var(--white); }
+.b3d button.active { background: var(--red); color: var(--white); }
+
+.b3d-info > p { color: var(--gray-300); font-size: 1.05rem; margin-bottom: 28px; }
+.specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 34px; }
+.specs div { padding: 16px 16px 14px; background: var(--black-3); border-radius: var(--radius); border-left: 3px solid var(--red); }
+.specs dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gray-500); }
+.specs dd { font-family: var(--font-head); font-weight: 800; font-size: 1.7rem; line-height: 1.1; color: var(--white); }
+.b3d-info__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* =========================================================
    QUEM SOMOS
    ========================================================= */
 .about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -885,6 +993,7 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .cta__inner { flex-direction: column; text-align: center; }
   .steps { grid-template-columns: repeat(2, 1fr); }
+  .b3d-grid { grid-template-columns: 1fr; gap: 40px; }
   .apps { grid-template-columns: 1fr 1fr; }
   .rules, .split { grid-template-columns: 1fr; gap: 40px; }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
@@ -917,6 +1026,12 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
   .footer__grid { grid-template-columns: 1fr; }
   .cta .btn { width: 100%; }
   .steps, .apps, .photo-grid { grid-template-columns: 1fr; }
+  .b3d { aspect-ratio: 4 / 5; min-height: 0; margin-inline: -8px; }
+  .b3d__controls { flex-direction: column; align-items: center; }
+  .b3d button { padding: 7px 11px; font-size: .85rem; }
+  .specs { grid-template-columns: repeat(2, 1fr); }
+  .specs dd { font-size: 1.45rem; }
+  .b3d-info__actions .btn { width: 100%; }
   .photo-grid--featured .photo:first-child { grid-column: auto; grid-row: auto; }
   .photo-grid--featured .photo:first-child .photo__img { aspect-ratio: 4 / 3; height: auto; min-height: 0; }
   .page-hero { min-height: 70vh; }

@@ -66,6 +66,14 @@ Fotos das ferramentas: formato 4:3 (ex.: 800×600).
 | `munck-servico.jpg` | Foto ao lado do texto "O serviço" |
 | `munck-atendimento-1.jpg` … `munck-atendimento-6.jpg` | "Nosso serviço atendendo" (a 1ª aparece grande) |
 
+## Betoneira em 3D (página inicial)
+
+- O modelo 3D é feito em código em `assets/js/betoneira3d.js` (biblioteca three.js em `assets/vendor/three/`).
+- **Cores**: no topo do arquivo, no bloco `COLORS` (tambor, chassi, motor, pneus…).
+- **Fotos 360° reais**: tire 36 fotos andando em volta da betoneira (mesma altura e distância,
+  uma a cada ~10°), salve como `assets/img/betoneira-360/01.jpg` … `36.jpg`. O botão
+  "Fotos 360°" aparece sozinho no visualizador.
+
 ## Adicionar uma ferramenta
 
 Em `ferramentas.html`, copie um bloco `<article class="tool">…</article>`, troque o nome, os textos, a categoria (`data-cat`: concretagem, compactacao, acesso, perfuracao ou corte) e o nome da foto.
