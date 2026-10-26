@@ -11,6 +11,7 @@ index.html            → página inicial
 ferramentas.html      → catálogo de ferramentas (com filtro por tipo)
 cacambas.html         → caçambas de entulho (fotos no chão e cheias)
 munck.html            → caminhão Munck (fotos do serviço atendendo)
+contatos.html         → Guia da Cidade: contatos de comércios de Itatiaiuçu
 assets/css/style.css  → visual (cores no topo do arquivo, em :root)
 assets/js/main.js     → menu, animações, galeria e formulário → WhatsApp
 assets/img/           → coloque aqui as imagens
@@ -66,13 +67,11 @@ Fotos das ferramentas: formato 4:3 (ex.: 800×600).
 | `munck-servico.jpg` | Foto ao lado do texto "O serviço" |
 | `munck-atendimento-1.jpg` … `munck-atendimento-6.jpg` | "Nosso serviço atendendo" (a 1ª aparece grande) |
 
-## Betoneira em 3D (página inicial)
+## Guia da Cidade (contatos de Itatiaiuçu)
 
-- O modelo 3D é feito em código em `assets/js/betoneira3d.js` (biblioteca three.js em `assets/vendor/three/`).
-- **Cores**: no topo do arquivo, no bloco `COLORS` (tambor, chassi, motor, pneus…).
-- **Fotos 360° reais**: tire 36 fotos andando em volta da betoneira (mesma altura e distância,
-  uma a cada ~10°), salve como `assets/img/betoneira-360/01.jpg` … `36.jpg`. O botão
-  "Fotos 360°" aparece sozinho no visualizador.
+Os contatos ficam em `assets/js/guia-dados.js`, um por linha. Para incluir um comércio, copie
+uma linha e troque nome, categoria, endereço, telefone (e `whats: true` se tiver WhatsApp).
+A busca, os filtros e os botões de ligar/WhatsApp/mapa são gerados sozinhos.
 
 ## Adicionar uma ferramenta
 

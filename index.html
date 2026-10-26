@@ -12,9 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script type="importmap">
-    { "imports": { "three": "./assets/vendor/three/three.module.min.js", "three/addons/": "./assets/vendor/three/" } }
-  </script>
 </head>
 <body>
 
@@ -35,6 +32,7 @@
           <li><a href="cacambas.html" class="nav__link">Caçambas</a></li>
           <li><a href="munck.html" class="nav__link">Caminhão Munck</a></li>
           <li><a href="#historia" class="nav__link">Nossa História</a></li>
+          <li><a href="contatos.html" class="nav__link">Guia da Cidade</a></li>
           <li><a href="#contato" class="nav__link">Contato</a></li>
         </ul>
         <a href="#contato" class="btn btn--primary nav__cta">Solicitar orçamento</a>
@@ -81,61 +79,6 @@
         <div class="highlight">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
           <div><strong>Atendimento</strong><span>Próximo e personalizado</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ DESTAQUE: BETONEIRA EM 3D ============ -->
-    <!-- Fotos 360°: assets/img/betoneira-360/01.jpg ... 12.jpg (0° a 330°, de 30 em 30),
-         topo.jpg e interior.jpg. Para mais suavidade, use mais fotos e ajuste data-frames. -->
-    <section class="section b3d-section" id="betoneira-3d">
-      <div class="container b3d-grid">
-        <div class="b3d show-photos" id="betoneira3d" data-photos="assets/img/betoneira-360/" data-frames="12">
-          <div class="b3d__tabs">
-            <button class="active" data-mode="photos">Fotos 360°</button>
-            <button data-mode="3d">Modelo 3D</button>
-          </div>
-          <div class="b3d__photos" aria-label="Betoneira 400 litros em 360 graus. Arraste para girar.">
-            <img class="b3d__ph b3d__ph--a" alt="Betoneira 400 litros" draggable="false">
-            <img class="b3d__ph b3d__ph--b" alt="" draggable="false">
-            <img class="b3d__ph b3d__ph--extra" alt="" draggable="false">
-            <span class="b3d__angle">0°</span>
-          </div>
-          <div class="b3d__canvas" aria-label="Betoneira 400 litros em 3D. Arraste para girar."></div>
-          <p class="b3d__status">Carregando…</p>
-          <p class="b3d__hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="m21 3-1 5-5-1"/></svg>Arraste para girar</p>
-          <div class="b3d__controls">
-            <div class="b3d__views" role="group" aria-label="Vistas">
-              <button data-view="front">Frente</button>
-              <button data-view="side">Lado</button>
-              <button data-view="back">Trás</button>
-              <button data-view="top">Cima</button>
-              <button data-view="inside" class="only-photos">Por dentro</button>
-            </div>
-            <div class="b3d__actions">
-              <button data-b3d="auto" title="Girar sozinha em 360°">360°</button>
-              <button data-b3d="spin" class="only-3d" title="Ligar ou desligar o tambor">Tambor</button>
-              <button data-b3d="pour" class="only-3d" title="Bascular o tambor"><span>Despejar</span></button>
-            </div>
-          </div>
-        </div>
-
-        <div class="b3d-info reveal">
-          <span class="eyebrow eyebrow--light">Destaque do estoque</span>
-          <h2 class="section__title section__title--light">Betoneira <span class="text-red">400 litros</span> em 360°</h2>
-          <p>Gire e veja a betoneira profissional por todos os lados, de cima e por dentro. Tambor reforçado, cremalheira de aço, motor protegido e rodas para facilitar o transporte no canteiro.</p>
-          <dl class="specs">
-            <div><dt>Tambor</dt><dd>400 L</dd></div>
-            <div><dt>Mistura</dt><dd>300 L</dd></div>
-            <div><dt>Rotação</dt><dd>27 RPM</dd></div>
-            <div><dt>Motor</dt><dd>2 CV</dd></div>
-            <div><dt>Ciclos/hora</dt><dd>15 a 20</dd></div>
-            <div><dt>Peso c/ motor</dt><dd>189 kg</dd></div>
-          </dl>
-          <div class="b3d-info__actions">
-            <a href="#" data-wa="Gostaria de alugar a Betoneira 400 litros." class="btn btn--primary btn--lg">Alugar esta betoneira</a>
-            <a href="ferramentas.html" class="btn btn--ghost btn--lg">Ver todas as ferramentas</a>
-          </div>
         </div>
       </div>
     </section>
@@ -391,6 +334,7 @@
           <li><a href="cacambas.html">Caçambas</a></li>
           <li><a href="munck.html">Caminhão Munck</a></li>
           <li><a href="#historia">Nossa História</a></li>
+          <li><a href="contatos.html">Guia da Cidade</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -428,6 +372,5 @@
   </div>
 
   <script src="assets/js/main.js"></script>
-  <script type="module" src="assets/js/betoneira3d.js"></script>
 </body>
 </html>

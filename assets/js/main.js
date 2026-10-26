@@ -113,7 +113,7 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
 
   /* ---------- Galeria (lightbox) ---------- */
   const lightbox = $("#lightbox");
-  const lightboxImg = $("img", lightbox);
+  const lightboxImg = lightbox && $("img", lightbox);
   if (lightbox) {
     const closeLightbox = () => (lightbox.hidden = true);
     $$(".gallery__item, [data-zoom]").forEach((item) =>
