@@ -86,6 +86,7 @@ def header(page, sec, key):
         cur = ' aria-current="page"' if active and not href.startswith("#") else ""
         items.append(f'          <li><a href="{href}" class="nav__link{" active" if active else ""}{extra}"{cur}>{text}</a></li>')
     return f'''<header class="header" id="header">
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <div class="company-bar" aria-label="Empresas do grupo">
       <div class="container company-bar__inner">
 {bar}
@@ -167,6 +168,18 @@ FOOTER = f'''<footer class="footer">
   </footer>'''
 
 
+FONT_LINK = '<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>'
+
+
+def fix_head(html):
+    """Troca as fontes do Google pela Inter hospedada no projeto."""
+    html = re.sub(r'[ \t]*<link rel="preconnect" href="https://fonts\.g[^>]*>\n', "", html)
+    html = re.sub(r'[ \t]*<link href="https://fonts\.googleapis\.com[^>]*>\n', "", html)
+    if FONT_LINK not in html:
+        html = html.replace('  <link rel="stylesheet" href="assets/css/style.css">', f'  {FONT_LINK}\n  <link rel="stylesheet" href="assets/css/style.css">', 1)
+    return html
+
+
 def breadcrumb(crumbs):
     parts = [f'<a href="index.html">{GRUPO}</a>']
     for text, href in crumbs:
@@ -184,6 +197,8 @@ def main():
         new = re.sub(r"<header class=\"header\".*?</header>", lambda m: header(name, sec, key), html, count=1, flags=re.S)
         new = re.sub(r"<footer class=\"footer\">.*?</footer>", lambda m: FOOTER, new, count=1, flags=re.S)
         new = re.sub(r"<body[^>]*>", f"<body{BODY_CLASS[sec]}>", new, count=1)
+        new = re.sub(r"<main[^>]*>", '<main id="conteudo">', new, count=1)
+        new = fix_head(new)
         if crumbs:
             new = re.sub(r"<nav class=\"breadcrumb\"[^>]*>.*?</nav>", lambda m: breadcrumb(crumbs), new, count=1, flags=re.S)
         if new != html:

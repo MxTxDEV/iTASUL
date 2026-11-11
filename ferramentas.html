@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locação de Ferramentas | Grupo Itasul</title>
+  <title>Locação de ferramentas | Grupo Itasul</title>
   <meta name="description" content="Locação de betoneira, compactador de solo, placa vibratória, andaime, furadeira, martelete e serra mármore. Grupo Itasul.">
   <meta name="theme-color" content="#c8102e">
 
   <link rel="icon" href="assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="theme-loc">
 
   <!-- ============ CABEÇALHO / MENU ============ -->
   <header class="header" id="header">
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <div class="company-bar" aria-label="Empresas do grupo">
       <div class="container company-bar__inner">
         <a href="index.html" class="cb cb--grupo"><i class="dot dot--grupo"></i>Grupo<span class="cb__long"> Itasul</span></a>
@@ -48,7 +47,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
 
     <!-- ============ TOPO DA PÁGINA ============ -->
     <section class="page-hero">
@@ -75,8 +74,8 @@
           <button class="filter active" data-filter="todos">Todos</button>
           <button class="filter" data-filter="concretagem">Concretagem</button>
           <button class="filter" data-filter="compactacao">Compactação</button>
-          <button class="filter" data-filter="acesso">Acesso e Altura</button>
-          <button class="filter" data-filter="perfuracao">Perfuração e Demolição</button>
+          <button class="filter" data-filter="acesso">Acesso e altura</button>
+          <button class="filter" data-filter="perfuracao">Perfuração e demolição</button>
           <button class="filter" data-filter="corte">Corte</button>
         </div>
         <div class="catalog">
@@ -96,38 +95,38 @@
             </div>
           </article>
           <article class="tool reveal" data-cat="compactacao">
-            <div class="img-slot tool__img" data-img="assets/img/ferramenta-compactador-de-solo.jpg" role="img" aria-label="Compactador de Solo">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-compactador-de-solo.jpg" role="img" aria-label="Compactador de solo">
               <span class="tool__tag">Compactação</span>
             </div>
             <div class="tool__body">
-              <h3>Compactador de Solo</h3>
+              <h3>Compactador de solo</h3>
               <p>Conhecido como “sapo”, compacta o solo com força em áreas estreitas e valas.</p>
               <ul class="tool__uses">
                 <li>Valas e fundações</li>
                 <li>Aterros e contrapisos</li>
                 <li>Base para calçadas e pavimentos</li>
               </ul>
-              <a href="#" data-wa="Gostaria de alugar: Compactador de Solo." class="btn btn--dark">Alugar agora</a>
+              <a href="#" data-wa="Gostaria de alugar: Compactador de solo." class="btn btn--dark">Alugar agora</a>
             </div>
           </article>
           <article class="tool reveal" data-cat="compactacao">
-            <div class="img-slot tool__img" data-img="assets/img/ferramenta-placa-vibratoria.jpg" role="img" aria-label="Placa Vibratória">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-placa-vibratoria.jpg" role="img" aria-label="Placa vibratória">
               <span class="tool__tag">Compactação</span>
             </div>
             <div class="tool__body">
-              <h3>Placa Vibratória</h3>
+              <h3>Placa vibratória</h3>
               <p>Compacta áreas amplas de areia, brita e solo granular com acabamento nivelado.</p>
               <ul class="tool__uses">
                 <li>Base para pisos intertravados (paver)</li>
                 <li>Estacionamentos e calçadas</li>
                 <li>Compactação de brita e areia</li>
               </ul>
-              <a href="#" data-wa="Gostaria de alugar: Placa Vibratória." class="btn btn--dark">Alugar agora</a>
+              <a href="#" data-wa="Gostaria de alugar: Placa vibratória." class="btn btn--dark">Alugar agora</a>
             </div>
           </article>
           <article class="tool reveal" data-cat="acesso">
             <div class="img-slot tool__img" data-img="assets/img/ferramenta-andaime.jpg" role="img" aria-label="Andaime">
-              <span class="tool__tag">Acesso e Altura</span>
+              <span class="tool__tag">Acesso e altura</span>
             </div>
             <div class="tool__body">
               <h3>Andaime</h3>
@@ -142,7 +141,7 @@
           </article>
           <article class="tool reveal" data-cat="perfuracao">
             <div class="img-slot tool__img" data-img="assets/img/ferramenta-furadeira.jpg" role="img" aria-label="Furadeira">
-              <span class="tool__tag">Perfuração e Demolição</span>
+              <span class="tool__tag">Perfuração e demolição</span>
             </div>
             <div class="tool__body">
               <h3>Furadeira</h3>
@@ -157,7 +156,7 @@
           </article>
           <article class="tool reveal" data-cat="perfuracao">
             <div class="img-slot tool__img" data-img="assets/img/ferramenta-martelete.jpg" role="img" aria-label="Martelete">
-              <span class="tool__tag">Perfuração e Demolição</span>
+              <span class="tool__tag">Perfuração e demolição</span>
             </div>
             <div class="tool__body">
               <h3>Martelete</h3>
@@ -171,18 +170,18 @@
             </div>
           </article>
           <article class="tool reveal" data-cat="corte">
-            <div class="img-slot tool__img" data-img="assets/img/ferramenta-serra-marmore.jpg" role="img" aria-label="Serra Mármore">
+            <div class="img-slot tool__img" data-img="assets/img/ferramenta-serra-marmore.jpg" role="img" aria-label="Serra mármore">
               <span class="tool__tag">Corte</span>
             </div>
             <div class="tool__body">
-              <h3>Serra Mármore</h3>
+              <h3>Serra mármore</h3>
               <p>Corte rápido e preciso de pisos, revestimentos, mármore, granito e concreto.</p>
               <ul class="tool__uses">
                 <li>Cortes em porcelanato e cerâmica</li>
                 <li>Mármore, granito e pedras</li>
                 <li>Rasgos em alvenaria e concreto</li>
               </ul>
-              <a href="#" data-wa="Gostaria de alugar: Serra Mármore." class="btn btn--dark">Alugar agora</a>
+              <a href="#" data-wa="Gostaria de alugar: Serra mármore." class="btn btn--dark">Alugar agora</a>
             </div>
           </article>
         </div>

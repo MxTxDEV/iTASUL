@@ -42,6 +42,13 @@ python3 tools/atualizar-paginas.py
 Para uma página nova: crie o `.html` com `<header class="header" id="header"></header>` e
 `<footer class="footer"></footer>` vazios, inclua-a em `PAGES` no script e rode o comando.
 
+### Tipografia
+
+O site usa uma única família, a **Inter** (a mais usada em sites e produtos digitais modernos),
+hospedada em `assets/fonts/` (não depende do Google). Os tamanhos e pesos de cada tipo de texto
+ficam em `assets/css/style.css`. Padrão de escrita: títulos e botões com só a primeira letra
+maiúscula (ex.: "Locação de ferramentas"); rótulos pequenos em maiúsculas com espaçamento.
+
 ### Cores
 
 - **Itasul Locações** usa o vermelho (`--red`).

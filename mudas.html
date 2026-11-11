@@ -8,15 +8,14 @@
   <meta name="theme-color" content="#c8102e">
 
   <link rel="icon" href="assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="theme-map">
 
   <!-- ============ CABEÇALHO / MENU ============ -->
   <header class="header" id="header">
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <div class="company-bar" aria-label="Empresas do grupo">
       <div class="container company-bar__inner">
         <a href="index.html" class="cb cb--grupo"><i class="dot dot--grupo"></i>Grupo<span class="cb__long"> Itasul</span></a>
@@ -46,7 +45,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
 
     <!-- ============ TOPO DA PÁGINA ============ -->
     <section class="page-hero page-hero--green">

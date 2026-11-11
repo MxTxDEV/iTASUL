@@ -8,15 +8,14 @@
   <meta name="theme-color" content="#c8102e">
 
   <link rel="icon" href="assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="theme-loc">
 
   <!-- ============ CABEÇALHO / MENU (gerado por tools/atualizar-paginas.py) ============ -->
   <header class="header" id="header">
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <div class="company-bar" aria-label="Empresas do grupo">
       <div class="container company-bar__inner">
         <a href="index.html" class="cb cb--grupo"><i class="dot dot--grupo"></i>Grupo<span class="cb__long"> Itasul</span></a>
@@ -48,7 +47,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
 
     <!-- ============ TOPO ============ -->
     <section class="page-hero">
@@ -103,7 +102,7 @@
               <div class="service__icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg>
               </div>
-              <h3>Locação de Ferramentas</h3>
+              <h3>Locação de ferramentas</h3>
               <p>Betoneiras, compactadores de solo, placas vibratórias, andaimes, furadeiras, marteletes, serras mármore e muito mais para a sua obra.</p>
               <a href="ferramentas.html" class="service__link">Ver detalhes <span>→</span></a>
             </div>
@@ -115,7 +114,7 @@
               <div class="service__icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h20l-2.5 10h-15L2 8z"/><path d="M6 8V5h12v3"/></svg>
               </div>
-              <h3>Caçambas de Entulho</h3>
+              <h3>Caçambas de entulho</h3>
               <p>Caçambas estacionárias para retirada de entulho, com entrega e recolhimento pontuais e destinação ambientalmente correta.</p>
               <a href="cacambas.html" class="service__link">Ver detalhes <span>→</span></a>
             </div>
