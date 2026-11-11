@@ -1,0 +1,340 @@
+/* =========================================================
+   MUDAS — MAP Reciclagem · dados das espécies
+   Cada espécie tem:
+     muda        → dados da muda à venda (idade, tamanho, altura, procedência…)
+     identificacao, caracteristicas, ficha → tabelas [rótulo, valor]
+     irrigacao, desenvolvimento → fases [período, texto]
+     aprender    → conteúdo das abas "Escolha o que deseja aprender"
+   Campos com "Consulte" ainda não foram informados: troque pelo valor real.
+   ========================================================= */
+
+/* ---------- Orientações comuns a todos os citros ---------- */
+const IRRIGACAO_PADRAO = [
+  ["Primeiros 7 dias", "Verificar diariamente a umidade do solo."],
+  ["8 a 30 dias", "Irrigar conforme necessidade, sem encharcar."],
+  ["2 a 6 meses", "Manter umidade adequada para o desenvolvimento."],
+  ["6 a 12 meses", "Ajustar a frequência conforme chuvas e temperatura."],
+  ["Planta adulta", "Irrigar nos períodos secos, conforme necessidade."],
+];
+
+const DESENVOLVIMENTO_CITROS = [
+  ["1º ano", "Formação das raízes e da copa."],
+  ["2º ano", "Crescimento estrutural e possibilidade de primeiras flores."],
+  ["3º ano", "Possibilidade de início de produção."],
+  ["4º e 5º anos", "Aumento gradual da produção."],
+  ["Fase adulta", "Produção mais estabelecida, conforme as condições de cultivo."],
+];
+
+const PLANTIO_CITROS = [
+  ["Época", "Plante no início do período chuvoso (outubro a dezembro). Com irrigação, o plantio pode ser feito o ano todo."],
+  ["Local", "Sol pleno, solo profundo e bem drenado. Evite baixadas que acumulam água ou geada."],
+  ["Espaçamento", "Em pomar, 6 a 7 m entre linhas e 3 a 4 m entre plantas. No quintal, deixe ao menos 4 m de outras árvores, muros e construções."],
+  ["Cova", "Abra uma cova de 50 × 50 × 50 cm, de preferência 30 dias antes. Misture a terra da superfície com 10 a 20 litros de esterco bem curtido e a correção indicada pela análise de solo."],
+  ["Plantio", "Retire a embalagem sem desmanchar o torrão. Deixe o colo da muda no nível do solo e o ponto de enxertia sempre acima da terra."],
+  ["Depois de plantar", "Faça uma bacia ao redor da muda, regue bem (10 a 20 litros) e cubra o solo com palha, sem encostar no tronco. Use um tutor se houver vento."],
+];
+
+const ADUBACAO_CITROS = [
+  ["Antes de tudo", "Faça a análise de solo. Ela indica a calagem e as doses certas para o seu terreno; um técnico agrícola ou a Emater-MG pode orientar."],
+  ["No plantio", "Matéria orgânica bem curtida e fósforo na cova, misturados à terra, nunca em contato direto com as raízes."],
+  ["1º e 2º anos", "Pequenas doses de adubo nitrogenado e potássio, divididas em 3 a 4 aplicações no período chuvoso, espalhadas em círculo na projeção da copa, a 15–20 cm do tronco. Regue após aplicar."],
+  ["Em produção", "As doses aumentam conforme a idade e a produção esperada. Reforce o potássio na formação dos frutos."],
+  ["Micronutrientes", "Os citros costumam pedir zinco, manganês e boro, geralmente aplicados nas folhas em brotações novas."],
+  ["Matéria orgânica", "Uma vez por ano, aplique composto ou esterco curtido na projeção da copa e mantenha a cobertura morta."],
+];
+
+const PODA_CITROS = [
+  ["Poda de formação", "No 1º ano, escolha 3 a 4 ramos bem distribuídos a partir de 40–60 cm do solo para formar a copa."],
+  ["Brotos do porta-enxerto", "Retire sempre os brotos que nascem abaixo do enxerto; eles roubam força da planta."],
+  ["Poda de limpeza", "Após a colheita, retire galhos secos, doentes, quebrados e os ramos “ladrões” muito vigorosos no interior da copa."],
+  ["Ferramentas", "Use tesouras afiadas e desinfetadas (álcool ou água sanitária diluída) entre uma planta e outra."],
+  ["Coroamento", "Mantenha um círculo limpo de mato ao redor do tronco, com cobertura morta, sem ferir o caule."],
+];
+
+const PRAGAS_CITROS = [
+  ["Greening (HLB)", "Doença grave, transmitida pelo inseto psilídeo. Folhas com manchas amareladas assimétricas e frutos deformados. Não tem cura: a planta doente deve ser eliminada. Compre mudas de viveiro registrado e comunique suspeitas ao IMA."],
+  ["Cancro cítrico", "Bactéria que forma lesões salientes e ásperas em folhas, ramos e frutos. Evite ferimentos e comunique suspeitas ao órgão de defesa agropecuária."],
+  ["Leprose", "Causada por vírus transmitido por ácaro. Manchas arredondadas nas folhas, frutos e ramos. Monitore os ácaros, principalmente no período seco."],
+  ["Gomose", "Fungo do solo que faz o tronco soltar goma perto do chão. Evite encharcamento e nunca enterre o ponto de enxertia."],
+  ["Minador-dos-citros", "Larva que abre galerias prateadas nas folhas novas. Atenção nas brotações."],
+  ["Pulgões, cochonilhas e formigas", "Atacam brotações e ramos. Formigas cortadeiras podem desfolhar mudas jovens em uma noite."],
+  ["Importante", "Use apenas produtos registrados para a cultura, com receita agronômica, e respeite o prazo de carência antes da colheita."],
+];
+
+window.MUDAS = [
+  /* ===================== LARANJA BAHIA ===================== */
+  {
+    id: "laranja-bahia",
+    nome: "Laranja Bahia",
+    cientifico: "Citrus sinensis (L.) Osbeck",
+    resumo: "A clássica laranja-de-umbigo: fruto grande, doce e geralmente sem sementes.",
+    fruta: "laranja",
+    foto: "assets/img/muda-laranja-bahia.jpg",
+    muda: {
+      "Espécie": "Laranjeira",
+      "Nome da espécie": "Citrus sinensis (L.) Osbeck",
+      "Variedade": "Bahia",
+      "Idade": "Consulte",
+      "Tamanho": "Consulte",
+      "Altura": "Consulte",
+      "Procedência": "Consulte",
+      "Tipo de clima": "Tropical e subtropical; prefere temperaturas amenas",
+      "Manejo": "Sol pleno, poda de formação e limpeza",
+      "Adubagem": "Orgânica no plantio e parcelada no período chuvoso",
+      "Irrigação": "Regular nos primeiros meses, sem encharcar",
+    },
+    identificacao: [
+      ["Nome popular", "Laranja Bahia"],
+      ["Nome científico", "Citrus sinensis (L.) Osbeck"],
+      ["Família botânica", "Rutaceae"],
+      ["Grupo", "Laranjas doces de umbigo"],
+      ["Origem histórica", "Salvador, Bahia"],
+      ["Reprodução comercial", "Principalmente enxertia"],
+      ["Tipo de fruto", "Grande, doce e geralmente sem sementes"],
+      ["Característica marcante", "Presença de “umbigo” na extremidade do fruto"],
+      ["Utilização", "Consumo in natura"],
+    ],
+    caracteristicas: [
+      ["Altura", "Acima de 5 metros, segundo a descrição da Bahia tradicional"],
+      ["Formato da copa", "Arredondada e frondosa"],
+      ["Crescimento", "Vigoroso; variável conforme o porta-enxerto"],
+      ["Frutos", "Grandes, geralmente acima de 250 g"],
+      ["Sementes", "Geralmente ausentes"],
+      ["Polpa", "Doce e saborosa"],
+      ["Maturação principal", "Maio a julho"],
+      ["Safra temporã", "Janeiro a abril"],
+    ],
+    irrigacao: IRRIGACAO_PADRAO,
+    desenvolvimento: DESENVOLVIMENTO_CITROS,
+    ficha: [
+      ["Espécie", "Laranjeira"],
+      ["Variedade", "Bahia"],
+      ["Família", "Rutaceae"],
+      ["Origem", "Salvador, Bahia"],
+      ["Fruto", "Laranja de umbigo"],
+      ["Porte", "Alto, na forma tradicional"],
+      ["Produção", "Maio a julho, principalmente"],
+    ],
+    aprender: {
+      plantar: PLANTIO_CITROS,
+      adubacao: ADUBACAO_CITROS,
+      podas: PODA_CITROS.concat([["Raleio", "Em anos de carga muito alta, retire frutos pequenos ou defeituosos para os restantes ficarem maiores."]]),
+      pragas: PRAGAS_CITROS,
+    },
+  },
+
+  /* ===================== MEXERICA PONCÃ ===================== */
+  {
+    id: "mexerica-ponca",
+    nome: "Mexerica Poncã",
+    cientifico: "Citrus reticulata Blanco",
+    resumo: "Casca solta que sai com a mão, gomos suculentos e sabor doce.",
+    fruta: "mexerica",
+    foto: "assets/img/muda-mexerica-ponca.jpg",
+    muda: {
+      "Espécie": "Tangerineira (mexeriqueira)",
+      "Nome da espécie": "Citrus reticulata Blanco",
+      "Variedade": "Poncã",
+      "Idade": "Consulte",
+      "Tamanho": "Consulte",
+      "Altura": "Consulte",
+      "Procedência": "Consulte",
+      "Tipo de clima": "Tropical e subtropical; boa adaptação ao clima de Minas",
+      "Manejo": "Sol pleno, poda de formação, raleio em anos de carga alta",
+      "Adubagem": "Orgânica no plantio e parcelada no período chuvoso",
+      "Irrigação": "Regular nos primeiros meses, sem encharcar",
+    },
+    identificacao: [
+      ["Nome popular", "Mexerica Poncã, tangerina Poncã, Ponkan"],
+      ["Nome científico", "Citrus reticulata Blanco"],
+      ["Família botânica", "Rutaceae"],
+      ["Grupo", "Tangerinas e mexericas"],
+      ["Origem histórica", "Sudeste da Ásia (Índia e China)"],
+      ["Reprodução comercial", "Principalmente enxertia"],
+      ["Tipo de fruto", "Médio a grande, casca fina e solta, com sementes"],
+      ["Característica marcante", "Casca que se solta facilmente com as mãos"],
+      ["Utilização", "Consumo in natura"],
+    ],
+    caracteristicas: [
+      ["Altura", "3 a 5 metros, conforme o porta-enxerto e o manejo"],
+      ["Formato da copa", "Arredondada a levemente ereta"],
+      ["Crescimento", "Vigoroso"],
+      ["Frutos", "Médios a grandes, por volta de 150 a 250 g"],
+      ["Sementes", "Presentes, em número variável"],
+      ["Polpa", "Suculenta, doce e de baixa acidez"],
+      ["Maturação principal", "Abril a julho"],
+      ["Atenção", "Tende a alternar anos de produção alta e baixa"],
+    ],
+    irrigacao: IRRIGACAO_PADRAO,
+    desenvolvimento: DESENVOLVIMENTO_CITROS,
+    ficha: [
+      ["Espécie", "Tangerineira"],
+      ["Variedade", "Poncã"],
+      ["Família", "Rutaceae"],
+      ["Origem", "Sudeste da Ásia"],
+      ["Fruto", "Mexerica de casca solta"],
+      ["Porte", "Médio"],
+      ["Produção", "Abril a julho, principalmente"],
+    ],
+    aprender: {
+      plantar: PLANTIO_CITROS,
+      adubacao: ADUBACAO_CITROS,
+      podas: PODA_CITROS.concat([["Raleio", "A Poncã costuma carregar demais em alguns anos. Raleie os frutos pequenos no início do desenvolvimento para equilibrar a produção e evitar a alternância."]]),
+      pragas: PRAGAS_CITROS,
+    },
+  },
+
+  /* ===================== ACEROLA ===================== */
+  {
+    id: "acerola",
+    nome: "Acerola",
+    cientifico: "Malpighia emarginata DC.",
+    resumo: "Frutinha vermelha campeã em vitamina C, com várias safras por ano.",
+    fruta: "acerola",
+    foto: "assets/img/muda-acerola.jpg",
+    muda: {
+      "Espécie": "Aceroleira",
+      "Nome da espécie": "Malpighia emarginata DC.",
+      "Variedade": "Consulte",
+      "Idade": "Consulte",
+      "Tamanho": "Consulte",
+      "Altura": "Consulte",
+      "Procedência": "Consulte",
+      "Tipo de clima": "Tropical e subtropical; sensível a geada",
+      "Manejo": "Sol pleno, poda de formação e de limpeza após as safras",
+      "Adubagem": "Orgânica no plantio e parcelada ao longo das chuvas",
+      "Irrigação": "Regular; a falta de água reduz as floradas",
+    },
+    identificacao: [
+      ["Nome popular", "Acerola, cereja-das-antilhas"],
+      ["Nome científico", "Malpighia emarginata DC."],
+      ["Família botânica", "Malpighiaceae"],
+      ["Grupo", "Frutíferas tropicais"],
+      ["Origem histórica", "Antilhas, América Central e norte da América do Sul"],
+      ["Reprodução comercial", "Estaquia e enxertia (plantas de semente são desuniformes)"],
+      ["Tipo de fruto", "Pequeno, vermelho quando maduro, com três caroços"],
+      ["Característica marcante", "Altíssimo teor de vitamina C"],
+      ["Utilização", "Sucos, polpas e consumo in natura"],
+    ],
+    caracteristicas: [
+      ["Altura", "2 a 3 metros (pode chegar a 4 m)"],
+      ["Formato da copa", "Arbustiva, densa e bem ramificada"],
+      ["Crescimento", "Rápido"],
+      ["Frutos", "Pequenos, de 3 a 10 g"],
+      ["Sementes", "Três caroços por fruto"],
+      ["Polpa", "Suculenta, ácida a levemente doce"],
+      ["Frutificação", "Várias floradas por ano, principalmente no período chuvoso"],
+      ["Ciclo", "Da flor ao fruto maduro, cerca de 3 a 4 semanas"],
+    ],
+    irrigacao: IRRIGACAO_PADRAO,
+    desenvolvimento: [
+      ["1º ano", "Formação das raízes e da copa; podem surgir as primeiras flores e frutos."],
+      ["2º ano", "Início da produção, com várias floradas ao longo do ano."],
+      ["3º ano", "Aumento da produção."],
+      ["4º e 5º anos", "Produção em crescimento e copa formada."],
+      ["Fase adulta", "Produção estabelecida, com várias safras por ano conforme água e clima."],
+    ],
+    ficha: [
+      ["Espécie", "Aceroleira"],
+      ["Variedade", "Consulte"],
+      ["Família", "Malpighiaceae"],
+      ["Origem", "Antilhas e América tropical"],
+      ["Fruto", "Acerola"],
+      ["Porte", "Pequeno a médio (arbustivo)"],
+      ["Produção", "Várias safras ao ano, principalmente nas chuvas"],
+    ],
+    aprender: {
+      plantar: [
+        ["Época", "Início do período chuvoso (outubro a dezembro); com irrigação, o ano todo."],
+        ["Local", "Sol pleno e solo bem drenado. Proteja de ventos fortes e evite locais com geada."],
+        ["Espaçamento", "Em pomar, 4 × 4 m ou 5 × 4 m. No quintal, ao menos 3 m de outras árvores e construções."],
+        ["Cova", "40 × 40 × 40 cm (ou 50 cm em solos pobres), com 10 a 15 litros de esterco curtido misturado à terra e a correção indicada pela análise de solo."],
+        ["Plantio", "Retire a embalagem sem desmanchar o torrão e deixe o colo da muda no nível do solo."],
+        ["Depois de plantar", "Faça a bacia, regue bem e cubra o solo com palha, sem encostar no tronco."],
+      ],
+      adubacao: [
+        ["Antes de tudo", "Faça a análise de solo para corrigir a acidez (calagem) e definir as doses; a Emater-MG pode orientar."],
+        ["No plantio", "Esterco curtido e fósforo misturados à terra da cova."],
+        ["Formação", "Pequenas doses de adubo nitrogenado e potássio, divididas em 3 a 4 vezes no período chuvoso, em círculo ao redor da planta. Regue após aplicar."],
+        ["Em produção", "Como frutifica várias vezes por ano, prefira adubações menores e mais frequentes. O potássio ajuda na qualidade dos frutos."],
+        ["Matéria orgânica", "Composto ou esterco curtido uma vez por ano e cobertura morta permanente."],
+      ],
+      podas: [
+        ["Poda de formação", "Conduza a muda com uma haste única até 40–60 cm e depois deixe 3 a 4 ramos principais."],
+        ["Poda de limpeza", "Após cada safra, retire galhos secos, doentes, cruzados e os que tocam o chão, deixando a copa arejada."],
+        ["Poda de altura", "Mantenha a planta numa altura que facilite a colheita manual; a acerola aceita bem podas."],
+        ["Ferramentas", "Tesouras afiadas e desinfetadas entre uma planta e outra."],
+        ["Coroamento", "Mantenha o círculo ao redor do tronco limpo de mato e com cobertura morta."],
+      ],
+      pragas: [
+        ["Nematoides", "Vermes microscópicos que formam galhas nas raízes e enfraquecem a planta. Use mudas sadias e evite áreas com histórico do problema."],
+        ["Antracnose", "Fungo que causa manchas escuras em folhas, flores e frutos, principalmente com muita chuva. Poda de arejamento ajuda a prevenir."],
+        ["Pulgões, cochonilhas e mosca-branca", "Sugam a seiva das brotações e folhas novas. Monitore com frequência."],
+        ["Mosca-das-frutas", "Ataca os frutos maduros. Colha no ponto certo e recolha frutos caídos."],
+        ["Formigas cortadeiras", "Podem desfolhar mudas jovens rapidamente; controle os formigueiros próximos."],
+        ["Importante", "Use apenas produtos registrados para a cultura, com receita agronômica, e respeite o prazo de carência."],
+      ],
+    },
+  },
+
+  /* ===================== LIMÃO TAHITI ===================== */
+  {
+    id: "limao-tahiti",
+    nome: "Limão Tahiti",
+    cientifico: "Citrus latifolia Tanaka",
+    resumo: "O limão mais usado no Brasil: suculento, ácido e sem sementes.",
+    fruta: "limao",
+    foto: "assets/img/muda-limao-tahiti.jpg",
+    muda: {
+      "Espécie": "Limeira ácida (limoeiro)",
+      "Nome da espécie": "Citrus latifolia Tanaka",
+      "Variedade": "Tahiti",
+      "Idade": "Consulte",
+      "Tamanho": "Consulte",
+      "Altura": "Consulte",
+      "Procedência": "Consulte",
+      "Tipo de clima": "Tropical e subtropical; prefere calor",
+      "Manejo": "Sol pleno, poda de formação e de limpeza",
+      "Adubagem": "Orgânica no plantio e parcelada no período chuvoso",
+      "Irrigação": "Regular; com irrigação produz quase o ano todo",
+    },
+    identificacao: [
+      ["Nome popular", "Limão Tahiti, lima ácida Tahiti"],
+      ["Nome científico", "Citrus latifolia Tanaka"],
+      ["Família botânica", "Rutaceae"],
+      ["Grupo", "Limas ácidas"],
+      ["Origem histórica", "Nome ligado ao Taiti (Polinésia); difundido a partir da Califórnia"],
+      ["Reprodução comercial", "Principalmente enxertia"],
+      ["Tipo de fruto", "Médio, verde, muito suculento e sem sementes"],
+      ["Característica marcante", "Fruto sem sementes, colhido ainda verde"],
+      ["Utilização", "Sucos, temperos, culinária e bebidas"],
+    ],
+    caracteristicas: [
+      ["Altura", "3 a 5 metros, conforme o porta-enxerto e o manejo"],
+      ["Formato da copa", "Arredondada, densa, com poucos espinhos"],
+      ["Crescimento", "Vigoroso"],
+      ["Frutos", "Médios, por volta de 70 a 100 g"],
+      ["Sementes", "Ausentes"],
+      ["Polpa", "Muito suculenta e ácida"],
+      ["Safra principal", "Janeiro a junho"],
+      ["Entressafra", "Julho a dezembro (com irrigação, produz quase o ano todo)"],
+    ],
+    irrigacao: IRRIGACAO_PADRAO,
+    desenvolvimento: DESENVOLVIMENTO_CITROS,
+    ficha: [
+      ["Espécie", "Limeira ácida"],
+      ["Variedade", "Tahiti"],
+      ["Família", "Rutaceae"],
+      ["Origem", "Taiti / Califórnia"],
+      ["Fruto", "Limão verde sem sementes"],
+      ["Porte", "Médio"],
+      ["Produção", "Janeiro a junho, principalmente"],
+    ],
+    aprender: {
+      plantar: PLANTIO_CITROS,
+      adubacao: ADUBACAO_CITROS,
+      podas: PODA_CITROS.concat([["Colheita", "Colha os frutos verdes, lisos e brilhantes, quando estiverem bem suculentos; frutos que amarelam no pé perdem valor."]]),
+      pragas: PRAGAS_CITROS,
+    },
+  },
+];

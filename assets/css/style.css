@@ -17,6 +17,9 @@
   --gray-100: #eeeeee;
   --gray-50: #f6f6f6;
   --white: #ffffff;
+  --green: #2f8f3e;
+  --green-dark: #22702f;
+  --green-light: #e8f4ea;
 
   --font-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -913,6 +916,165 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 .guia-note__small { margin-top: 10px; font-size: .82rem; color: var(--gray-500) !important; }
 
 /* =========================================================
+   MUDAS (MAP Reciclagem)
+   ========================================================= */
+.text-green { color: #4cbb5c; }
+.section .text-green, .mhead .text-green { color: var(--green); }
+.eyebrow--green { color: #5fcf6f; }
+.eyebrow--green::before { background: currentColor; }
+.section--gray .eyebrow--green { color: var(--green); }
+.btn--green { background: var(--green); color: var(--white); box-shadow: 0 8px 24px rgba(47, 143, 62, .35); }
+.btn--green:hover { background: var(--green-dark); }
+.page-hero--green::after { background: var(--green); }
+
+/* ---------- Ilustração das frutas (aparece enquanto não há foto) ---------- */
+.fruit { position: relative; display: block; width: 120px; height: 120px; }
+.fruit--big { width: 190px; height: 190px; }
+.fruit i { position: absolute; border-radius: 50%; }
+.fruit i:nth-child(1) { inset: 8%; background: radial-gradient(circle at 34% 30%, var(--f1), var(--f2) 62%, var(--f3)); box-shadow: inset -10px -14px 24px rgba(0,0,0,.18), 0 18px 30px rgba(0,0,0,.25); }
+.fruit i:nth-child(2), .fruit i:nth-child(3) { display: none; }
+.fruit b { position: absolute; top: 0; left: 52%; width: 34%; height: 20%; background: linear-gradient(135deg, #5cc06a, #2f8f3e); border-radius: 0 100% 0 100%; transform: rotate(-18deg); }
+.fruit--laranja { --f1: #ffc15a; --f2: #f7941d; --f3: #d96b05; }
+.fruit--laranja i:nth-child(2) { display: block; left: 46%; top: 82%; width: 9%; height: 7%; background: #c75f04; opacity: .7; } /* umbigo */
+.fruit--mexerica { --f1: #ffb347; --f2: #f57f17; --f3: #d35400; }
+.fruit--mexerica i:nth-child(1) { inset: 16% 6% 6%; }
+.fruit--mexerica i:nth-child(2) { display: block; left: 40%; top: 8%; width: 20%; height: 16%; background: #e8740f; } /* pescoço */
+.fruit--limao { --f1: #a6e36b; --f2: #5fae2e; --f3: #3e7f1c; }
+.fruit--limao i:nth-child(1) { inset: 10% 4%; transform: rotate(-20deg); }
+.fruit--acerola { --f1: #ff6b6b; --f2: #d7192f; --f3: #9c0d1e; }
+.fruit--acerola i:nth-child(1) { inset: 30% 36% 6% 4%; }
+.fruit--acerola i:nth-child(2), .fruit--acerola i:nth-child(3) { display: block; background: radial-gradient(circle at 34% 30%, var(--f1), var(--f2) 62%, var(--f3)); box-shadow: inset -8px -10px 18px rgba(0,0,0,.18), 0 14px 24px rgba(0,0,0,.25); }
+.fruit--acerola i:nth-child(2) { inset: 36% 4% 4% 40%; }
+.fruit--acerola i:nth-child(3) { inset: 14% 22% 34% 24%; }
+.img-slot.is-loaded .fruit { display: none; }
+
+/* ---------- Cartões das espécies ---------- */
+.mudas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.mcard {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border-bottom: 4px solid transparent;
+  transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
+}
+.mcard:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--green); }
+.mcard.active { border-color: var(--green); box-shadow: 0 0 0 3px var(--green), var(--shadow-lg); }
+.mcard__media {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 40%, #ffffff 0%, var(--green-light) 70%, #d3ead6 100%);
+  background-size: cover;
+  background-position: center;
+}
+.mcard__media::after { display: none; }
+.mcard__body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+.mcard h3 { font-family: var(--font-head); font-size: 1.7rem; text-transform: uppercase; line-height: 1.05; color: var(--black); }
+.mcard em { font-size: .9rem; color: var(--green); margin: 4px 0 10px; }
+.mcard p { font-size: .95rem; color: var(--gray-700); flex: 1; margin-bottom: 16px; }
+.mcard__link { font-family: var(--font-head); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--green); }
+.mcard__link span { display: inline-block; transition: transform .25s; }
+.mcard:hover .mcard__link span { transform: translateX(6px); }
+
+/* ---------- Ficha da espécie ---------- */
+.muda-section { padding-top: 70px; }
+.muda-section:has(#mudaDetalhe[hidden]) { display: none; }
+#mudaDetalhe { scroll-margin-top: calc(var(--header-h) + 20px); }
+.mhead { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; margin-bottom: 64px; }
+.mhead__media {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 42%, #ffffff 0%, var(--green-light) 65%, #cfe7d3 100%);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+}
+.mhead__media::after { display: none; }
+.mhead .section__title { margin-bottom: 4px; }
+.mhead__sci { font-style: italic; color: var(--green); font-size: 1.15rem; margin-bottom: 26px; }
+.mhead .eyebrow { color: var(--green); }
+.minfo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 30px; }
+.minfo { padding: 14px 16px; background: var(--gray-50); border-radius: var(--radius); border-left: 3px solid var(--green); }
+.minfo dt { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gray-500); margin-bottom: 3px; }
+.minfo dd { font-weight: 600; font-size: .95rem; color: var(--black); line-height: 1.35; }
+.minfo--pend { border-left-color: var(--gray-300); }
+.minfo--pend dd { color: var(--gray-500); font-weight: 500; font-style: italic; }
+
+.mblocks { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 56px; }
+.mblock { background: var(--white); border-radius: 10px; box-shadow: var(--shadow); padding: 28px 28px 20px; border-top: 4px solid var(--green); }
+.mblock__title { font-family: var(--font-head); font-size: 1.6rem; text-transform: uppercase; color: var(--black); margin-bottom: 14px; }
+
+.mtable { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.mtable thead th { font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--white); background: var(--black); padding: 10px 12px; text-align: left; }
+.mtable thead th:first-child { border-radius: 6px 0 0 6px; }
+.mtable thead th:last-child { border-radius: 0 6px 6px 0; }
+.mtable tbody th { width: 38%; text-align: left; font-weight: 700; color: var(--black); padding: 11px 12px; vertical-align: top; }
+.mtable tbody td { color: var(--gray-700); padding: 11px 12px; }
+.mtable tbody tr + tr { border-top: 1px solid var(--gray-100); }
+.mtable tbody tr:nth-child(even) { background: #fafcfa; }
+
+.mficha {
+  max-width: 720px;
+  margin: 0 auto 64px;
+  background: var(--white);
+  border: 2px solid var(--green);
+  border-radius: 14px;
+  padding: 26px 30px 18px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+.mficha::before { content: ""; position: absolute; inset: 8px; border: 1px dashed rgba(47,143,62,.35); border-radius: 10px; pointer-events: none; }
+.mficha__head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.mficha__head .fruit { width: 64px; height: 64px; }
+.mficha__head span { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; color: var(--green); font-weight: 700; }
+.mficha__head strong { font-family: var(--font-head); font-size: 2rem; text-transform: uppercase; line-height: 1; color: var(--black); }
+.mficha .mtable thead th { background: var(--green); }
+
+.mlearn { background: var(--black); color: var(--white); border-radius: 14px; padding: 40px; }
+.mlearn__title { font-family: var(--font-head); font-size: clamp(1.8rem, 3.4vw, 2.4rem); text-transform: uppercase; text-align: center; margin-bottom: 24px; }
+.mlearn__tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
+.mtab {
+  padding: 11px 20px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--gray-100);
+  background: var(--black-3);
+  border: 2px solid transparent;
+  border-radius: 40px;
+  transition: all .25s;
+}
+.mtab:hover { border-color: var(--green); color: var(--white); }
+.mtab.active { background: var(--green); color: var(--white); }
+.mlearn__panel h3 { font-family: var(--font-head); font-size: 1.5rem; text-transform: uppercase; margin: 6px 0 14px; }
+.mlearn__panel h3 + .mtable, .mlearn__panel .mtable { margin-bottom: 26px; }
+.mlearn .mtable thead th { background: var(--green); }
+.mlearn .mtable tbody th { color: var(--white); }
+.mlearn .mtable tbody td { color: var(--gray-300); }
+.mlearn .mtable tbody tr + tr { border-top-color: var(--gray-900); }
+.mlearn .mtable tbody tr:nth-child(even) { background: rgba(255,255,255,.03); }
+.msteps { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.mstep { padding: 20px 22px; background: var(--black-3); border-radius: 10px; border-left: 3px solid var(--green); }
+.mstep h4 { font-family: var(--font-head); font-size: 1.25rem; text-transform: uppercase; color: #6fd27e; margin-bottom: 6px; }
+.mstep p { color: var(--gray-300); font-size: .95rem; }
+.mtimeline { position: relative; display: grid; gap: 14px; padding-left: 30px; }
+.mtimeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 3px; background: linear-gradient(var(--green), #6fd27e); border-radius: 2px; }
+.mtimeline li { position: relative; display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 16px 20px; background: var(--black-3); border-radius: 10px; }
+.mtimeline li::before { content: ""; position: absolute; left: -27px; top: 22px; width: 15px; height: 15px; border-radius: 50%; background: var(--black); border: 3px solid #6fd27e; }
+.mtimeline strong { font-family: var(--font-head); font-size: 1.25rem; text-transform: uppercase; color: #6fd27e; }
+.mtimeline span { color: var(--gray-300); }
+.mnote { margin-top: 16px; font-size: .88rem; color: var(--gray-500); font-style: italic; }
+
+/* =========================================================
    RESPONSIVO
    ========================================================= */
 @media (max-width: 1540px) {
@@ -962,6 +1124,11 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
   .apps { grid-template-columns: 1fr 1fr; }
   .rules, .split { grid-template-columns: 1fr; gap: 40px; }
   .guia-note { flex-direction: column; align-items: flex-start; padding: 30px 24px; }
+  .mudas-grid { grid-template-columns: repeat(2, 1fr); }
+  .mhead { grid-template-columns: 1fr; gap: 32px; }
+  .mhead__media { position: static; max-width: 360px; width: 100%; margin-inline: auto; }
+  .mblocks { grid-template-columns: 1fr; }
+  .minfo-grid { grid-template-columns: repeat(2, 1fr); }
   .photo-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* linha do tempo vertical à esquerda */
@@ -997,6 +1164,15 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
   .page-hero { min-height: 70vh; }
   .guia-tools { flex-direction: column; align-items: stretch; gap: 10px; }
   .guia-grid { grid-template-columns: 1fr; }
+  .mudas-grid { grid-template-columns: 1fr; }
+  .mblock { padding: 22px 16px 14px; }
+  .mtable { font-size: .88rem; }
+  .mtable tbody th, .mtable tbody td, .mtable thead th { padding: 9px 8px; }
+  .mlearn { padding: 30px 16px; margin-inline: -8px; }
+  .mtab { padding: 9px 14px; font-size: .9rem; }
+  .mtimeline li { grid-template-columns: 1fr; gap: 4px; }
+  .mficha { padding: 22px 16px 14px; }
+  .minfo-grid { grid-template-columns: 1fr 1fr; }
   .guia-note .btn { width: 100%; }
   .emerg__title { width: 100%; }
   .btn { white-space: normal; text-align: center; }

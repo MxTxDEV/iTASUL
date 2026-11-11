@@ -11,6 +11,7 @@ index.html            → página inicial
 ferramentas.html      → catálogo de ferramentas (com filtro por tipo)
 cacambas.html         → caçambas de entulho (fotos no chão e cheias)
 munck.html            → caminhão Munck (fotos do serviço atendendo)
+mudas.html            → Mudas (MAP Reciclagem): fichas das espécies
 contatos.html         → Guia da Cidade: contatos de comércios de Itatiaiuçu
 assets/css/style.css  → visual (cores no topo do arquivo, em :root)
 assets/js/main.js     → menu, animações, galeria e formulário → WhatsApp
@@ -66,6 +67,14 @@ Fotos das ferramentas: formato 4:3 (ex.: 800×600).
 | `munck-topo.jpg` | Fundo do topo da página |
 | `munck-servico.jpg` | Foto ao lado do texto "O serviço" |
 | `munck-atendimento-1.jpg` … `munck-atendimento-6.jpg` | "Nosso serviço atendendo" (a 1ª aparece grande) |
+
+## Mudas (MAP Reciclagem)
+
+Os dados de cada espécie ficam em `assets/js/mudas-dados.js`. Os campos marcados como
+"Consulte" (idade, tamanho, altura e procedência da muda) aparecem em cinza no site até
+serem preenchidos. Fotos (opcionais): `assets/img/muda-laranja-bahia.jpg`,
+`muda-mexerica-ponca.jpg`, `muda-acerola.jpg`, `muda-limao-tahiti.jpg` e `mudas-topo.jpg`.
+Cada espécie tem link direto, ex.: `mudas.html#acerola`.
 
 ## Guia da Cidade (contatos de Itatiaiuçu)
 
