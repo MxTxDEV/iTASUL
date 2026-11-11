@@ -53,23 +53,31 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
   document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
 
   /* ---------- Link ativo conforme a seção visível ---------- */
+  // Links com #âncora acendem quando a seção correspondente está no meio da tela.
+  // Quando nenhuma seção com link está visível, volta o link da própria página
+  // (o que tem aria-current), se houver; na página inicial, mantém o último.
   const links = $$(".nav__link");
+  const hashLinks = links.filter((l) => l.getAttribute("href").startsWith("#"));
+  const pageLink = links.find((l) => l.getAttribute("aria-current") === "page");
+  let current = null;
+  const paint = () => {
+    const target = hashLinks.find((l) => l.getAttribute("href") === `#${current}`) || pageLink;
+    if (target) links.forEach((l) => l.classList.toggle("active", l === target));
+  };
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        links.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === `#${entry.target.id}`));
+        if (entry.isIntersecting) current = entry.target.id;
+        else if (current === entry.target.id) current = null;
       });
+      paint();
     },
     { rootMargin: "-45% 0px -50% 0px" }
   );
-  // Só na página inicial: marca no menu a seção que está na tela
-  links
-    .filter((l) => l.getAttribute("href").startsWith("#"))
-    .forEach((l) => {
-      const section = $(l.getAttribute("href"));
-      if (section) sectionObserver.observe(section);
-    });
+  hashLinks.forEach((l) => {
+    const section = $(l.getAttribute("href"));
+    if (section) sectionObserver.observe(section);
+  });
 
   /* ---------- Animação de entrada ---------- */
   const revealObserver = new IntersectionObserver(

@@ -4,19 +4,49 @@ Site vitrine do **Grupo Itasul**: locação de equipamentos para construção ci
 
 Feito em HTML, CSS e JavaScript puros: não precisa instalar nada. Basta abrir o `index.html` ou publicar a pasta em qualquer hospedagem (Hostinger, Vercel, Netlify, GitHub Pages…).
 
-## Estrutura
+## Estrutura: três áreas, cada uma com menu e cor próprios
+
+O site é o **Grupo Itasul**, que reúne duas empresas. Uma barra no topo de todas as páginas
+(Grupo · Itasul Locações · MAP Reciclagem) leva de uma área à outra, e o menu muda conforme a área.
 
 ```
-index.html            → página inicial
-ferramentas.html      → catálogo de ferramentas (com filtro por tipo)
-cacambas.html         → caçambas de entulho (fotos no chão e cheias)
-munck.html            → caminhão Munck (fotos do serviço atendendo)
-mudas.html            → Mudas (MAP Reciclagem): fichas das espécies
-contatos.html         → Guia da Cidade: contatos de comércios de Itatiaiuçu
-assets/css/style.css  → visual (cores no topo do arquivo, em :root)
-assets/js/main.js     → menu, animações, galeria e formulário → WhatsApp
-assets/img/           → coloque aqui as imagens
+GRUPO ITASUL (página principal)
+  index.html            → apresenta o grupo e as duas empresas (clique em cada uma)
+  contatos.html         → Guia da Cidade (contatos de Itatiaiuçu)
+
+ITASUL LOCAÇÕES (vermelho)
+  locacoes.html         → visão geral da empresa
+  ferramentas.html      → catálogo de ferramentas (com filtro por tipo)
+  cacambas.html         → caçambas de entulho (fotos no chão e cheias)
+  munck.html            → caminhão Munck (fotos do serviço atendendo)
+
+MAP RECICLAGEM (verde)
+  map.html              → visão geral da empresa
+  mudas.html            → mudas frutíferas: fichas das espécies
+
+assets/css/style.css    → visual (cores no topo do arquivo, em :root)
+assets/js/main.js       → menu, animações, galeria e formulário → WhatsApp
+assets/img/             → imagens
+tools/atualizar-paginas.py → mantém cabeçalho, rodapé e menus iguais em todas as páginas
 ```
+
+### Mudar o menu, o rodapé ou criar uma página nova
+
+O cabeçalho e o rodapé se repetem em todas as páginas, então são gerados por um script.
+Edite os menus em `tools/atualizar-paginas.py` e rode:
+
+```
+python3 tools/atualizar-paginas.py
+```
+
+Para uma página nova: crie o `.html` com `<header class="header" id="header"></header>` e
+`<footer class="footer"></footer>` vazios, inclua-a em `PAGES` no script e rode o comando.
+
+### Cores
+
+- **Itasul Locações** usa o vermelho (`--red`).
+- **MAP Reciclagem** usa o verde: a classe `theme-map` no `<body>` troca o vermelho por verde
+  em toda a página (botões, destaques, rodapé), sem precisar mexer página por página.
 
 ## Imagens: onde colocar cada uma
 

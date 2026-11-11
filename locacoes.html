@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itasul Locações | Grupo Itasul</title>
+  <meta name="description" content="Itasul Locações: locação de equipamentos para construção civil, caçambas de entulho e caminhão Munck. Entrega rápida e equipamentos revisados.">
+  <meta name="theme-color" content="#c8102e">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="theme-loc">
+
+  <!-- ============ CABEÇALHO / MENU (gerado por tools/atualizar-paginas.py) ============ -->
+  <header class="header" id="header">
+    <div class="company-bar" aria-label="Empresas do grupo">
+      <div class="container company-bar__inner">
+        <a href="index.html" class="cb cb--grupo"><i class="dot dot--grupo"></i>Grupo<span class="cb__long"> Itasul</span></a>
+        <a href="locacoes.html" class="cb cb--loc is-active" aria-current="true"><i class="dot dot--loc"></i><span class="cb__long">Itasul </span>Locações</a>
+        <a href="map.html" class="cb cb--map"><i class="dot dot--map"></i>MAP<span class="cb__long"> Reciclagem</span></a>
+      </div>
+    </div>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Grupo Itasul - início">
+        <img class="brand__logo" src="assets/img/logo-horizontal-branca.png" alt="Grupo Itasul"
+             onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+        <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="locacoes.html" class="nav__link active" aria-current="page">Visão geral</a></li>
+          <li><a href="ferramentas.html" class="nav__link">Ferramentas</a></li>
+          <li><a href="cacambas.html" class="nav__link">Caçambas</a></li>
+          <li><a href="munck.html" class="nav__link">Caminhão Munck</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+        <a href="#" data-wa="Gostaria de um orçamento de locação." class="btn btn--primary nav__cta">Pedir orçamento</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ TOPO ============ -->
+    <section class="page-hero">
+      <div class="hero__bg" data-img="assets/img/locacoes-topo.jpg"></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Você está em"><a href="index.html">Grupo Itasul</a>/<span>Itasul Locações</span></nav>
+        <span class="eyebrow eyebrow--light reveal">Empresa do Grupo Itasul</span>
+        <h1 class="reveal">Itasul <span class="text-red">Locações</span></h1>
+        <p class="reveal">Locação de equipamentos para construção civil, caçambas de entulho e caminhão Munck, com entrega rápida, segurança e o compromisso de quem conhece o canteiro de obras.</p>
+        <div class="hero__actions reveal">
+          <a href="ferramentas.html" class="btn btn--primary btn--lg">Ver ferramentas</a>
+          <a href="#" data-wa="Gostaria de um orçamento de locação." class="btn btn--ghost btn--lg">Pedir orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAIXA DE DESTAQUES ============ -->
+    <section class="highlights">
+      <div class="container highlights__grid">
+        <div class="highlight">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <div><strong>Entrega rápida</strong><span>Atendimento ágil na sua obra</span></div>
+        </div>
+        <div class="highlight">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><strong>Segurança</strong><span>Equipamentos revisados</span></div>
+        </div>
+        <div class="highlight">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><strong>Pontualidade</strong><span>Prazos cumpridos à risca</span></div>
+        </div>
+        <div class="highlight">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+          <div><strong>Atendimento</strong><span>Próximo e personalizado</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--light">Nossos serviços</span>
+          <h2 class="section__title section__title--light">Soluções completas para a sua obra</h2>
+          <p class="section__lead">Da ferramenta ao içamento, a Itasul Locações tem o que você precisa.</p>
+        </div>
+
+        <div class="services__grid">
+          <article class="service reveal">
+            <div class="img-slot service__img" data-img="assets/img/servico-equipamentos.jpg" role="img" aria-label="Equipamentos para construção civil"></div>
+            <div class="service__body">
+              <div class="service__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg>
+              </div>
+              <h3>Locação de Ferramentas</h3>
+              <p>Betoneiras, compactadores de solo, placas vibratórias, andaimes, furadeiras, marteletes, serras mármore e muito mais para a sua obra.</p>
+              <a href="ferramentas.html" class="service__link">Ver detalhes <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="service service--featured reveal">
+            <div class="img-slot service__img" data-img="assets/img/servico-cacambas.jpg" role="img" aria-label="Caçambas de entulho"></div>
+            <div class="service__body">
+              <div class="service__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h20l-2.5 10h-15L2 8z"/><path d="M6 8V5h12v3"/></svg>
+              </div>
+              <h3>Caçambas de Entulho</h3>
+              <p>Caçambas estacionárias para retirada de entulho, com entrega e recolhimento pontuais e destinação ambientalmente correta.</p>
+              <a href="cacambas.html" class="service__link">Ver detalhes <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <div class="img-slot service__img" data-img="assets/img/servico-munck.jpg" role="img" aria-label="Caminhão Munck"></div>
+            <div class="service__body">
+              <div class="service__icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h12V9H3v8zM15 12h4l2 3v2h-6"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 9 17 3l2 2"/></svg>
+              </div>
+              <h3>Caminhão Munck</h3>
+              <p>Içamento, carga, descarga e movimentação de materiais pesados com operadores experientes e total segurança.</p>
+              <a href="munck.html" class="service__link">Ver detalhes <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Como funciona</span>
+          <h2 class="section__title">Alugar é <span class="text-red">simples</span></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Escolha</h3><p>Veja as ferramentas, a caçamba ou o Munck de que a sua obra precisa.</p></div>
+          <div class="step reveal"><h3>Orçamento</h3><p>Chame no WhatsApp e informe o serviço, o endereço e o período.</p></div>
+          <div class="step reveal"><h3>Entrega ou retirada</h3><p>Entregamos na sua obra ou você retira na nossa loja.</p></div>
+          <div class="step reveal"><h3>Devolução</h3><p>Terminou o serviço? Devolva ou agende o recolhimento com a gente.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--light">Galeria</span>
+          <h2 class="section__title section__title--light">Nossa frota em ação</h2>
+        </div>
+        <!-- Coloque as fotos em assets/img/galeria-1.jpg ... galeria-6.jpg -->
+        <div class="gallery__grid">
+          <button class="gallery__item gallery__item--wide img-slot" data-img="assets/img/galeria-1.jpg" aria-label="Ampliar foto 1"></button>
+          <button class="gallery__item img-slot" data-img="assets/img/galeria-2.jpg" aria-label="Ampliar foto 2"></button>
+          <button class="gallery__item img-slot" data-img="assets/img/galeria-3.jpg" aria-label="Ampliar foto 3"></button>
+          <button class="gallery__item img-slot" data-img="assets/img/galeria-4.jpg" aria-label="Ampliar foto 4"></button>
+          <button class="gallery__item img-slot" data-img="assets/img/galeria-5.jpg" aria-label="Ampliar foto 5"></button>
+          <button class="gallery__item gallery__item--wide img-slot" data-img="assets/img/galeria-6.jpg" aria-label="Ampliar foto 6"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHAMADA / CONTATO ============ -->
+    <section class="cta" id="contato">
+      <div class="container cta__inner">
+        <div>
+          <h2>Precisa de ferramenta, caçamba ou Munck?</h2>
+          <p>Fale agora com a Itasul Locações e receba seu orçamento em minutos.</p>
+        </div>
+        <a href="#" data-wa="Gostaria de um orçamento de locação." class="btn btn--white btn--lg">Chamar no WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ (gerado por tools/atualizar-paginas.py) ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer" aria-label="Grupo Itasul">
+          <img class="brand__logo" src="assets/img/logo-branca.png" alt="Grupo Itasul"
+               onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+          <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
+        </a>
+        <p>O Grupo Itasul reúne a Itasul Locações, com equipamentos, caçambas e caminhão Munck, e a MAP Reciclagem, com mudas frutíferas.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/5500000000000" class="js-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Grupo Itasul</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#historia">Nossa História</a></li>
+          <li><a href="contatos.html">Guia da Cidade</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><i class="dot dot--loc"></i>Itasul Locações</h4>
+        <ul>
+          <li><a href="locacoes.html">Visão geral</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="cacambas.html">Caçambas</a></li>
+          <li><a href="munck.html">Caminhão Munck</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><i class="dot dot--map"></i>MAP Reciclagem</h4>
+        <ul>
+          <li><a href="map.html">Visão geral</a></li>
+          <li><a href="mudas.html">Mudas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li>(00) 00000-0000</li>
+          <li>contato@grupoitasul.com.br</li>
+          <li>Cidade/UF</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">© <span id="year"></span> Grupo Itasul. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5500000000000" class="whatsapp-float js-whatsapp" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.5-.2z"/></svg>
+  </a>
+
+  <!-- Lightbox da galeria -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="Fechar">×</button>
+    <img alt="Foto ampliada">
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
