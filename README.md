@@ -113,6 +113,13 @@ serem preenchidos. Fotos (opcionais): `assets/img/muda-laranja-bahia.jpg`,
 `muda-mexerica-ponca.jpg`, `muda-acerola.jpg`, `muda-limao-tahiti.jpg` e `mudas-topo.jpg`.
 Cada espécie tem link direto, ex.: `mudas.html#acerola`.
 
+## Conteúdo institucional
+
+Os textos de história, missão, visão, valores, endereço e da MAP Reciclagem vêm da apresentação
+institucional do Grupo Itasul. Fotos tiradas dos slides: `assets/img/map-*.jpg` (central de
+transbordo e planta de RCC), `frota-*.jpg` (galeria da Itasul Locações) e `sobre.jpg`.
+Para fotos melhores, basta trocar os arquivos mantendo o mesmo nome.
+
 ## Guia da Cidade (contatos de Itatiaiuçu)
 
 Os contatos ficam em `assets/js/guia-dados.js`, um por linha. Para incluir um comércio, copie

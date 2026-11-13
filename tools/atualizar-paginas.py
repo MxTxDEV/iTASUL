@@ -121,7 +121,7 @@ FOOTER = f'''<footer class="footer">
                onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
           <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
         </a>
-        <p>O Grupo Itasul reúne a Itasul Locações, com equipamentos, caçambas e caminhão Munck, e a MAP Reciclagem, com mudas frutíferas.</p>
+        <p>Construindo o futuro com dedicação e trabalho. O Grupo Itasul reúne a Itasul Locações e a MAP Reciclagem.</p>
         <div class="social">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -158,7 +158,7 @@ FOOTER = f'''<footer class="footer">
         <ul>
           <li>(00) 00000-0000</li>
           <li>contato@grupoitasul.com.br</li>
-          <li>Cidade/UF</li>
+          <li>Av. Duque de Caxias, 501 – Centro<br>Itatiaiuçu/MG</li>
         </ul>
       </div>
     </div>
