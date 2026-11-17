@@ -137,3 +137,16 @@ Em `ferramentas.html`, copie um bloco `<article class="tool">…</article>`, tro
 - **Nossa história**: anos (`20XX`) e textos da linha do tempo.
 - **Números**: anos de mercado, obras atendidas etc. (atributos `data-count`).
 - **Redes sociais**: links do Instagram e Facebook no rodapé.
+
+## Portfólio (para enviar aos clientes)
+
+`portfolio.html` (menu **Portfólio**) é a apresentação institucional completa, com as fotos do site: grupo,
+Itasul Locações, catálogo, MAP Reciclagem, mudas e contato. Tem botões **Baixar em PDF**, **Compartilhar**
+(WhatsApp/menu do celular) e **Copiar link**. Também imprime em A4, uma seção por folha.
+
+- **PDF** (`assets/downloads/Portfolio-Grupo-Itasul.pdf`) e **imagem de pré-visualização**
+  (`assets/img/og-portfolio.jpg`) são gerados por `node tools/gerar-portfolio-pdf.mjs`
+  (precisa de `npm i playwright`). Rode de novo sempre que mudar textos, fotos ou contatos.
+- **Contatos**: telefone, WhatsApp e e-mail ficam no topo de `assets/js/main.js`. Enquanto o WhatsApp for o
+  número de exemplo, o portfólio esconde telefone e botões de WhatsApp (nunca mostra contato falso).
+- Os endereços `og:url`/`og:image` do `<head>` assumem `https://i-tasul.vercel.app`; troque pelo domínio final.

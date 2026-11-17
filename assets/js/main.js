@@ -1,10 +1,14 @@
 /* =========================================================
-   GRUPO ITAÇU — Scripts do site
+   GRUPO ITASUL — Scripts do site
    ========================================================= */
 
 /* ▼▼▼ CONFIGURAÇÃO — troque pelo número real (DDI + DDD + número, só dígitos) ▼▼▼ */
 const WHATSAPP_NUMBER = "5500000000000";
+const PHONE_DISPLAY = "(00) 00000-0000";          // telefone como aparece escrito no site
+const EMAIL = "contato@grupoitasul.com.br";
 const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçamento.";
+/* O telefone, o WhatsApp e o e-mail de TODAS as páginas (menu, rodapé, contato e portfólio)
+   são preenchidos a partir das linhas acima: basta trocar aqui. */
 /* ▲▲▲ ------------------------------------------------------------------- ▲▲▲ */
 
 (function () {
@@ -23,6 +27,19 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
     a.target = "_blank";
     a.rel = "noopener";
   });
+
+  /* ---------- Contatos: preenchidos a partir da configuração do topo do arquivo ---------- */
+  $$('[data-contact="phone"]').forEach((el) => {
+    el.textContent = PHONE_DISPLAY;
+    if (el.tagName === "A") el.href = `tel:+${WHATSAPP_NUMBER}`;
+  });
+  $$('[data-contact="email"]').forEach((el) => {
+    el.textContent = EMAIL;
+    if (el.tagName === "A") el.href = `mailto:${EMAIL}`;
+  });
+  // Enquanto o WhatsApp for o número de exemplo (55 + zeros), o portfólio esconde o telefone e os
+  // botões de WhatsApp (classe .pf-needs-phone), para nunca mostrar um contato falso a um cliente.
+  document.documentElement.classList.toggle("phone-pending", /^\d{2}0{5,}/.test(WHATSAPP_NUMBER));
 
   /* ---------- Imagens: carrega cada foto e só troca o fundo se ela existir ---------- */
   $$("[data-img]").forEach((el) => {
@@ -131,8 +148,54 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
         lightbox.hidden = false;
       })
     );
+    // fotos do portfólio (<img> comum, que também imprimem no PDF)
+    $$("img[data-zoom]").forEach((img) => {
+      img.tabIndex = 0;
+      const open = () => {
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.hidden = false;
+      };
+      img.addEventListener("click", open);
+      img.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      });
+    });
     lightbox.addEventListener("click", (e) => e.target !== lightboxImg && closeLightbox());
     document.addEventListener("keydown", (e) => e.key === "Escape" && closeLightbox());
+  }
+
+  /* ---------- Portfólio: compartilhar e copiar o link ---------- */
+  const shareBtn = $("#pfShare");
+  const copyBtn = $("#pfCopy");
+  const toast = $("#pfToast");
+  const say = (msg) => {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("is-on");
+    clearTimeout(say.t);
+    say.t = setTimeout(() => toast.classList.remove("is-on"), 2600);
+  };
+  const pageUrl = () => location.href.split("#")[0];
+  if (shareBtn) {
+    shareBtn.addEventListener("click", async () => {
+      const data = { title: "Portfólio | Grupo Itasul", text: "Conheça o portfólio do Grupo Itasul:", url: pageUrl() };
+      if (navigator.share) {
+        try { await navigator.share(data); } catch (e) { /* a pessoa cancelou */ }
+      } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(`${data.text} ${data.url}`)}`, "_blank", "noopener");
+      }
+    });
+  }
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(pageUrl());
+        say("Link copiado!");
+      } catch (e) {
+        window.prompt("Copie o link:", pageUrl());
+      }
+    });
   }
 
   /* ---------- Filtro do catálogo de ferramentas ---------- */

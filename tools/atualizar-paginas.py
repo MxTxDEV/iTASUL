@@ -20,6 +20,7 @@ LOC, MAP, GRUPO = "Itasul Locações", "MAP Reciclagem", "Grupo Itasul"
 # arquivo: (área, página ativa no menu, migalhas [(texto, link)] — o último é a página atual)
 PAGES = {
     "index.html":       ("grupo", "inicio", None),
+    "portfolio.html":   ("grupo", "portfolio", [("Portfólio", None)]),
     "contatos.html":    ("grupo", "guia", [("Guia da Cidade", None)]),
     "locacoes.html":    ("loc", "visao", [(LOC, None)]),
     "ferramentas.html": ("loc", "ferramentas", [(LOC, "locacoes.html"), ("Ferramentas", None)]),
@@ -39,6 +40,7 @@ def menu(page, sec):
             ("inicio", "Início", "#inicio" if home else "index.html", ""),
             ("loc", LOC, "locacoes.html", " nav__link--loc"),
             ("map", MAP, "map.html", " nav__link--map"),
+            ("portfolio", "Portfólio", "portfolio.html", ""),
             ("historia", "Nossa História", "#historia" if home else "index.html#historia", ""),
             ("guia", "Guia da Cidade", "contatos.html", ""),
             ("contato", "Contato", "#contato" if home else "index.html#contato", ""),
@@ -132,6 +134,7 @@ FOOTER = f'''<footer class="footer">
         <h4>Grupo Itasul</h4>
         <ul>
           <li><a href="index.html">Início</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
           <li><a href="index.html#historia">Nossa História</a></li>
           <li><a href="contatos.html">Guia da Cidade</a></li>
           <li><a href="index.html#contato">Contato</a></li>
@@ -156,8 +159,8 @@ FOOTER = f'''<footer class="footer">
       <div>
         <h4>Contato</h4>
         <ul>
-          <li>(00) 00000-0000</li>
-          <li>contato@grupoitasul.com.br</li>
+          <li><a href="tel:+5500000000000" data-contact="phone">(00) 00000-0000</a></li>
+          <li><a href="mailto:contato@grupoitasul.com.br" data-contact="email">contato@grupoitasul.com.br</a></li>
           <li>Av. Duque de Caxias, 501 – Centro<br>Itatiaiuçu/MG</li>
         </ul>
       </div>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Grupo Itasul</title>
+  <meta name="description" content="Portfólio institucional do Grupo Itasul: Itasul Locações (equipamentos, caçambas e caminhão Munck) e MAP Reciclagem (central de transbordo e triagem de resíduos e mudas frutíferas).">
+  <meta name="theme-color" content="#c8102e">
+
+  <!-- Pré-visualização ao compartilhar (WhatsApp, redes sociais). Se o endereço do site mudar, troque o domínio abaixo. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Grupo Itasul">
+  <meta property="og:title" content="Portfólio | Grupo Itasul">
+  <meta property="og:description" content="Itasul Locações e MAP Reciclagem: equipamentos para construção civil, caçambas, caminhão Munck, central de transbordo e triagem de resíduos e mudas frutíferas.">
+  <meta property="og:url" content="https://i-tasul.vercel.app/portfolio.html">
+  <meta property="og:image" content="https://i-tasul.vercel.app/assets/img/og-portfolio.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ CABEÇALHO / MENU (gerado por tools/atualizar-paginas.py) ============ -->
+  <header class="header" id="header">
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <div class="company-bar" aria-label="Empresas do grupo">
+      <div class="container company-bar__inner">
+        <a href="index.html" class="cb cb--grupo is-active" aria-current="true"><i class="dot dot--grupo"></i>Grupo<span class="cb__long"> Itasul</span></a>
+        <a href="locacoes.html" class="cb cb--loc"><i class="dot dot--loc"></i><span class="cb__long">Itasul </span>Locações</a>
+        <a href="map.html" class="cb cb--map"><i class="dot dot--map"></i>MAP<span class="cb__long"> Reciclagem</span></a>
+      </div>
+    </div>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Grupo Itasul - início">
+        <img class="brand__logo" src="assets/img/logo-horizontal-branca.png" alt="Grupo Itasul"
+             onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+        <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Início</a></li>
+          <li><a href="locacoes.html" class="nav__link nav__link--loc">Itasul Locações</a></li>
+          <li><a href="map.html" class="nav__link nav__link--map">MAP Reciclagem</a></li>
+          <li><a href="portfolio.html" class="nav__link active" aria-current="page">Portfólio</a></li>
+          <li><a href="index.html#historia" class="nav__link">Nossa História</a></li>
+          <li><a href="contatos.html" class="nav__link">Guia da Cidade</a></li>
+          <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+        <a href="index.html#contato" class="btn btn--primary nav__cta">Solicitar orçamento</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ CAPA ============ -->
+    <section class="pf-hero pf-page" id="topo">
+      <div class="container pf-hero__grid">
+        <div class="pf-hero__text">
+          <span class="eyebrow eyebrow--light">Portfólio institucional</span>
+          <h1>Grupo <span class="text-red">Itasul</span></h1>
+          <p class="pf-lema">Construindo o futuro com dedicação e trabalho.</p>
+          <p class="pf-intro">Reunimos a <strong>Itasul Locações</strong>, com locação de equipamentos para construção civil e movimentação, e a <strong>MAP Reciclagem</strong>, com central de transbordo e triagem de resíduos e mudas frutíferas.</p>
+          <div class="pf-actions no-print">
+            <a class="btn btn--primary btn--lg" href="assets/downloads/Portfolio-Grupo-Itasul.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>Baixar em PDF
+            </a>
+            <button class="btn btn--ghost btn--lg" id="pfShare" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>Compartilhar
+            </button>
+            <button class="btn btn--ghost btn--lg pf-copy" id="pfCopy" type="button" aria-label="Copiar o link deste portfólio">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copiar link
+            </button>
+          </div>
+        </div>
+
+        <div class="pf-mosaic">
+          <figure class="pf-mosaic__item">
+            <img src="assets/img/frota-caminhao-andaimes.jpg" alt="Caminhão da Itasul Locações carregado com andaimes e betoneira" width="389" height="254">
+            <figcaption><i class="dot dot--loc"></i>Itasul Locações</figcaption>
+          </figure>
+          <figure class="pf-mosaic__item">
+            <img src="assets/img/map-galpao.jpg" alt="Galpão 01 da central de transbordo e triagem" width="595" height="342">
+            <figcaption><i class="dot dot--map"></i>MAP Reciclagem</figcaption>
+          </figure>
+          <figure class="pf-mosaic__item">
+            <img src="assets/img/frota-cesto-aereo.jpg" alt="Caminhão com cesto aéreo" width="365" height="321">
+            <figcaption><i class="dot dot--loc"></i>Itasul Locações</figcaption>
+          </figure>
+          <figure class="pf-mosaic__item">
+            <img src="assets/img/muda-laranja-bahia.jpg" alt="Laranja Bahia, uma das mudas frutíferas da MAP Reciclagem" width="800" height="1200">
+            <figcaption><i class="dot dot--map"></i>MAP Reciclagem</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="pf-facts">
+        <ul class="container pf-facts__list">
+          <li><strong>2012</strong><span>Ano de fundação</span></li>
+          <li><strong>2</strong><span>Empresas no grupo</span></li>
+          <li><strong>Itatiaiuçu/MG</strong><span>Sede</span></li>
+          <li><strong>100 t</strong><span>Balança rodoviária</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ÍNDICE ============ -->
+    <nav class="pf-index no-print" aria-label="Neste portfólio">
+      <div class="container pf-index__inner">
+        <span class="pf-index__label">Neste portfólio</span>
+        <a href="#grupo">O grupo</a>
+        <a href="#locacoes"><i class="dot dot--loc"></i>Itasul Locações</a>
+        <a href="#map"><i class="dot dot--map"></i>MAP Reciclagem</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+
+    <!-- ============ O GRUPO ============ -->
+    <section class="pf-section pf-page" id="grupo">
+      <div class="container">
+        <div class="pf-grupo">
+          <div class="pf-grupo__text reveal">
+            <span class="eyebrow">O grupo</span>
+            <h2 class="section__title">Uma história que começou em <span class="text-red">2012</span></h2>
+            <p>O <strong>Grupo Itasul</strong> iniciou suas atividades em <strong>22 de agosto de 2012</strong>, com a empresa Itau Locações e Serviço Ltda. Hoje reúne duas empresas: a <strong>Itasul Locações</strong>, com locação de equipamentos para construção civil e movimentação, e a <strong>MAP Reciclagem</strong>, com soluções ambientais responsáveis e gerenciamento de resíduos.</p>
+            <p>Atuamos com foco nas necessidades dos nossos clientes, da população e do meio ambiente.</p>
+          </div>
+          <aside class="pf-card pf-card--dark reveal" aria-label="Ficha do grupo">
+            <h3>Ficha do grupo</h3>
+            <dl>
+              <div><dt>Início das atividades</dt><dd>22 de agosto de 2012</dd></div>
+              <div><dt>Sede</dt><dd>Avenida Duque de Caxias, 501<br>Centro, Itatiaiuçu/MG</dd></div>
+              <div><dt>Fundador</dt><dd>Carlos Silva</dd></div>
+              <div><dt>Empresas</dt><dd>Itasul Locações · MAP Reciclagem</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="values pf-values">
+          <div class="value reveal">
+            <h3>Nossa missão</h3>
+            <p>Oferecer soluções completas em locação de equipamentos para construção civil e movimentação, e em gerenciamento de resíduos, com eficiência, segurança e responsabilidade ambiental, contribuindo para operações mais sustentáveis e produtivas dos nossos clientes e para a comunidade.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Nossa visão</h3>
+            <p>Ser referência regional em locação de equipamentos para construção civil e movimentação e em gestão de resíduos, reconhecidos pela inovação, confiabilidade e compromisso com a sustentabilidade, ampliando continuamente a nossa capacidade de gerar valor para clientes, comunidade e meio ambiente.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Nossos valores</h3>
+            <ul class="value__list">
+              <li><strong>Sustentabilidade:</strong> atuar com responsabilidade ambiental, reduzindo impactos e promovendo a economia circular.</li>
+              <li><strong>Segurança:</strong> priorizar práticas seguras em todas as operações, protegendo colaboradores, clientes e a comunidade.</li>
+              <li><strong>Inovação:</strong> buscar melhorias e soluções inteligentes para aumentar a eficiência e a produtividade.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ITASUL LOCAÇÕES (vermelho) ============ -->
+    <section class="pf-section pf-section--gray pf-theme-loc pf-page" id="locacoes">
+      <div class="container">
+        <div class="pf-company reveal">
+          <span class="pf-company__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg></span>
+          <div class="pf-company__text">
+            <span class="pf-company__tag">Empresa do Grupo Itasul</span>
+            <h2>Itasul Locações</h2>
+            <p>Equipamentos para construção civil e movimentação.</p>
+          </div>
+          <a class="btn btn--white no-print" href="locacoes.html">Conhecer a empresa</a>
+        </div>
+
+        <div class="pf-services">
+          <article class="pf-service reveal">
+            <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5z"/></svg></span>
+            <h3>Locação de ferramentas</h3>
+            <p>Betoneira, compactador de solo, placa vibratória, andaime, escora metálica, furadeira, martelete, serra mármore e cortadora de piso.</p>
+            <a class="pf-service__link no-print" href="ferramentas.html">Ver catálogo <span>→</span></a>
+          </article>
+          <article class="pf-service reveal">
+            <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8h20l-2.5 10h-15L2 8z"/><path d="M6 8V5h12v3"/></svg></span>
+            <h3>Caçambas de entulho</h3>
+            <p>Caçambas estacionárias para retirada de entulho, com entrega e recolhimento pontuais e destinação ambientalmente correta.</p>
+            <a class="pf-service__link no-print" href="cacambas.html">Ver detalhes <span>→</span></a>
+          </article>
+          <article class="pf-service reveal">
+            <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h12V9H3v8zM15 12h4l2 3v2h-6"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M9 9 17 3l2 2"/></svg></span>
+            <h3>Caminhão Munck</h3>
+            <p>Içamento, carga, descarga e movimentação de materiais pesados, com operadores experientes e total segurança.</p>
+            <a class="pf-service__link no-print" href="munck.html">Ver detalhes <span>→</span></a>
+          </article>
+        </div>
+
+        <div class="pf-block">
+          <h3 class="pf-subtitle reveal">Equipamentos</h3>
+          <div class="pf-photos pf-photos--2">
+            <figure class="pf-photo reveal">
+              <img src="assets/img/frota-martelos.jpg" alt="Marteletes rotativos" width="429" height="321" data-zoom>
+              <figcaption>Marteletes rotativos</figcaption>
+            </figure>
+            <figure class="pf-photo reveal">
+              <img src="assets/img/frota-esmerilhadeiras.jpg" alt="Esmerilhadeiras" width="389" height="291" data-zoom>
+              <figcaption>Esmerilhadeiras</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-section pf-section--gray pf-theme-loc pf-page pf-page--cont" id="catalogo">
+      <div class="container">
+        <div class="pf-head reveal">
+          <span class="eyebrow">Catálogo</span>
+          <h2 class="section__title">Equipamentos <span class="text-red">disponíveis</span></h2>
+          <p class="section__lead section__lead--dark">Alguns dos equipamentos que a Itasul Locações tem para locação. O catálogo completo, com descrição e usos, está no site.</p>
+        </div>
+
+        <div class="pf-grid pf-grid--4">
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-betoneira.jpg" alt="Betoneira" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Concretagem</small><strong>Betoneira</strong></span>
+          </a>
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-escora.jpg" alt="Escora metálica" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Concretagem</small><strong>Escora metálica</strong></span>
+          </a>
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-compactador-de-solo.jpg" alt="Compactador de solo" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Compactação</small><strong>Compactador de solo</strong></span>
+          </a>
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-placa-vibratoria.jpg" alt="Placa vibratória" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Compactação</small><strong>Placa vibratória</strong></span>
+          </a>
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-andaime.jpg" alt="Andaime" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Acesso e altura</small><strong>Andaime</strong></span>
+          </a>
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-furadeira.jpg" alt="Furadeira" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Perfuração e demolição</small><strong>Furadeira</strong></span>
+          </a>
+          <a class="pf-tile reveal" href="ferramentas.html">
+            <span class="pf-tile__img"><img src="assets/img/ferramenta-cortadora-de-piso.jpg" alt="Cortadora de piso" width="800" height="600"></span>
+            <span class="pf-tile__body"><small>Corte</small><strong>Cortadora de piso</strong></span>
+          </a>
+          <a class="pf-tile pf-tile--cta reveal no-print" href="ferramentas.html">
+            <strong>Catálogo completo</strong>
+            <span>Veja todas as ferramentas <b>→</b></span>
+          </a>
+        </div>
+
+        <div class="pf-block">
+          <h3 class="pf-subtitle reveal">Como alugar</h3>
+          <div class="steps pf-steps">
+            <div class="step reveal"><h3>Escolha</h3><p>Veja as ferramentas, a caçamba ou o Munck de que a sua obra precisa.</p></div>
+            <div class="step reveal"><h3>Orçamento</h3><p>Chame no WhatsApp e informe o serviço, o endereço e o período.</p></div>
+            <div class="step reveal"><h3>Entrega ou retirada</h3><p>Entregamos na sua obra ou você retira na nossa loja.</p></div>
+            <div class="step reveal"><h3>Devolução</h3><p>Terminou o serviço? Devolva ou agende o recolhimento com a gente.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MAP RECICLAGEM (verde) ============ -->
+    <section class="pf-section pf-theme-map pf-page" id="map">
+      <div class="container">
+        <div class="pf-company reveal">
+          <span class="pf-company__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.5 5-6.5C9 13.7 11 13 13 11"/></svg></span>
+          <div class="pf-company__text">
+            <span class="pf-company__tag">Empresa do Grupo Itasul</span>
+            <h2>MAP Reciclagem</h2>
+            <p>Soluções ambientais responsáveis.</p>
+          </div>
+          <a class="btn btn--white no-print" href="map.html">Conhecer a empresa</a>
+        </div>
+
+        <div class="pf-block pf-block--first">
+          <div class="pf-head pf-head--left reveal">
+            <span class="eyebrow">Central de transbordo e triagem</span>
+            <h3 class="pf-h3">Pátio, balança e galpão para a gestão de resíduos</h3>
+            <p class="section__lead section__lead--dark">A MAP Reciclagem opera uma central de transbordo e triagem de resíduos, com pátio, balança rodoviária de até 100 toneladas e galpão.</p>
+          </div>
+          <div class="pf-photos pf-photos--3">
+            <figure class="pf-photo reveal">
+              <img src="assets/img/map-patio.jpg" alt="Pátio da área de transbordo e triagem" width="363" height="272" data-zoom>
+              <figcaption>Pátio da área de transbordo e triagem</figcaption>
+            </figure>
+            <figure class="pf-photo reveal">
+              <img src="assets/img/map-balanca.jpg" alt="Balança rodoviária" width="333" height="272" data-zoom>
+              <figcaption>Balança rodoviária de até 100 ton.</figcaption>
+            </figure>
+            <figure class="pf-photo reveal">
+              <img src="assets/img/map-galpao.jpg" alt="Galpão 01" width="595" height="342" data-zoom>
+              <figcaption>Galpão 01</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="pf-block">
+          <div class="pf-head pf-head--left reveal">
+            <span class="eyebrow">Expansão</span>
+            <h3 class="pf-h3">Planta de beneficiamento de RCC</h3>
+            <p class="section__lead section__lead--dark">A central está em expansão, com uma planta de beneficiamento de RCC (resíduos da construção civil) em construção.</p>
+          </div>
+          <div class="pf-photos pf-photos--2">
+            <figure class="pf-photo reveal">
+              <img src="assets/img/map-terreno.jpg" alt="Preparação do terreno para a planta de RCC" width="366" height="230" data-zoom>
+              <figcaption>Preparação do terreno para a planta de RCC</figcaption>
+            </figure>
+            <figure class="pf-photo pf-photo--plan reveal">
+              <img src="assets/img/map-planta-rcc.jpg" alt="Projeto da planta de RCC" width="327" height="263" data-zoom>
+              <figcaption>Planta para RCC em construção (projeto)</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pf-section pf-section--green-soft pf-theme-map pf-page pf-page--cont" id="mudas">
+      <div class="container">
+        <div class="pf-head reveal">
+          <span class="eyebrow">Mudas frutíferas</span>
+          <h2 class="section__title">Quatro espécies, <span class="text-red">ficha completa</span></h2>
+          <p class="section__lead section__lead--dark">Cada muda tem identificação botânica, características, orientações de irrigação e desenvolvimento esperado, e um guia de cultivo.</p>
+        </div>
+
+        <div class="pf-grid pf-grid--4">
+          <a class="pf-tile pf-tile--square reveal" href="mudas.html#laranja-bahia">
+            <span class="pf-tile__img"><img src="assets/img/muda-laranja-bahia.jpg" alt="Laranja Bahia" width="800" height="1200"></span>
+            <span class="pf-tile__body"><small>Citrus sinensis</small><strong>Laranja Bahia</strong></span>
+          </a>
+          <a class="pf-tile pf-tile--square reveal" href="mudas.html#mexerica-ponca">
+            <span class="pf-tile__img"><img src="assets/img/muda-mexerica-ponca.jpg" alt="Mexerica Poncã" width="800" height="1200"></span>
+            <span class="pf-tile__body"><small>Citrus reticulata</small><strong>Mexerica Poncã</strong></span>
+          </a>
+          <a class="pf-tile pf-tile--square reveal" href="mudas.html#acerola">
+            <span class="pf-tile__img"><img src="assets/img/muda-acerola.jpg" alt="Acerola" width="800" height="1200"></span>
+            <span class="pf-tile__body"><small>Malpighia emarginata</small><strong>Acerola</strong></span>
+          </a>
+          <a class="pf-tile pf-tile--square reveal" href="mudas.html#limao-tahiti">
+            <span class="pf-tile__img"><img src="assets/img/muda-limao-tahiti.jpg" alt="Limão Tahiti" width="900" height="1200"></span>
+            <span class="pf-tile__body"><small>Citrus latifolia</small><strong>Limão Tahiti</strong></span>
+          </a>
+        </div>
+
+        <div class="pf-block">
+          <h3 class="pf-subtitle reveal">O que você encontra em cada ficha</h3>
+          <ul class="pf-checks reveal">
+            <li>Identificação botânica e genética</li>
+            <li>Características e referência técnica</li>
+            <li>Como plantar</li>
+            <li>Irrigação por fase</li>
+            <li>Adubação</li>
+            <li>Podas e manutenção</li>
+            <li>Pragas e doenças</li>
+            <li>Calendário de desenvolvimento</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="pf-contact pf-page pf-page--end" id="contato">
+      <div class="container pf-contact__grid">
+        <div class="reveal">
+          <span class="eyebrow eyebrow--light">Contato</span>
+          <h2 class="section__title section__title--light">Vamos <span class="text-red">conversar</span></h2>
+          <p class="pf-contact__lead">Fale com o Grupo Itasul e conte o que você precisa: locação de equipamentos, caçambas, caminhão Munck, soluções para resíduos ou mudas.</p>
+          <div class="pf-actions no-print">
+            <a class="btn btn--primary btn--lg pf-needs-phone" href="#" data-wa="Vi o portfólio do Grupo Itasul e gostaria de falar com vocês.">Falar no WhatsApp</a>
+            <a class="btn btn--ghost btn--lg" href="index.html#contato">Enviar mensagem pelo site</a>
+          </div>
+        </div>
+
+        <ul class="pf-contact__list reveal">
+          <li>
+            <span class="pf-contact__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><small>Endereço</small><span>Avenida Duque de Caxias, 501<br>Centro, Itatiaiuçu/MG</span></div>
+          </li>
+          <li class="pf-needs-phone">
+            <span class="pf-contact__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><small>Telefone / WhatsApp</small><a href="tel:+5500000000000" data-contact="phone">(00) 00000-0000</a></div>
+          </li>
+          <li>
+            <span class="pf-contact__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <div><small>E-mail</small><a href="mailto:contato@grupoitasul.com.br" data-contact="email">contato@grupoitasul.com.br</a></div>
+          </li>
+        </ul>
+      </div>
+      <p class="pf-signature">Grupo Itasul · Itasul Locações · MAP Reciclagem<br>Construindo o futuro com dedicação e trabalho.</p>
+    </section>
+
+  </main>
+
+  <p class="pf-toast" id="pfToast" role="status" aria-live="polite"></p>
+
+  <!-- ============ RODAPÉ (gerado por tools/atualizar-paginas.py) ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer" aria-label="Grupo Itasul">
+          <img class="brand__logo" src="assets/img/logo-branca.png" alt="Grupo Itasul"
+               onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+          <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
+        </a>
+        <p>Construindo o futuro com dedicação e trabalho. O Grupo Itasul reúne a Itasul Locações e a MAP Reciclagem.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/5500000000000" class="js-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Grupo Itasul</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="index.html#historia">Nossa História</a></li>
+          <li><a href="contatos.html">Guia da Cidade</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><i class="dot dot--loc"></i>Itasul Locações</h4>
+        <ul>
+          <li><a href="locacoes.html">Visão geral</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="cacambas.html">Caçambas</a></li>
+          <li><a href="munck.html">Caminhão Munck</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><i class="dot dot--map"></i>MAP Reciclagem</h4>
+        <ul>
+          <li><a href="map.html">Visão geral</a></li>
+          <li><a href="mudas.html">Mudas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+5500000000000" data-contact="phone">(00) 00000-0000</a></li>
+          <li><a href="mailto:contato@grupoitasul.com.br" data-contact="email">contato@grupoitasul.com.br</a></li>
+          <li>Av. Duque de Caxias, 501 – Centro<br>Itatiaiuçu/MG</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">© <span id="year"></span> Grupo Itasul. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5500000000000" class="whatsapp-float js-whatsapp pf-needs-phone" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.5-.2z"/></svg>
+  </a>
+
+  <!-- Lightbox das fotos -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox__close" aria-label="Fechar">×</button>
+    <img alt="Foto ampliada">
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
