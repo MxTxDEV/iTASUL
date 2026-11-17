@@ -147,6 +147,6 @@ Itasul Locações, catálogo, MAP Reciclagem, mudas e contato. Tem botões **Bai
 - **PDF** (`assets/downloads/Portfolio-Grupo-Itasul.pdf`) e **imagem de pré-visualização**
   (`assets/img/og-portfolio.jpg`) são gerados por `node tools/gerar-portfolio-pdf.mjs`
   (precisa de `npm i playwright`). Rode de novo sempre que mudar textos, fotos ou contatos.
-- **Contatos**: telefone, WhatsApp e e-mail ficam no topo de `assets/js/main.js`. Enquanto o WhatsApp for o
+- **Contatos**: telefone, WhatsApp e e-mail ficam no topo de `assets/js/main.js`. Enquanto o WhatsApp (ou o e-mail) estiver sem preencher, o
   número de exemplo, o portfólio esconde telefone e botões de WhatsApp (nunca mostra contato falso).
 - Os endereços `og:url`/`og:image` do `<head>` assumem `https://i-tasul.vercel.app`; troque pelo domínio final.

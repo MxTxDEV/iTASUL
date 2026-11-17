@@ -3,9 +3,10 @@
    ========================================================= */
 
 /* ▼▼▼ CONFIGURAÇÃO — troque pelo número real (DDI + DDD + número, só dígitos) ▼▼▼ */
-const WHATSAPP_NUMBER = "5500000000000";
-const PHONE_DISPLAY = "(00) 00000-0000";          // telefone como aparece escrito no site
-const EMAIL = "contato@grupoitasul.com.br";
+const WHATSAPP_NUMBER = "5500000000000";           // WhatsApp (ainda não informado: botões de WhatsApp ficam ocultos no portfólio)
+const PHONE_NUMBER = "553135721440";               // telefone fixo, para o link de ligar
+const PHONE_DISPLAY = "(31) 3572-1440";            // telefone como aparece escrito no site
+const EMAIL = "";                                  // e-mail ainda não informado: some do site enquanto estiver vazio
 const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçamento.";
 /* O telefone, o WhatsApp e o e-mail de TODAS as páginas (menu, rodapé, contato e portfólio)
    são preenchidos a partir das linhas acima: basta trocar aqui. */
@@ -31,15 +32,18 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
   /* ---------- Contatos: preenchidos a partir da configuração do topo do arquivo ---------- */
   $$('[data-contact="phone"]').forEach((el) => {
     el.textContent = PHONE_DISPLAY;
-    if (el.tagName === "A") el.href = `tel:+${WHATSAPP_NUMBER}`;
+    if (el.tagName === "A") el.href = `tel:+${PHONE_NUMBER}`;
   });
+  document.documentElement.classList.toggle("email-pending", !EMAIL);
   $$('[data-contact="email"]').forEach((el) => {
+    if (!EMAIL) return;
     el.textContent = EMAIL;
     if (el.tagName === "A") el.href = `mailto:${EMAIL}`;
   });
   // Enquanto o WhatsApp for o número de exemplo (55 + zeros), o portfólio esconde o telefone e os
-  // botões de WhatsApp (classe .pf-needs-phone), para nunca mostrar um contato falso a um cliente.
-  document.documentElement.classList.toggle("phone-pending", /^\d{2}0{5,}/.test(WHATSAPP_NUMBER));
+  // botões de WhatsApp (.pf-needs-phone = telefone, .pf-needs-wa = WhatsApp), para nunca mostrar um contato falso a um cliente.
+  document.documentElement.classList.toggle("phone-pending", /^\d{2}0{5,}/.test(PHONE_NUMBER));
+  document.documentElement.classList.toggle("wa-pending", /^\d{2}0{5,}/.test(WHATSAPP_NUMBER));
 
   /* ---------- Imagens: carrega cada foto e só troca o fundo se ela existir ---------- */
   $$("[data-img]").forEach((el) => {

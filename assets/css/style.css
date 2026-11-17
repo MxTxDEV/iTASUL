@@ -1247,7 +1247,7 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
    PORTFÓLIO (portfolio.html) — tela, celular e impressão/PDF
    ========================================================= */
 .pf { background: var(--white); }
-.phone-pending .pf-needs-phone { display: none !important; }
+.phone-pending .pf-needs-phone, .wa-pending .pf-needs-wa { display: none !important; }
 .pf-theme-loc { --red: #c8102e; --red-dark: #9e0c24; --red-light: #e63946; --red-rgb: 200, 16, 46; }
 .pf-theme-map { --red: #2f8f3e; --red-dark: #22702f; --red-light: #5fcf6f; --red-rgb: 47, 143, 62; }
 .pf svg { stroke-width: 2; }
@@ -1481,6 +1481,7 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 @media screen and (min-width: 961px) { .pf-actions { flex-wrap: nowrap; } .pf-actions .btn { white-space: nowrap; } .pf-hero__grid { grid-template-columns: 1.2fr .9fr; } }
 .pf-photo img { height: auto; }
 .phone-pending .footer [data-contact="phone"] { display: none; }
+.email-pending li:has(> [data-contact="email"]), .email-pending div:has(> [data-contact="email"]) { display: none !important; }
 
 /* Ajuste fino da impressão: cada seção cabe numa folha A4 */
 @media print {
