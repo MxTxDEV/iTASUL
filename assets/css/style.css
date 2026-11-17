@@ -1511,3 +1511,11 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 .pf-contact__qr img { flex-shrink: 0; width: 96px; height: 96px; border-radius: 8px; background: #fff; padding: 5px; }
 .pf-contact__hint { display: block; margin-top: 4px; font-size: .8rem; font-weight: 500; color: var(--gray-500); }
 .email-pending .pf-needs-email { display: none !important; }
+@media print {
+  .pf-values { grid-template-columns: repeat(3, 1fr) !important; }
+  .pf-values .value { padding: 16px 14px !important; }
+  .pf-values .value h3 { font-size: 1rem; }
+  .pf-values .value p, .pf-values .value li { font-size: .74rem; line-height: 1.45; }
+  .pf-grupo__text p { font-size: .88rem; margin-bottom: 9px; }
+  .pf-grupo { grid-template-columns: 1.2fr .8fr !important; }
+}
