@@ -3,6 +3,7 @@
    ========================================================= */
 
 /* ▼▼▼ CONFIGURAÇÃO — troque pelo número real (DDI + DDD + número, só dígitos) ▼▼▼ */
+const WHATSAPP_LINK = "https://wa.link/ouwq6u";      // link oficial do WhatsApp do Grupo (todos os botões de WhatsApp usam este)
 const WHATSAPP_NUMBER = "5500000000000";           // WhatsApp (ainda não informado: botões de WhatsApp ficam ocultos no portfólio)
 const PHONE_NUMBER = "553135721440";               // telefone fixo, para o link de ligar
 const PHONE_DISPLAY = "(31) 3572-1440";            // telefone como aparece escrito no site
@@ -18,7 +19,7 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
-  const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  const waLink = (msg) => WHATSAPP_LINK || `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
   /* ---------- Links do WhatsApp ---------- */
   $$(".js-whatsapp").forEach((a) => (a.href = waLink(WHATSAPP_MSG)));
@@ -43,7 +44,7 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
   // Enquanto o WhatsApp for o número de exemplo (55 + zeros), o portfólio esconde o telefone e os
   // botões de WhatsApp (.pf-needs-phone = telefone, .pf-needs-wa = WhatsApp), para nunca mostrar um contato falso a um cliente.
   document.documentElement.classList.toggle("phone-pending", /^\d{2}0{5,}/.test(PHONE_NUMBER));
-  document.documentElement.classList.toggle("wa-pending", /^\d{2}0{5,}/.test(WHATSAPP_NUMBER));
+  document.documentElement.classList.toggle("wa-pending", !WHATSAPP_LINK && /^\d{2}0{5,}/.test(WHATSAPP_NUMBER));
 
   /* ---------- Imagens: carrega cada foto e só troca o fundo se ela existir ---------- */
   $$("[data-img]").forEach((el) => {

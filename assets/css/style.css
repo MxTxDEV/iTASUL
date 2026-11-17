@@ -1507,3 +1507,7 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
   .pf-checks { gap: 8px 28px; }
   .pf-block .pf-subtitle { margin-bottom: 14px; }
 }
+
+.pf-contact__qr img { flex-shrink: 0; width: 96px; height: 96px; border-radius: 8px; background: #fff; padding: 5px; }
+.pf-contact__hint { display: block; margin-top: 4px; font-size: .8rem; font-weight: 500; color: var(--gray-500); }
+.email-pending .pf-needs-email { display: none !important; }
