@@ -1550,3 +1550,5 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 @media (prefers-reduced-motion: reduce) { .scroll-cue svg { animation: none; } }
 @media (max-width: 600px) { .scroll-cue { bottom: 10px; } }
 @media print { .scroll-cue { display: none !important; } }
+.scroll-cue--flow { position: static; transform: none; margin: -28px auto 14px; }
+@media (max-width: 960px) { .scroll-cue--flow { margin-top: 0; } }

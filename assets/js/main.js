@@ -66,7 +66,7 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
   /* ---------- Aviso "Role para baixo" no topo de cada página ---------- */
   // Mostra uma seta animada no fim da primeira tela para o visitante saber que há mais conteúdo.
   // Clicar leva à próxima seção; ao rolar a página, o aviso some.
-  const heroEl = $(".hero, .page-hero");
+  const heroEl = $(".hero, .page-hero, .pf-hero");
   if (heroEl) {
     const cue = document.createElement("a");
     cue.className = "scroll-cue";
@@ -81,7 +81,13 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
       const top = next ? next.getBoundingClientRect().top + window.scrollY - 40 : window.innerHeight;
       window.scrollTo({ top, behavior: "smooth" });
     });
-    heroEl.appendChild(cue);
+    const facts = $(".pf-facts", heroEl);
+    if (facts) {            // capa do portfólio: o aviso fica entre o texto e a faixa de dados
+      cue.classList.add("scroll-cue--flow");
+      heroEl.insertBefore(cue, facts);
+    } else {
+      heroEl.appendChild(cue);
+    }
     const hideCue = () => cue.classList.toggle("is-hidden", window.scrollY > 80);
     hideCue();
     window.addEventListener("scroll", hideCue, { passive: true });
