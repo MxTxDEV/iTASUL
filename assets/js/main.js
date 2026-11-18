@@ -5,6 +5,8 @@
 /* ▼▼▼ CONFIGURAÇÃO — troque pelo número real (DDI + DDD + número, só dígitos) ▼▼▼ */
 const WHATSAPP_NUMBER = "5531971078138";           // WhatsApp do Grupo (DDI + DDD + número); cada botão abre com a mensagem do serviço
 const WHATSAPP_DISPLAY = "(31) 97107-8138";        // WhatsApp como aparece escrito no site
+const WHATSAPP_MAP_NUMBER = "5531990135873";       // WhatsApp da MAP Reciclagem (páginas verdes: MAP e mudas)
+const WHATSAPP_MAP_DISPLAY = "(31) 99013-5873";
 const WHATSAPP_LINK = "";                          // opcional: link curto (ex.: wa.link). Se preencher, ele substitui as mensagens prontas
 const HOURS = "7h às 17h";                         // horário de atendimento
 const PHONE_NUMBER = "553135721440";               // telefone fixo, para o link de ligar
@@ -21,13 +23,17 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
 
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
-  const waLink = (msg) => WHATSAPP_LINK || `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  const isMap = document.body.classList.contains("theme-map");
+  const waNumber = isMap ? WHATSAPP_MAP_NUMBER : WHATSAPP_NUMBER;
+  const waDisplay = isMap ? WHATSAPP_MAP_DISPLAY : WHATSAPP_DISPLAY;
+  const waName = isMap ? "MAP Reciclagem" : "Grupo Itasul";
+  const waLink = (msg) => (!isMap && WHATSAPP_LINK) || `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
 
   /* ---------- Links do WhatsApp ---------- */
-  $$(".js-whatsapp").forEach((a) => (a.href = waLink(WHATSAPP_MSG)));
+  $$(".js-whatsapp").forEach((a) => (a.href = waLink(isMap ? `Olá, ${waName}! Vim pelo site e gostaria de falar com vocês.` : WHATSAPP_MSG)));
   // Botões com mensagem própria, ex.: data-wa="Quero alugar uma Betoneira"
   $$("[data-wa]").forEach((a) => {
-    a.href = waLink(`Olá, Grupo Itasul! Vim pelo site. ${a.dataset.wa}`);
+    a.href = waLink(`Olá, ${waName}! Vim pelo site. ${a.dataset.wa}`);
     a.target = "_blank";
     a.rel = "noopener";
   });
@@ -38,8 +44,8 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
     if (el.tagName === "A") el.href = `tel:+${PHONE_NUMBER}`;
   });
   $$('[data-contact="whatsapp"]').forEach((el) => {
-    el.textContent = WHATSAPP_DISPLAY;
-    if (el.tagName === "A") { el.href = waLink(WHATSAPP_MSG); el.target = "_blank"; el.rel = "noopener"; }
+    el.textContent = waDisplay;
+    if (el.tagName === "A") { el.href = waLink(isMap ? `Olá, ${waName}! Vim pelo site e gostaria de falar com vocês.` : WHATSAPP_MSG); el.target = "_blank"; el.rel = "noopener"; }
   });
   $$('[data-contact="hours"]').forEach((el) => (el.textContent = HOURS));
   document.documentElement.classList.toggle("email-pending", !EMAIL);

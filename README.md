@@ -169,3 +169,6 @@ No topo de `assets/js/main.js`: `WHATSAPP_NUMBER` (31 97107-8138), `WHATSAPP_DIS
 `assets/js/mudas-dados.js` (os mesmos dados das fichas), montado por `assets/js/cuidados-mudas.js`. No fim da página há o botão que baixa
 `assets/downloads/Cuidados-das-Mudas-Grupo-Itasul.pdf`, gerado junto com o PDF do portfólio por `node tools/gerar-portfolio-pdf.mjs`.
 Se mudar algum cuidado em `mudas-dados.js`, rode o gerador de novo para atualizar o PDF.
+
+**WhatsApp da MAP:** as páginas verdes (MAP e mudas) usam `WHATSAPP_MAP_NUMBER` / `WHATSAPP_MAP_DISPLAY` em `assets/js/main.js`
+(31 99013-5873), com a mensagem "Olá, MAP Reciclagem!". As demais páginas usam o WhatsApp do Grupo.

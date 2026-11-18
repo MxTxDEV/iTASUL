@@ -67,7 +67,7 @@ def cta(page, sec):
     if sec == "loc":
         return '<a href="#" data-wa="Gostaria de um orçamento de locação." class="btn btn--primary nav__cta">Pedir orçamento</a>'
     if sec == "map":
-        return '<a href="#" data-wa="Gostaria de falar com a MAP Reciclagem." class="btn btn--primary nav__cta">Falar com a MAP</a>'
+        return '<a href="#" data-wa="Gostaria de falar com a equipe." class="btn btn--primary nav__cta">Falar com a MAP</a>'
     return f'<a href="{"#contato" if page == "index.html" else "index.html#contato"}" class="btn btn--primary nav__cta">Solicitar orçamento</a>'
 
 
