@@ -57,7 +57,7 @@ def menu(page, sec):
         ]
     return [
         ("visao", "Visão geral", "map.html", ""),
-        ("mudas", "Mudas", "mudas.html", ""),
+        ("mudas", "Cuide da sua muda", "mudas.html", ""),
         ("contato", "Contato", contato, ""),
     ]
 
@@ -66,7 +66,7 @@ def cta(page, sec):
     if sec == "loc":
         return '<a href="#" data-wa="Gostaria de um orçamento de locação." class="btn btn--primary nav__cta">Pedir orçamento</a>'
     if sec == "map":
-        return '<a href="#" data-wa="Gostaria de encomendar mudas." class="btn btn--primary nav__cta">Encomendar mudas</a>'
+        return '<a href="#" data-wa="Gostaria de falar com a MAP Reciclagem." class="btn btn--primary nav__cta">Falar com a MAP</a>'
     return f'<a href="{"#contato" if page == "index.html" else "index.html#contato"}" class="btn btn--primary nav__cta">Solicitar orçamento</a>'
 
 
@@ -153,7 +153,7 @@ FOOTER = f'''<footer class="footer">
         <h4><i class="dot dot--map"></i>{MAP}</h4>
         <ul>
           <li><a href="map.html">Visão geral</a></li>
-          <li><a href="mudas.html">Mudas</a></li>
+          <li><a href="mudas.html">Cuide da sua muda</a></li>
         </ul>
       </div>
       <div>
