@@ -1678,3 +1678,5 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 @media print { .care-print { display: block !important; } .care-steps-section, .care-hint { display: none !important; } }
 .care-stage__art svg :is(ellipse, circle, rect, path):not([stroke]) { stroke: none; }
 .hero__text { max-width: 780px; font-size: clamp(1rem, 1.35vw, 1.15rem); line-height: 1.55; margin-bottom: 28px; }
+.pf-company__btns { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px; }
+@media screen and (max-width: 960px) { .pf-company__btns { width: 100%; } .pf-company__btns .btn { flex: 1; } }

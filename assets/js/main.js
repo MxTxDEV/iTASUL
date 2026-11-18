@@ -47,6 +47,17 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
     el.textContent = waDisplay;
     if (el.tagName === "A") { el.href = waLink(isMap ? `Olá, ${waName}! Vim pelo site e gostaria de falar com vocês.` : WHATSAPP_MSG); el.target = "_blank"; el.rel = "noopener"; }
   });
+  // WhatsApp da MAP Reciclagem em páginas que não são verdes (ex.: portfólio)
+  const mapLink = (msg) => `https://wa.me/${WHATSAPP_MAP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  $$("[data-wa-map]").forEach((a) => {
+    a.href = mapLink(`Olá, MAP Reciclagem! Vim pelo site. ${a.dataset.waMap}`);
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+  $$('[data-contact="whatsapp-map"]').forEach((el) => {
+    el.textContent = WHATSAPP_MAP_DISPLAY;
+    if (el.tagName === "A") { el.href = mapLink("Olá, MAP Reciclagem! Vim pelo site e gostaria de falar com vocês."); el.target = "_blank"; el.rel = "noopener"; }
+  });
   $$('[data-contact="hours"]').forEach((el) => (el.textContent = HOURS));
   document.documentElement.classList.toggle("email-pending", !EMAIL);
   $$('[data-contact="email"]').forEach((el) => {
