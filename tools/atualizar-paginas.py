@@ -28,6 +28,7 @@ PAGES = {
     "munck.html":       ("loc", "munck", [(LOC, "locacoes.html"), ("Caminhão Munck", None)]),
     "map.html":         ("map", "visao", [(MAP, None)]),
     "mudas.html":       ("map", "mudas", [(MAP, "map.html"), ("Mudas", None)]),
+    "cuidados-mudas.html": ("map", "mudas", [(MAP, "map.html"), ("Mapa de cuidados", None)]),
 }
 BODY_CLASS = {"grupo": "", "loc": ' class="theme-loc"', "map": ' class="theme-map"'}
 

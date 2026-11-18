@@ -1,4 +1,5 @@
-// Gera assets/downloads/Portfolio-Grupo-Itasul.pdf e assets/img/og-portfolio.jpg a partir de portfolio.html.
+// Gera assets/downloads/Portfolio-Grupo-Itasul.pdf, assets/img/og-portfolio.jpg (a partir de portfolio.html)
+// e assets/downloads/Cuidados-das-Mudas-Grupo-Itasul.pdf (a partir de cuidados-mudas.html).
 // Uso:  npm i playwright   (uma vez)   e depois   node tools/gerar-portfolio-pdf.mjs
 // Rode de novo sempre que o portfólio, as fotos ou os contatos (assets/js/main.js) mudarem.
 import { chromium } from "playwright";
@@ -20,5 +21,12 @@ await page.screenshot({ path: path.join(root, "assets/img/og-portfolio.jpg"), ty
 await page.reload({ waitUntil: "networkidle" });
 await page.emulateMedia({ media: "print" });
 await page.pdf({ path: path.join(root, "assets/downloads/Portfolio-Grupo-Itasul.pdf"), format: "A4", printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
+// PDF dos cuidados das mudas
+const care = await browser.newPage({ viewport: { width: 1200, height: 900 } });
+await care.goto(`http://localhost:${port}/cuidados-mudas.html`, { waitUntil: "networkidle" });
+await care.evaluate(() => document.fonts.ready);
+await care.waitForTimeout(800);
+await care.emulateMedia({ media: "print" });
+await care.pdf({ path: path.join(root, "assets/downloads/Cuidados-das-Mudas-Grupo-Itasul.pdf"), format: "A4", printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
 await browser.close(); srv.close();
 console.log("ok");

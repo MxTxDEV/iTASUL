@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de cuidados da muda | MAP Reciclagem · Grupo Itasul</title>
+  <meta name="description" content="Mapa de cuidados da muda: como plantar, irrigar, adubar, podar e proteger a laranja Bahia, a mexerica Poncã, a acerola e o limão Tahiti, com PDF para baixar.">
+  <meta name="theme-color" content="#c8102e">
+
+  <link rel="canonical" href="https://grupoitasul.com.br/cuidados-mudas.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Grupo Itasul">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Mapa de cuidados da muda | MAP Reciclagem · Grupo Itasul">
+  <meta property="og:description" content="Mapa de cuidados da muda: como plantar, irrigar, adubar, podar e proteger a laranja Bahia, a mexerica Poncã, a acerola e o limão Tahiti, com PDF para baixar.">
+  <meta property="og:url" content="https://grupoitasul.com.br/cuidados-mudas.html">
+  <meta property="og:image" content="https://grupoitasul.com.br/assets/img/og-portfolio.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="theme-map">
+
+  <!-- ============ CABEÇALHO / MENU ============ -->
+  <header class="header" id="header">
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <div class="company-bar" aria-label="Empresas do grupo">
+      <div class="container company-bar__inner">
+        <a href="index.html" class="cb cb--grupo"><i class="dot dot--grupo"></i>Grupo<span class="cb__long"> Itasul</span></a>
+        <a href="locacoes.html" class="cb cb--loc"><i class="dot dot--loc"></i><span class="cb__long">Itasul </span>Locações</a>
+        <a href="map.html" class="cb cb--map is-active" aria-current="true"><i class="dot dot--map"></i>MAP<span class="cb__long"> Reciclagem</span></a>
+      </div>
+    </div>
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Grupo Itasul - início">
+        <img class="brand__logo" src="assets/img/logo-horizontal-branca.png" alt="Grupo Itasul"
+             onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+        <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="map.html" class="nav__link">Visão geral</a></li>
+          <li><a href="mudas.html" class="nav__link active" aria-current="page">Cuide da sua muda</a></li>
+          <li><a href="map.html#contato" class="nav__link">Contato</a></li>
+        </ul>
+        <a href="#" data-wa="Gostaria de falar com a MAP Reciclagem." class="btn btn--primary nav__cta">Falar com a MAP</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ TOPO DA PÁGINA ============ -->
+    <section class="page-hero page-hero--green care-cover">
+      <div class="hero__bg" data-img="assets/img/mudas-topo.jpg"></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Você está em"><a href="index.html">Grupo Itasul</a>/<a href="map.html">MAP Reciclagem</a>/<span>Mapa de cuidados</span></nav>
+        <span class="eyebrow eyebrow--green reveal">MAP Reciclagem</span>
+        <h1 class="reveal">Mapa de cuidados <span class="text-green">da sua muda</span></h1>
+        <p class="reveal">Como plantar, irrigar, adubar, podar e proteger a sua muda, passo a passo, para cada espécie. No final da página você baixa tudo em PDF.</p>
+        <a href="#especies" class="btn btn--green btn--lg reveal">Escolher a minha muda</a>
+      </div>
+    </section>
+
+    <!-- ============ ESCOLHA A ESPÉCIE ============ -->
+    <!-- Os cuidados vêm de assets/js/mudas-dados.js (os mesmos dados das fichas) -->
+    <section class="section section--gray" id="especies">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--green">Qual é a sua muda?</span>
+          <h2 class="section__title">Escolha a <span class="text-green">espécie</span></h2>
+          <p class="section__lead section__lead--dark">Toque na sua muda para ir direto aos cuidados dela.</p>
+        </div>
+        <div class="care-pick" id="carePick"></div>
+      </div>
+    </section>
+
+    <!-- ============ CUIDADOS DE CADA MUDA ============ -->
+    <div id="careList"></div>
+
+    <!-- ============ PDF ============ -->
+    <section class="section care-pdf" id="pdf">
+      <div class="container care-pdf__inner">
+        <div class="reveal">
+          <span class="eyebrow eyebrow--light">Leve com você</span>
+          <h2 class="section__title section__title--light">Baixe o mapa de cuidados <span class="text-green">em PDF</span></h2>
+          <p>Todos os cuidados das quatro mudas em um só arquivo, para ler no celular, imprimir ou guardar.</p>
+        </div>
+        <div class="care-pdf__actions reveal">
+          <a class="btn btn--green btn--lg" href="assets/downloads/Cuidados-das-Mudas-Grupo-Itasul.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>Baixar o PDF dos cuidados
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#" data-wa="Recebi uma muda de brinde e tenho uma dúvida sobre os cuidados.">Tirar uma dúvida no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand brand--footer" aria-label="Grupo Itasul">
+          <img class="brand__logo" src="assets/img/logo-branca.png" alt="Grupo Itasul"
+               onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+          <span class="brand__text"><span class="brand__mark">G</span><span>Grupo <strong>Itasul</strong></span></span>
+        </a>
+        <p>Construindo o futuro com dedicação e trabalho. O Grupo Itasul reúne a Itasul Locações e a MAP Reciclagem.</p>
+        <div class="social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/5500000000000" class="js-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Grupo Itasul</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="index.html#historia">Nossa História</a></li>
+          <li><a href="contatos.html">Guia da Cidade</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><i class="dot dot--loc"></i>Itasul Locações</h4>
+        <ul>
+          <li><a href="locacoes.html">Visão geral</a></li>
+          <li><a href="ferramentas.html">Ferramentas</a></li>
+          <li><a href="cacambas.html">Caçambas</a></li>
+          <li><a href="munck.html">Caminhão Munck</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><i class="dot dot--map"></i>MAP Reciclagem</h4>
+        <ul>
+          <li><a href="map.html">Visão geral</a></li>
+          <li><a href="mudas.html">Cuide da sua muda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+553135721440" data-contact="phone">(31) 3572-1440</a></li>
+          <li><a href="#" data-contact="whatsapp">(31) 97107-8138</a> (WhatsApp)</li>
+          <li>Atendimento: <span data-contact="hours">7h às 17h</span></li>
+          <li><a href="mailto:contato@grupoitasul.com.br" data-contact="email">contato@grupoitasul.com.br</a></li>
+          <li>Av. Duque de Caxias, 501 – Centro<br>Itatiaiuçu/MG</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">© <span id="year"></span> Grupo Itasul. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5500000000000" class="whatsapp-float js-whatsapp" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.5-.2z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/mudas-dados.js"></script>
+  <script src="assets/js/cuidados-mudas.js"></script>
+</body>
+</html>

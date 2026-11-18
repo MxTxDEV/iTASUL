@@ -162,3 +162,10 @@ Itasul Locações, catálogo, MAP Reciclagem, mudas e contato. Tem botões **Bai
 
 No topo de `assets/js/main.js`: `WHATSAPP_NUMBER` (31 97107-8138), `WHATSAPP_DISPLAY`, `HOURS` e, opcionalmente, `WHATSAPP_LINK`
 (link curto; se preencher, ele substitui as mensagens prontas por serviço). Depois de mudar, gere o PDF do portfólio de novo.
+
+## Mapa de cuidados da muda
+
+`cuidados-mudas.html` mostra, para cada espécie, os cuidados (plantar, irrigação, adubação, podas, pragas e calendário). O conteúdo vem de
+`assets/js/mudas-dados.js` (os mesmos dados das fichas), montado por `assets/js/cuidados-mudas.js`. No fim da página há o botão que baixa
+`assets/downloads/Cuidados-das-Mudas-Grupo-Itasul.pdf`, gerado junto com o PDF do portfólio por `node tools/gerar-portfolio-pdf.mjs`.
+Se mudar algum cuidado em `mudas-dados.js`, rode o gerador de novo para atualizar o PDF.

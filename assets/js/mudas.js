@@ -76,7 +76,7 @@
           <h2 class="section__title">${esc(m.nome)}</h2>
           <p class="mhead__sci">${esc(m.cientifico)}</p>
           <dl class="minfo-grid">${info}</dl>
-          <a href="#" class="btn btn--primary btn--lg" data-wa-muda>Encomendar esta muda</a>
+          <a href="cuidados-mudas.html#${m.id}" class="btn btn--primary btn--lg">Mapa de cuidados da muda</a>
         </div>
       </div>
 
@@ -112,13 +112,8 @@
         <div class="mlearn__panel" role="tabpanel">${conteudo(m, "plantar")}</div>
       </section>`;
 
-    // fotos (se existirem) e WhatsApp
+    // fotos (se existirem)
     detail.querySelectorAll("[data-img]").forEach(loadImg);
-    const wa = detail.querySelector("[data-wa-muda]");
-    const num = typeof WHATSAPP_NUMBER !== "undefined" ? WHATSAPP_NUMBER : "";
-    wa.href = `https://wa.me/${num}?text=${encodeURIComponent(`Olá, Grupo Itasul! Vim pelo site e gostaria de encomendar muda de ${m.nome}.`)}`;
-    wa.target = "_blank";
-    wa.rel = "noopener";
 
     // abas de aprendizado
     const panel = detail.querySelector(".mlearn__panel");
