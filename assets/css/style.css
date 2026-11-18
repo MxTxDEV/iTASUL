@@ -1623,3 +1623,17 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
   .care-sub { margin: 8px 0 2px; font-size: .62rem; }
   .care-note { font-size: .68rem; margin-top: 6px; }
 }
+
+/* Seção "Duas empresas" mais compacta */
+.empresas.section { padding: 64px 0; }
+.empresas .section__head { margin-bottom: 30px; }
+.empresas__grid { gap: 22px; }
+.empresa { padding: 26px 28px 24px; border-top-width: 5px; }
+.empresa__icon { width: 48px; height: 48px; margin-bottom: 12px; }
+.empresa__icon svg { width: 24px; height: 24px; }
+.empresa h3 { margin: 4px 0 8px; font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
+.empresa p { margin-bottom: 12px; font-size: .95rem; }
+.empresa__list { gap: 6px; margin-bottom: 20px; }
+.empresa__list li { font-size: .9rem; }
+.empresa .btn { padding-block: 12px; }
+@media (max-width: 600px) { .empresas.section { padding: 48px 0; } .empresa { padding: 24px 20px 22px; } }
