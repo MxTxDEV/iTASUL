@@ -157,3 +157,8 @@ Itasul Locações, catálogo, MAP Reciclagem, mudas e contato. Tem botões **Bai
 - **Como chegar**: seção `#como-chegar` na página inicial (mapa do Google com o endereço e botão "Abrir no Google Maps").
 - **Nossa frota**: galeria `#frota` na página inicial (`assets/img/frota-obra-1.jpg` … `-6.jpg`).
 - **SEO**: cada página tem `canonical`, tags Open Graph e a página inicial tem dados de empresa local (JSON-LD). `sitemap.xml` e `robots.txt` ficam na raiz; adicione páginas novas no `sitemap.xml`.
+
+## WhatsApp e horário
+
+No topo de `assets/js/main.js`: `WHATSAPP_NUMBER` (31 97107-8138), `WHATSAPP_DISPLAY`, `HOURS` e, opcionalmente, `WHATSAPP_LINK`
+(link curto; se preencher, ele substitui as mensagens prontas por serviço). Depois de mudar, gere o PDF do portfólio de novo.

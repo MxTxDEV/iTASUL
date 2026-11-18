@@ -160,6 +160,8 @@ FOOTER = f'''<footer class="footer">
         <h4>Contato</h4>
         <ul>
           <li><a href="tel:+553135721440" data-contact="phone">(31) 3572-1440</a></li>
+          <li><a href="#" data-contact="whatsapp">(31) 97107-8138</a> (WhatsApp)</li>
+          <li>Atendimento: <span data-contact="hours">7h às 17h</span></li>
           <li><a href="mailto:contato@grupoitasul.com.br" data-contact="email">contato@grupoitasul.com.br</a></li>
           <li>Av. Duque de Caxias, 501 – Centro<br>Itatiaiuçu/MG</li>
         </ul>

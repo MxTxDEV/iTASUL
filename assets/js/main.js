@@ -3,8 +3,10 @@
    ========================================================= */
 
 /* ▼▼▼ CONFIGURAÇÃO — troque pelo número real (DDI + DDD + número, só dígitos) ▼▼▼ */
-const WHATSAPP_LINK = "https://wa.link/ouwq6u";      // link oficial do WhatsApp do Grupo (todos os botões de WhatsApp usam este)
-const WHATSAPP_NUMBER = "5500000000000";           // WhatsApp (ainda não informado: botões de WhatsApp ficam ocultos no portfólio)
+const WHATSAPP_NUMBER = "5531971078138";           // WhatsApp do Grupo (DDI + DDD + número); cada botão abre com a mensagem do serviço
+const WHATSAPP_DISPLAY = "(31) 97107-8138";        // WhatsApp como aparece escrito no site
+const WHATSAPP_LINK = "";                          // opcional: link curto (ex.: wa.link). Se preencher, ele substitui as mensagens prontas
+const HOURS = "7h às 17h";                         // horário de atendimento
 const PHONE_NUMBER = "553135721440";               // telefone fixo, para o link de ligar
 const PHONE_DISPLAY = "(31) 3572-1440";            // telefone como aparece escrito no site
 const EMAIL = "";                                  // e-mail ainda não informado: some do site enquanto estiver vazio
@@ -35,6 +37,11 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
     el.textContent = PHONE_DISPLAY;
     if (el.tagName === "A") el.href = `tel:+${PHONE_NUMBER}`;
   });
+  $$('[data-contact="whatsapp"]').forEach((el) => {
+    el.textContent = WHATSAPP_DISPLAY;
+    if (el.tagName === "A") { el.href = waLink(WHATSAPP_MSG); el.target = "_blank"; el.rel = "noopener"; }
+  });
+  $$('[data-contact="hours"]').forEach((el) => (el.textContent = HOURS));
   document.documentElement.classList.toggle("email-pending", !EMAIL);
   $$('[data-contact="email"]').forEach((el) => {
     if (!EMAIL) return;
