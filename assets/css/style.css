@@ -1677,3 +1677,4 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 @media screen and (max-width: 600px) { .care-node__dot { width: 40px; height: 40px; } .care-node__t { font-size: .82rem; } .care-nav .btn { padding-inline: 14px; font-size: .9rem; } }
 @media print { .care-print { display: block !important; } .care-steps-section, .care-hint { display: none !important; } }
 .care-stage__art svg :is(ellipse, circle, rect, path):not([stroke]) { stroke: none; }
+.hero__text { max-width: 780px; font-size: clamp(1rem, 1.35vw, 1.15rem); line-height: 1.55; margin-bottom: 28px; }
