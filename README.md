@@ -165,7 +165,7 @@ No topo de `assets/js/main.js`: `WHATSAPP_NUMBER` (31 97107-8138), `WHATSAPP_DIS
 
 ## Mapa de cuidados da muda
 
-`cuidados-mudas.html` mostra, para cada espécie, os cuidados (plantar, irrigação, adubação, podas, pragas e calendário). O conteúdo vem de
+`cuidados-mudas.html` mostra, para cada espécie, um passo a passo interativo (passe o mouse ou toque em cada etapa: plantio, primeiro mês, primeiro ano, segundo ano, flores e primeiros frutos, planta adulta e colheita), com a ilustração da muda crescendo até o fruto. No PDF e na impressão sai a lista completa dos cuidados (plantar, irrigação, adubação, podas, pragas e calendário). O conteúdo vem de
 `assets/js/mudas-dados.js` (os mesmos dados das fichas), montado por `assets/js/cuidados-mudas.js`. No fim da página há o botão que baixa
 `assets/downloads/Cuidados-das-Mudas-Grupo-Itasul.pdf`, gerado junto com o PDF do portfólio por `node tools/gerar-portfolio-pdf.mjs`.
 Se mudar algum cuidado em `mudas-dados.js`, rode o gerador de novo para atualizar o PDF.

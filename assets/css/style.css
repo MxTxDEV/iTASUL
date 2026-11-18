@@ -1637,3 +1637,43 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 .empresa__list li { font-size: .9rem; }
 .empresa .btn { padding-block: 12px; }
 @media (max-width: 600px) { .empresas.section { padding: 48px 0; } .empresa { padding: 24px 20px 22px; } }
+
+/* ---------- Passo a passo interativo (tela) ---------- */
+.care-print { display: none; }
+.care-steps-section { background: var(--white); scroll-margin-top: calc(var(--header-h) + 10px); }
+.care-species-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.care-tab { padding: 10px 20px; font: inherit; font-weight: 600; color: var(--gray-900); background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 40px; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.care-tab:hover { border-color: var(--green); }
+.care-tab.active { color: #fff; background: var(--green); border-color: var(--green); }
+.care-hint { margin-bottom: 30px; text-align: center; color: var(--gray-500); }
+.care-path { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 34px; }
+.care-path__line { position: absolute; left: calc(100% / 12); right: calc(100% / 12); top: 21px; height: 4px; background: var(--gray-100); border-radius: 2px; }
+.care-path__line i { display: block; width: var(--p); height: 100%; background: var(--green); border-radius: 2px; transition: width .4s var(--ease); }
+.care-node { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0 4px; font: inherit; text-align: center; background: none; border: 0; cursor: pointer; }
+.care-node__dot { z-index: 1; width: 46px; height: 46px; display: grid; place-items: center; font-weight: 700; color: var(--gray-500); background: var(--white); border: 3px solid var(--gray-100); border-radius: 50%; transition: all .3s var(--ease); }
+.care-node.is-done .care-node__dot { color: #fff; background: var(--green); border-color: var(--green); }
+.care-node.is-active .care-node__dot { color: #fff; background: var(--green); border-color: var(--green); transform: scale(1.18); box-shadow: 0 0 0 6px rgba(var(--green-rgb, 47, 143, 62), .18); }
+.care-node__t { margin-top: 6px; font-size: .92rem; font-weight: 700; line-height: 1.25; color: var(--black); }
+.care-node__q { font-size: .78rem; color: var(--gray-500); }
+.care-node:hover .care-node__dot { border-color: var(--green); }
+.care-stage { display: grid; grid-template-columns: .85fr 1.15fr; gap: 32px; align-items: start; padding: 28px; background: var(--gray-50); border-radius: 16px; }
+.care-stage.is-in { animation: careIn .35s var(--ease); }
+@keyframes careIn { from { opacity: .3; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.care-stage__art svg { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow); }
+.care-stage__caption { display: flex; flex-direction: column; align-items: center; margin-top: 12px; text-align: center; }
+.care-stage__caption strong { font-size: 1.15rem; color: var(--black); }
+.care-stage__caption span { font-size: .85rem; color: var(--gray-500); }
+.care-stage__expect { margin-bottom: 14px; padding: 12px 16px; font-size: .95rem; color: var(--gray-900); background: #e6f4e9; border-left: 4px solid var(--green); border-radius: 8px; }
+.care-stage__group { margin-bottom: 8px; padding: 14px 18px 6px; background: var(--white); border-radius: 12px; box-shadow: var(--shadow); }
+.care-stage__group .care-sub { margin: 0 0 4px; }
+.care-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; }
+.care-nav .btn[disabled] { opacity: .4; pointer-events: none; }
+@media screen and (max-width: 900px) {
+  .care-path { grid-template-columns: repeat(3, 1fr); row-gap: 22px; }
+  .care-path__line { display: none; }
+  .care-stage { grid-template-columns: 1fr; padding: 18px; }
+  .care-stage__art { max-width: 340px; margin: 0 auto; }
+}
+@media screen and (max-width: 600px) { .care-node__dot { width: 40px; height: 40px; } .care-node__t { font-size: .82rem; } .care-nav .btn { padding-inline: 14px; font-size: .9rem; } }
+@media print { .care-print { display: block !important; } .care-steps-section, .care-hint { display: none !important; } }
+.care-stage__art svg :is(ellipse, circle, rect, path):not([stroke]) { stroke: none; }
