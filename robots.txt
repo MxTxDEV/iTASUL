@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grupoitasul.com.br/sitemap.xml

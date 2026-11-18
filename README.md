@@ -150,3 +150,10 @@ Itasul Locações, catálogo, MAP Reciclagem, mudas e contato. Tem botões **Bai
 - **Contatos**: telefone, WhatsApp e e-mail ficam no topo de `assets/js/main.js`. Enquanto o WhatsApp (ou o e-mail) estiver sem preencher, o
   número de exemplo, o portfólio esconde telefone e botões de WhatsApp (nunca mostra contato falso).
 - Os endereços `og:url`/`og:image` do `<head>` usam o domínio `https://grupoitasul.com.br`.
+
+## Perguntas frequentes, mapa, galeria e SEO
+
+- **Perguntas frequentes**: seção `#faq` em `cacambas.html`, `munck.html` e `ferramentas.html` (blocos `<details class="faq__item">`). Se mudar uma pergunta, ajuste também o JSON-LD `FAQPage` no `<head>` da mesma página.
+- **Como chegar**: seção `#como-chegar` na página inicial (mapa do Google com o endereço e botão "Abrir no Google Maps").
+- **Nossa frota**: galeria `#frota` na página inicial (`assets/img/frota-obra-1.jpg` … `-6.jpg`).
+- **SEO**: cada página tem `canonical`, tags Open Graph e a página inicial tem dados de empresa local (JSON-LD). `sitemap.xml` e `robots.txt` ficam na raiz; adicione páginas novas no `sitemap.xml`.
