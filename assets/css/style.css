@@ -1534,3 +1534,19 @@ body.theme-map .mtile .img-slot { background-color: var(--green-light); backgrou
 @media screen and (max-width: 1100px) { .eco__grid { grid-template-columns: repeat(2, 1fr); } }
 @media screen and (max-width: 600px) { .eco__grid { grid-template-columns: 1fr; } }
 @media print { .pf-eco .eco__grid { grid-template-columns: repeat(2, 1fr); } .pf-eco { min-height: 296mm; display: flex; flex-direction: column; justify-content: center; } }
+
+/* ---------- Aviso "Role para baixo" ---------- */
+.scroll-cue {
+  position: absolute; left: 50%; bottom: 18px; z-index: 5;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  color: var(--white); text-shadow: 0 1px 8px rgba(0, 0, 0, .6);
+  transform: translateX(-50%); transition: opacity .3s;
+}
+.scroll-cue__text { font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.scroll-cue svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 1px 6px rgba(0, 0, 0, .6)); animation: cueBounce 1.6s ease-in-out infinite; }
+.scroll-cue:hover { color: var(--red-light); }
+.scroll-cue.is-hidden { opacity: 0; pointer-events: none; }
+@keyframes cueBounce { 0%, 100% { transform: translateY(0); opacity: .55; } 50% { transform: translateY(7px); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .scroll-cue svg { animation: none; } }
+@media (max-width: 600px) { .scroll-cue { bottom: 10px; } }
+@media print { .scroll-cue { display: none !important; } }

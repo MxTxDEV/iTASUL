@@ -63,6 +63,30 @@ const WHATSAPP_MSG = "Olá, Grupo Itasul! Vim pelo site e gostaria de um orçame
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* ---------- Aviso "Role para baixo" no topo de cada página ---------- */
+  // Mostra uma seta animada no fim da primeira tela para o visitante saber que há mais conteúdo.
+  // Clicar leva à próxima seção; ao rolar a página, o aviso some.
+  const heroEl = $(".hero, .page-hero");
+  if (heroEl) {
+    const cue = document.createElement("a");
+    cue.className = "scroll-cue";
+    cue.href = "#";
+    cue.setAttribute("aria-label", "Role para baixo para ver mais informações");
+    cue.innerHTML =
+      '<span class="scroll-cue__text">Role para baixo</span>' +
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+    cue.addEventListener("click", (e) => {
+      e.preventDefault();
+      const next = heroEl.nextElementSibling;
+      const top = next ? next.getBoundingClientRect().top + window.scrollY - 40 : window.innerHeight;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+    heroEl.appendChild(cue);
+    const hideCue = () => cue.classList.toggle("is-hidden", window.scrollY > 80);
+    hideCue();
+    window.addEventListener("scroll", hideCue, { passive: true });
+  }
+
   /* ---------- Menu mobile ---------- */
   const toggle = $("#navToggle");
   const setMenu = (open) => {
