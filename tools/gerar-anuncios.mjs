@@ -223,6 +223,19 @@ const ADS = [
     hl: "Tudo para a sua obra, <em>num só lugar.</em>", sub: "Betoneira, andaime, furadeira, cortadora de piso e muito mais.",
     products: ["andaime", "furadeira", "cortadora"] },
 
+  { id: "13-ferramentas-furadeira", layout: "TA", tag: "Ferramentas para construção civil",
+    hl: "Concreto duro? A furadeira <em>resolve.</em>", sub: "Furadeira para locação, para furar com força e precisão.",
+    products: ["furadeira"], pstyle: "width:800px;height:auto;top:190px;" },
+  { id: "14-ferramentas-cortadora", layout: "TA", tag: "Ferramentas para construção civil",
+    hl: "Corte reto, obra no <em>prazo.</em>", sub: "Cortadora de piso para locação.",
+    products: ["cortadora"] },
+  { id: "15-ferramentas-altura", layout: "TB", tag: "Ferramentas para construção civil",
+    hl: "Em altura, estrutura <em>firme.</em>", sub: "Andaime e escora para locação, para a obra seguir segura.",
+    products: ["andaime", "escora"] },
+  { id: "16-ferramentas-etapas", layout: "TB", tag: "Ferramentas para construção civil",
+    hl: "Para cada etapa, a ferramenta <em>certa.</em>", sub: "Betoneira, placa vibratória e muito mais para locação.",
+    products: ["betoneira", "placa"], p1style: "left:20px;top:430px;height:540px;", p2style: "left:560px;top:520px;height:520px;" },
+
   { id: "10-cacamba-na-obra", layout: "A", tag: "Caçamba de entulho",
     hl: "A caçamba chega, o entulho <em>sai.</em>", sub: "Entregamos no endereço da sua obra, no prazo combinado.",
     photo: "cacamba-frota-chao.jpg", pos: "18% 50%", size: "auto 810px", sizeS: "auto 990px" },
@@ -281,8 +294,8 @@ function html(a, fmt = "feed") {
   if (L === "A") inner = `<div class="band"></div><div class="photo" style="${bg(a.photo, a.pos, a.size ? `background-size:${a.size};` : "")}"></div><div class="photo-shade"></div><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
   if (L === "B") inner = `<div class="photo" style="${bg(a.photo, a.pos, a.size ? `background-size:${a.size};` : "")}"></div><div class="photo-shade"></div>${logo()}<div class="tag">${a.tag}</div><div class="bar"></div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${foot()}`;
   if (L === "C") inner = `<div class="head"></div>${logo()}<div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p><div class="band"></div><div class="photo" style="${bg(a.photo, a.pos, a.size ? `background-size:${a.size};` : "")}"></div><div class="photo-shade"></div>${cta()}${foot()}`;
-  if (L === "TA") inner = `<div class="band"></div><div class="stage"></div><div class="block"></div><div class="ground"></div><img class="product" src="${rec(a.products[0])}"><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
-  if (L === "TB") inner = `<div class="bg"></div><div class="stripes"></div><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><img class="p1" src="${rec(a.products[0])}"><img class="p2" src="${rec(a.products[1])}"><div class="strip"></div><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
+  if (L === "TA") inner = `<div class="band"></div><div class="stage"></div><div class="block"></div><div class="ground"></div><img class="product" style="${a.pstyle || ""}" src="${rec(a.products[0])}"><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
+  if (L === "TB") inner = `<div class="bg"></div><div class="stripes"></div><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><img class="p1" style="${a.p1style || ""}" src="${rec(a.products[0])}"><img class="p2" style="${a.p2style || ""}" src="${rec(a.products[1])}"><div class="strip"></div><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
   if (L === "TC") inner = `<div class="spot"></div><div class="floor"></div>${logo()}<div class="tag">${a.tag}</div><img class="p3" src="${rec(a.products[0])}"><img class="p1" src="${rec(a.products[1])}"><img class="p2" src="${rec(a.products[2])}"><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${foot()}`;
   if (L === "X") inner = `<div class="spot"></div>${logo()}<div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><div class="illus">${cacambaSVG(a.cheia)}</div><p class="sub">${a.sub}</p>${cta()}${foot()}`;
   if (L === "L") {

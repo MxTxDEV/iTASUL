@@ -63,3 +63,10 @@ Arquivos: `anuncio-01` a `anuncio-12` (feed) e `stories/story-01` a `story-12` (
 - **11 · Encheu? A gente leva.** Foto real do site: caçamba basculada, operador da equipe e entulho de obra no chão.
 - **12 · O que pode ir na caçamba?** Lista "Pode / Não pode", baseada na lista que já está na página de Caçambas do site, com itens de segurança comuns no setor (química, pneus, amianto).
 - **Stories 9:16:** os mesmos textos, com o conteúdo reposicionado. Os 250 px do topo e os cerca de 350 px de baixo ficam livres, porque o Instagram cobre essas faixas com o nome do perfil e com a caixa de resposta.
+
+## Anúncios 13 a 16 (ferramentas)
+- **13 · Concreto duro? A furadeira resolve.** Furadeira.
+- **14 · Corte reto, obra no prazo.** Cortadora de piso.
+- **15 · Em altura, estrutura firme.** Andaime e escora.
+- **16 · Para cada etapa, a ferramenta certa.** Betoneira e placa vibratória.
+Todos em feed e Stories. As fotos de ferramentas têm só 800 px; fotos maiores melhorariam a nitidez.
