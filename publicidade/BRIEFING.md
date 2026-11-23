@@ -59,7 +59,7 @@ Arquivos: `anuncio-01` a `anuncio-12` (feed) e `stories/story-01` a `story-12` (
 - Sugestão de teste: rodar os três pôsteres de cada serviço juntos e deixar o Meta pausar os de menor clique em 5 a 7 dias.
 
 ## Anúncios 10 a 12 (caçamba) e Stories
-- **10 · A caçamba chega, o entulho sai.** Ilustração própria da caçamba estacionária, vazia, em fundo preto e vermelho.
-- **11 · Encheu? A gente leva.** A mesma caçamba cheia de entulho (tijolos, blocos, madeira).
+- **10 · A caçamba chega, o entulho sai.** Foto real do site: caminhão de caçamba estacionária (à esquerda) ao lado do Munck, em frente à fachada.
+- **11 · Encheu? A gente leva.** Foto real do site: caçamba basculada, operador da equipe e entulho de obra no chão.
 - **12 · O que pode ir na caçamba?** Lista "Pode / Não pode", baseada na lista que já está na página de Caçambas do site, com itens de segurança comuns no setor (química, pneus, amianto).
 - **Stories 9:16:** os mesmos textos, com o conteúdo reposicionado. Os 250 px do topo e os cerca de 350 px de baixo ficam livres, porque o Instagram cobre essas faixas com o nome do perfil e com a caixa de resposta.
