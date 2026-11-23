@@ -223,9 +223,9 @@ const ADS = [
     hl: "Tudo para a sua obra, <em>num só lugar.</em>", sub: "Betoneira, andaime, furadeira, cortadora de piso e muito mais.",
     products: ["andaime", "furadeira", "cortadora"] },
 
-  { id: "10-cacamba-na-obra", layout: "C", tag: "Caçamba de entulho",
+  { id: "10-cacamba-na-obra", layout: "A", tag: "Caçamba de entulho",
     hl: "A caçamba chega, o entulho <em>sai.</em>", sub: "Entregamos no endereço da sua obra, no prazo combinado.",
-    photo: "cacambas-topo.jpg", pos: "0% 43%", size: "auto 1400px", sizeS: "auto 1700px" },
+    photo: "/publicidade/fotos/cacamba-servico.jpg", pos: "100% 0%", size: "auto 860px", sizeS: "auto 1000px" },
   { id: "11-cacamba-cheia-leva", layout: "B", tag: "Caçamba de entulho",
     hl: "Encheu?<br>A gente <em>leva.</em>", sub: "Retirada da caçamba cheia com descarte em local licenciado.",
     photo: "cacamba-cheia-3.jpg", pos: "0% 62%", size: "auto 1000px", sizeS: "auto 1300px" },
