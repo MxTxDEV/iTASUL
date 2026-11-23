@@ -236,6 +236,10 @@ const ADS = [
     hl: "Para cada etapa, a ferramenta <em>certa.</em>", sub: "Betoneira, placa vibratória e muito mais para locação.",
     products: ["betoneira", "placa"], p1style: "left:20px;top:430px;height:540px;", p2style: "left:560px;top:520px;height:520px;" },
 
+  { id: "17-ferramentas-compactador", layout: "TA", tag: "Ferramentas para construção civil",
+    hl: "Base firme começa na <em>compactação.</em>", sub: "Compactador de solo para locação, para deixar o terreno pronto.",
+    products: ["compactador"], pstyle: "height:660px;top:90px;", pstyleS: "height:660px;top:300px;" },
+
   { id: "10-cacamba-na-obra", layout: "A", tag: "Caçamba de entulho",
     hl: "A caçamba chega, o entulho <em>sai.</em>", sub: "Entregamos no endereço da sua obra, no prazo combinado.",
     photo: "cacamba-frota-chao.jpg", pos: "18% 50%", size: "auto 810px", sizeS: "auto 990px" },
@@ -289,6 +293,7 @@ function html(a, fmt = "feed") {
   const L = a.layout;
   const story = fmt === "story";
   if (story && a.sizeS) a = { ...a, size: a.sizeS };
+  if (story && a.pstyleS) a = { ...a, pstyle: a.pstyleS };
   const rec = (n) => `/publicidade/recortes/${n}.png`;
   let inner = "";
   if (L === "A") inner = `<div class="band"></div><div class="photo" style="${bg(a.photo, a.pos, a.size ? `background-size:${a.size};` : "")}"></div><div class="photo-shade"></div><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
