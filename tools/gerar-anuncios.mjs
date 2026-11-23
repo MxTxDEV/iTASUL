@@ -225,10 +225,10 @@ const ADS = [
 
   { id: "10-cacamba-na-obra", layout: "A", tag: "Caçamba de entulho",
     hl: "A caçamba chega, o entulho <em>sai.</em>", sub: "Entregamos no endereço da sua obra, no prazo combinado.",
-    photo: "/publicidade/fotos/cacamba-servico.jpg", pos: "100% 0%", size: "auto 860px", sizeS: "auto 1000px" },
+    photo: "cacamba-frota-chao.jpg", pos: "18% 50%", size: "auto 810px", sizeS: "auto 990px" },
   { id: "11-cacamba-cheia-leva", layout: "B", tag: "Caçamba de entulho",
     hl: "Encheu?<br>A gente <em>leva.</em>", sub: "Retirada da caçamba cheia com descarte em local licenciado.",
-    photo: "cacamba-cheia-3.jpg", pos: "0% 62%", size: "auto 1000px", sizeS: "auto 1300px" },
+    photo: "cacamba-cheia-rua.jpg", pos: "52% 50%", size: "auto 930px", sizeS: "auto 1180px" },
   { id: "12-cacamba-pode-nao-pode", layout: "L", tag: "Caçamba de entulho",
     hl: "O que pode ir na <em>caçamba?</em>", sub: "Separe direito e evite problemas na retirada.",
     pode: ["Restos de alvenaria, tijolos e blocos", "Concreto, argamassa e reboco", "Pisos, azulejos e telhas", "Terra e areia", "Madeira de obra e restos de gesso"],
