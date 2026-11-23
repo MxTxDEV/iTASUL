@@ -1,7 +1,7 @@
 # Pôsteres de tráfego pago — Itasul Locações (Grupo Itasul)
 
-9 anúncios no formato feed 4:5 (1080 × 1350 px), prontos para Meta Ads (Instagram e Facebook) e para Google Display.
-Arquivos: `anuncio-01` a `anuncio-09` (PNG). Para gerar de novo: `node tools/gerar-anuncios.mjs`.
+12 anúncios no formato feed 4:5 (1080 × 1350 px) e os mesmos 12 em Stories/Reels 9:16 (1080 × 1920 px, pasta `stories/`), prontos para Meta Ads (Instagram e Facebook) e para Google Display.
+Arquivos: `anuncio-01` a `anuncio-12` (feed) e `stories/story-01` a `story-12` (PNG). Para gerar de novo: `node tools/gerar-anuncios.mjs`.
 
 ## Etapa 1 — Contexto
 - **Quem anuncia:** Itasul Locações, do Grupo Itasul, em Itatiaiuçu/MG, desde 2012.
@@ -57,3 +57,9 @@ Arquivos: `anuncio-01` a `anuncio-09` (PNG). Para gerar de novo: `node tools/ger
 - [x] Série coerente (mesmo sistema) com variação de molde.
 - Limite técnico: as fotos de ferramentas têm só 800 px de largura; foram recortadas e ampliadas com cuidado, mas ficam mais nítidas se vocês mandarem fotos maiores.
 - Sugestão de teste: rodar os três pôsteres de cada serviço juntos e deixar o Meta pausar os de menor clique em 5 a 7 dias.
+
+## Anúncios 10 a 12 (caçamba) e Stories
+- **10 · A caçamba chega, o entulho sai.** Ilustração própria da caçamba estacionária, vazia, em fundo preto e vermelho.
+- **11 · Encheu? A gente leva.** A mesma caçamba cheia de entulho (tijolos, blocos, madeira).
+- **12 · O que pode ir na caçamba?** Lista "Pode / Não pode", baseada na lista que já está na página de Caçambas do site, com itens de segurança comuns no setor (química, pneus, amianto).
+- **Stories 9:16:** os mesmos textos, com o conteúdo reposicionado. Os 250 px do topo e os cerca de 350 px de baixo ficam livres, porque o Instagram cobre essas faixas com o nome do perfil e com a caixa de resposta.

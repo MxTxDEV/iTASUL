@@ -22,8 +22,8 @@ const CSS = `
 @font-face { font-family: "Inter"; src: url("/assets/fonts/inter-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; }
 :root { --red: #d0112b; --red-hot: #ee2540; --black: #0a0a0a; --ink: #141414; --gray: #a7a7a7; --paper: #f3f3f1; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--black); font-family: "Inter", sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
-.ad { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--black); }
+html, body { width: 1080px; overflow: hidden; background: var(--black); font-family: "Inter", sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+.ad { position: relative; width: 1080px; height: var(--h, 1350px); overflow: hidden; background: var(--black); }
 .abs { position: absolute; }
 .photo { position: absolute; background-size: cover; background-repeat: no-repeat; filter: contrast(1.07) saturate(1.1) brightness(.97); }
 .tag { position: absolute; display: inline-flex; align-items: center; gap: 12px; padding: 13px 24px; font-size: 21px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #fff; background: var(--red); border-radius: 4px; }
@@ -114,6 +114,76 @@ html, body { width: 1080px; height: 1350px; overflow: hidden; background: var(--
 .TC .sub { position: absolute; left: 72px; width: 880px; top: 1072px; }
 .TC .cta { position: absolute; left: 72px; top: 1176px; }
 .TC .foot { top: 1296px; }
+/* ===================== STORIES 9:16 (1080 x 1920) =====================
+   Zonas seguras: nada importante nos 250 px do topo nem nos ~380 px de baixo (barra do Instagram). */
+.S { --h: 1920px; }
+.S.A .photo, .S.A .photo-shade, .S.A .band { height: 990px; }
+.S.A .tag { top: 262px; } .S.A .hl { top: 1050px; font-size: 90px; } .S.A .sub { top: 1272px; }
+.S.A .cta { top: 1406px; } .S.A .logo { top: 1426px; } .S.A .foot { top: 1540px; }
+
+.S.B .photo, .S.B .photo-shade { height: 1180px; }
+.S.B .logo { top: 262px; } .S.B .tag { top: 268px; }
+.S.B .bar { top: 900px; } .S.B .hl { top: 900px; font-size: 92px; } .S.B .sub { top: 1152px; }
+.S.B .cta { top: 1310px; } .S.B .foot { top: 1450px; }
+
+.S.C .head { height: 720px; } .S.C .logo { top: 262px; } .S.C .tag { top: 268px; }
+.S.C .hl { top: 390px; font-size: 90px; } .S.C .sub { top: 600px; }
+.S.C .band { top: 690px; height: 800px; } .S.C .photo, .S.C .photo-shade { top: 718px; height: 772px; }
+.S.C .cta { top: 1370px; } .S.C .foot { top: 1508px; }
+
+.S.TA .stage, .S.TA .band { height: 1000px; }
+.S.TA .block { top: 270px; height: 650px; left: 140px; width: 800px; }
+.S.TA .product { top: 250px; height: 700px; } .S.TA .ground { top: 900px; }
+.S.TA .tag { top: 262px; } .S.TA .hl { top: 1050px; } .S.TA .sub { top: 1262px; }
+.S.TA .cta { top: 1396px; } .S.TA .logo { top: 1416px; } .S.TA .foot { top: 1530px; }
+
+.S.TB .tag { top: 262px; } .S.TB .hl { top: 340px; font-size: 104px; }
+.S.TB .p1 { top: 700px; height: 560px; } .S.TB .p2 { top: 640px; height: 640px; }
+.S.TB .strip { top: 1330px; height: 590px; } .S.TB .sub { top: 1390px; }
+.S.TB .cta { top: 1450px; } .S.TB .logo { top: 1464px; } .S.TB .foot { top: 1566px; }
+
+.S.TC .logo { top: 262px; } .S.TC .tag { top: 268px; }
+.S.TC .p3 { top: 380px; height: 560px; } .S.TC .p1 { top: 320px; } .S.TC .p2 { top: 560px; }
+.S.TC .floor { top: 880px; } .S.TC .hl { top: 1010px; font-size: 90px; } .S.TC .sub { top: 1226px; }
+.S.TC .cta { top: 1366px; } .S.TC .foot { top: 1500px; }
+
+/* ---------- Ilustração da caçamba ---------- */
+.X .spot { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 46%, rgba(255,255,255,.26) 0, rgba(255,255,255,.06) 42%, transparent 68%), radial-gradient(ellipse at 100% 0, rgba(208,17,43,.5), transparent 55%), radial-gradient(ellipse at 0 100%, rgba(208,17,43,.25), transparent 50%); }
+.X .tag { left: 72px; top: 72px; }
+.X .hl { position: absolute; left: 72px; width: 936px; top: 150px; font-size: 98px; }
+.X .illus { position: absolute; left: 50px; top: 378px; width: 980px; filter: drop-shadow(0 24px 30px rgba(0,0,0,.55)); }
+.X .illus svg { display: block; width: 100%; height: auto; }
+.X .sub { position: absolute; left: 72px; width: 880px; top: 1010px; }
+.X .cta { position: absolute; left: 72px; top: 1172px; }
+.X .logo { right: 72px; top: 1186px; }
+.X .foot { top: 1288px; }
+.S.X .logo { left: 72px; right: auto; top: 262px; } .S.X .tag { left: auto; right: 72px; top: 268px; }
+.S.X .hl { top: 380px; font-size: 104px; }
+.S.X .illus { left: 40px; top: 700px; width: 1000px; }
+.S.X .sub { top: 1340px; } .S.X .cta { top: 1450px; } .S.X .foot { top: 1572px; }
+
+/* ---------- Lista: o que pode / não pode ---------- */
+.L .spot { position: absolute; inset: 0; background: radial-gradient(ellipse at 100% 0, rgba(208,17,43,.5), transparent 55%), radial-gradient(ellipse at 0 100%, rgba(47,143,62,.28), transparent 55%); }
+.L .tag { left: 72px; top: 72px; }
+.L .hl { position: absolute; left: 72px; width: 936px; top: 150px; font-size: 98px; }
+.L .panel { position: absolute; top: 420px; width: 440px; height: 566px; padding: 28px 28px 14px; border-radius: 18px; }
+.L .pode { left: 72px; background: rgba(47,143,62,.16); border: 2px solid #2f9e44; }
+.L .nao { left: 568px; background: rgba(208,17,43,.16); border: 2px solid var(--red-hot); }
+.L .panel h3 { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; font-size: 38px; font-weight: 800; letter-spacing: -.02em; }
+.L .panel li { display: flex; align-items: flex-start; gap: 14px; list-style: none; padding: 11px 0; border-top: 1px solid rgba(255,255,255,.12); font-size: 26px; font-weight: 600; line-height: 1.25; color: #ececec; }
+.L .ic { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: center / 20px no-repeat; }
+.L .ok { background-color: #2f9e44; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>"); }
+.L .no { background-color: var(--red-hot); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'><path d='M18 6 6 18M6 6l12 12'/></svg>"); }
+.L .sub { position: absolute; left: 72px; width: 900px; top: 1020px; }
+.L .cta { position: absolute; left: 72px; top: 1172px; }
+.L .logo { right: 72px; top: 1186px; }
+.L .foot { top: 1288px; }
+.S.L .logo { left: 72px; right: auto; top: 262px; } .S.L .tag { left: auto; right: 72px; top: 268px; }
+.S.L .hl { top: 360px; font-size: 100px; }
+.S.L .panel { left: 72px; width: 936px; height: auto; padding: 22px 28px 8px; }
+.S.L .pode { top: 590px; } .S.L .nao { top: 1000px; }
+.S.L .panel h3 { font-size: 34px; margin-bottom: 8px; } .S.L .panel li { padding: 8px 0; font-size: 25px; }
+.S.L .sub { top: 1426px; } .S.L .cta { top: 1480px; } .S.L .foot { top: 1600px; }
 `;
 
 const cta = () => `<div class="cta"><span class="cta__ico">${ICON_WA}</span><span><small>Peça seu orçamento no WhatsApp</small><b>${WHATS}</b></span></div>`;
@@ -141,7 +211,7 @@ const ADS = [
     photo: "cacamba-cheia-1.jpg", pos: "42% 50%" },
   { id: "06-cacamba-destino", layout: "B", tag: "Caçamba de entulho",
     hl: "Destino <em>certo</em> para o seu entulho.", sub: "Descarte em local licenciado e cuidado com o meio ambiente.",
-    photo: "cacambas-topo.jpg", pos: "0% 30%", size: "auto 1018px" },
+    photo: "cacambas-topo.jpg", pos: "0% 30%", size: "auto 1018px", sizeS: "auto 1180px" },
 
   { id: "07-ferramentas-betoneira", layout: "TA", tag: "Ferramentas para construção civil",
     hl: "A obra começa na <em>betoneira.</em>", sub: "Locação de betoneira e de outras ferramentas para a sua obra.",
@@ -152,10 +222,58 @@ const ADS = [
   { id: "09-ferramentas-tudo", layout: "TC", tag: "Ferramentas para construção civil",
     hl: "Tudo para a sua obra, <em>num só lugar.</em>", sub: "Betoneira, andaime, furadeira, cortadora de piso e muito mais.",
     products: ["andaime", "furadeira", "cortadora"] },
+
+  { id: "10-cacamba-na-obra", layout: "X", cheia: false, tag: "Caçamba de entulho",
+    hl: "A caçamba chega, o entulho <em>sai.</em>", sub: "Entregamos no endereço da sua obra, no prazo combinado." },
+  { id: "11-cacamba-cheia-leva", layout: "X", cheia: true, tag: "Caçamba de entulho",
+    hl: "Encheu?<br>A gente <em>leva.</em>", sub: "Retirada da caçamba cheia com descarte em local licenciado." },
+  { id: "12-cacamba-pode-nao-pode", layout: "L", tag: "Caçamba de entulho",
+    hl: "O que pode ir na <em>caçamba?</em>", sub: "Separe direito e evite problemas na retirada.",
+    pode: ["Restos de alvenaria, tijolos e blocos", "Concreto, argamassa e reboco", "Pisos, azulejos e telhas", "Terra e areia", "Madeira de obra e restos de gesso"],
+    nao: ["Lixo doméstico e orgânico", "Produtos químicos e solventes", "Pneus, baterias e eletrônicos", "Amianto e materiais contaminados", "Carga acima da borda da caçamba"] },
 ];
 
-function html(a) {
+/* ---------------- Ilustração: caçamba estacionária (vazia ou cheia) ---------------- */
+function cacambaSVG(cheia) {
+  const rot = (x, y, w, h, a, fill, extra = "") => `<rect x="${x - w / 2}" y="${y - h / 2}" width="${w}" height="${h}" rx="5" fill="${fill}" transform="rotate(${a} ${x} ${y})" ${extra}/>`;
+  let ribs = "";
+  for (let i = 1; i <= 6; i++) { const t = i / 7; ribs += `<line x1="${110 + 680 * t}" y1="262" x2="${155 + 590 * t}" y2="470" stroke="#b78500" stroke-width="9" stroke-linecap="round"/>`; }
+  let lixo = "";
+  if (cheia) {
+    lixo += `<path d="M120 252 L170 205 L230 170 L300 150 L380 128 L450 118 L530 130 L610 112 L690 140 L750 180 L788 252 Z" fill="#6f655b"/>`;
+    [[250, 192, 52, 30, -12, "#9a9a9a"], [330, 162, 60, 34, 8, "#b0a79b"], [430, 142, 66, 36, -6, "#8a8176"], [520, 152, 58, 32, 12, "#a89c8d"], [610, 150, 60, 34, -10, "#7c746b"], [690, 188, 56, 32, 14, "#98897a"],
+     [200, 228, 56, 26, 6, "#a3a3a3"], [300, 224, 70, 30, -4, "#8d8d8d"], [400, 214, 64, 32, 10, "#b9b0a3"], [500, 218, 70, 30, -8, "#7d7468"], [600, 222, 64, 30, 6, "#a09486"], [690, 232, 54, 24, -5, "#8f8f8f"]]
+      .forEach(([x, y, w, h, a, f]) => (lixo += rot(x, y, w, h, a, f)));
+    [[280, 172, 44, 20, -20], [470, 130, 44, 20, 15], [560, 178, 44, 20, -10], [640, 130, 44, 20, 25], [360, 198, 44, 20, 10], [720, 207, 44, 20, -18], [170, 212, 44, 20, 12]]
+      .forEach(([x, y, w, h, a]) => (lixo += rot(x, y, w, h, a, "#b5523b", 'stroke="#7e2f20" stroke-width="2"')));
+    [[420, 178, 36, 20, 18], [600, 198, 36, 20, -12], [330, 130, 34, 18, -14]].forEach(([x, y, w, h, a]) => (lixo += rot(x, y, w, h, a, "#ececec", 'stroke="#bdbdbd" stroke-width="2"')));
+    lixo += rot(300, 112, 150, 13, -16, "#c4915a") + rot(560, 96, 140, 13, 20, "#b98a4e") + rot(190, 188, 120, 13, 26, "#cf9d66");
+    [[240, 236, 12], [360, 240, 10], [470, 236, 11], [650, 240, 12], [740, 236, 10]].forEach(([x, y, r]) => (lixo += `<circle cx="${x}" cy="${y}" r="${r}" fill="#6b4e33"/>`));
+  }
+  return `<svg viewBox="0 0 900 560" aria-hidden="true">
+    <defs>
+      <linearGradient id="cf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd23a"/><stop offset="1" stop-color="#e3a400"/></linearGradient>
+      <linearGradient id="ci" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c241f"/><stop offset="1" stop-color="#1a1512"/></linearGradient>
+      <radialGradient id="cs"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="450" cy="500" rx="430" ry="38" fill="url(#cs)"/>
+    <polygon points="160,176 740,176 790,252 110,252" fill="url(#ci)"/>
+    ${lixo}
+    <polygon points="110,250 790,250 745,470 155,470" fill="url(#cf)"/>
+    ${ribs}
+    <line x1="132" y1="360" x2="768" y2="360" stroke="#b78500" stroke-width="11" stroke-linecap="round"/>
+    <polygon points="98,238 802,238 792,264 108,264" fill="#c99200"/>
+    <polygon points="98,238 802,238 800,246 100,246" fill="#ffe27a" opacity=".75"/>
+    <circle cx="96" cy="254" r="11" fill="none" stroke="#2a2a2a" stroke-width="6"/><circle cx="804" cy="254" r="11" fill="none" stroke="#2a2a2a" stroke-width="6"/>
+    <rect x="165" y="470" width="130" height="16" rx="4" fill="#222"/><rect x="605" y="470" width="130" height="16" rx="4" fill="#222"/>
+  </svg>`;
+}
+
+
+function html(a, fmt = "feed") {
   const L = a.layout;
+  const story = fmt === "story";
+  if (story && a.sizeS) a = { ...a, size: a.sizeS };
   const rec = (n) => `/publicidade/recortes/${n}.png`;
   let inner = "";
   if (L === "A") inner = `<div class="band"></div><div class="photo" style="${bg(a.photo, a.pos, a.size ? `background-size:${a.size};` : "")}"></div><div class="photo-shade"></div><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
@@ -164,22 +282,33 @@ function html(a) {
   if (L === "TA") inner = `<div class="band"></div><div class="stage"></div><div class="block"></div><div class="ground"></div><img class="product" src="${rec(a.products[0])}"><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
   if (L === "TB") inner = `<div class="bg"></div><div class="stripes"></div><div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><img class="p1" src="${rec(a.products[0])}"><img class="p2" src="${rec(a.products[1])}"><div class="strip"></div><p class="sub">${a.sub}</p>${cta()}${logo()}${foot()}`;
   if (L === "TC") inner = `<div class="spot"></div><div class="floor"></div>${logo()}<div class="tag">${a.tag}</div><img class="p3" src="${rec(a.products[0])}"><img class="p1" src="${rec(a.products[1])}"><img class="p2" src="${rec(a.products[2])}"><h1 class="hl">${a.hl}</h1><p class="sub">${a.sub}</p>${cta()}${foot()}`;
-  return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>${CSS}</style></head><body><div class="ad ${L}">${inner}<div class="grain"></div></div></body></html>`;
+  if (L === "X") inner = `<div class="spot"></div>${logo()}<div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><div class="illus">${cacambaSVG(a.cheia)}</div><p class="sub">${a.sub}</p>${cta()}${foot()}`;
+  if (L === "L") {
+    const li = (arr, c) => arr.map((t) => `<li><i class="ic ${c}"></i><span>${t}</span></li>`).join("");
+    inner = `<div class="spot"></div>${logo()}<div class="tag">${a.tag}</div><h1 class="hl">${a.hl}</h1><div class="panel pode"><h3><i class="ic ok"></i>Pode</h3><ul>${li(a.pode, "ok")}</ul></div><div class="panel nao"><h3><i class="ic no"></i>Não pode</h3><ul>${li(a.nao, "no")}</ul></div><p class="sub">${a.sub}</p>${cta()}${foot()}`;
+  }
+  return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>${CSS}</style></head><body><div class="ad ${story ? "S " : ""}${L}">${inner}<div class="grain"></div></div></body></html>`;
 }
 
-fs.mkdirSync(path.join(root, "publicidade"), { recursive: true });
+fs.mkdirSync(path.join(root, "publicidade", "stories"), { recursive: true });
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM || "/opt/pw-browsers/chromium" });
 const only = process.argv[2];
+const fmtOnly = process.argv[3]; // "feed" ou "story" (opcional)
 for (const a of ADS) {
-  if (only && !a.id.startsWith(only)) continue;
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1 });
-  fs.writeFileSync(path.join(root, "publicidade", ".tmp.html"), html(a));
-  await page.goto(`http://localhost:${port}/publicidade/.tmp.html`, { waitUntil: "networkidle" });
-  await page.evaluate(() => document.fonts.ready);
-  await page.waitForTimeout(250);
-  await page.screenshot({ path: path.join(root, "publicidade", `anuncio-${a.id}.png`) });
-  await page.close();
-  console.log("ok", a.id);
+  if (only && only !== "all" && !a.id.startsWith(only)) continue;
+  for (const fmt of ["feed", "story"]) {
+    if (fmtOnly && fmtOnly !== fmt) continue;
+    const H = fmt === "story" ? 1920 : 1350;
+    const page = await browser.newPage({ viewport: { width: 1080, height: H }, deviceScaleFactor: 1 });
+    fs.writeFileSync(path.join(root, "publicidade", ".tmp.html"), html(a, fmt));
+    await page.goto(`http://localhost:${port}/publicidade/.tmp.html`, { waitUntil: "networkidle" });
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(250);
+    const out = fmt === "story" ? path.join(root, "publicidade", "stories", `story-${a.id}.png`) : path.join(root, "publicidade", `anuncio-${a.id}.png`);
+    await page.screenshot({ path: out });
+    await page.close();
+    console.log("ok", fmt, a.id);
+  }
 }
 fs.rmSync(path.join(root, "publicidade", ".tmp.html"), { force: true });
 await browser.close(); srv.close();
